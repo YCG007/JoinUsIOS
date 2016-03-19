@@ -7,6 +7,8 @@
 //
 
 #import "TabBarController.h"
+#import "NetworkManager.h"
+#import "Student.h"
 
 @interface TabBarController ()
 

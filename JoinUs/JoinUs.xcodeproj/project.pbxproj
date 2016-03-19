@@ -22,7 +22,6 @@
 		5952D2261C9D50A700E761F9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2251C9D50A700E761F9 /* Utils.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
-		59BD2A991C9ACC9D00D9A58C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A981C9ACC9D00D9A58C /* ViewController.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
 		59BD2A9E1C9ACC9D00D9A58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9D1C9ACC9D00D9A58C /* Assets.xcassets */; };
 		59BD2AA11C9ACC9D00D9A58C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9F1C9ACC9D00D9A58C /* LaunchScreen.storyboard */; };
@@ -39,6 +38,7 @@
 		59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */; };
 		59BD2AF71C9ADF9100D9A58C /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AF61C9ADF9100D9A58C /* Student.m */; };
 		59BD2AFA1C9AE06C00D9A58C /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AF91C9AE06C00D9A58C /* Team.m */; };
+		59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D191E01C9D82E500FF696C /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,8 +67,6 @@
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		59BD2A971C9ACC9D00D9A58C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		59BD2A981C9ACC9D00D9A58C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		59BD2A9B1C9ACC9D00D9A58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59BD2A9D1C9ACC9D00D9A58C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59BD2AA01C9ACC9D00D9A58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		59BD2AF61C9ADF9100D9A58C /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		59BD2AF81C9AE06C00D9A58C /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
 		59BD2AF91C9AE06C00D9A58C /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		59D191DF1C9D82E500FF696C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		59D191E01C9D82E500FF696C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,13 +207,12 @@
 				5952D1F81C9D3E4E00E761F9 /* Market */,
 				5952D1F91C9D3E4E00E761F9 /* Message */,
 				5952D1FA1C9D3E4E00E761F9 /* Personal */,
+				59D191DE1C9D82C500FF696C /* Networking */,
 				5952D1FC1C9D3E4E00E761F9 /* Utils */,
 				59BD2AF41C9ADF7700D9A58C /* Models */,
 				59BD2AA81C9ADF2300D9A58C /* JSONModel */,
 				59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */,
 				59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */,
-				59BD2A971C9ACC9D00D9A58C /* ViewController.h */,
-				59BD2A981C9ACC9D00D9A58C /* ViewController.m */,
 				59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */,
 				59BD2A9D1C9ACC9D00D9A58C /* Assets.xcassets */,
 				59BD2A9F1C9ACC9D00D9A58C /* LaunchScreen.storyboard */,
@@ -303,6 +302,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		59D191DE1C9D82C500FF696C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				59D191DF1C9D82E500FF696C /* NetworkManager.h */,
+				59D191E01C9D82E500FF696C /* NetworkManager.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,12 +397,12 @@
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
-				59BD2A991C9ACC9D00D9A58C /* ViewController.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
 				5952D2111C9D482100E761F9 /* MarketNavigationController.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				5952D2171C9D484800E761F9 /* PersonalNavigationController.m in Sources */,
+				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
 				59BD2AC81C9ADF2300D9A58C /* NSArray+JSONModel.m in Sources */,
 				59BD2AFA1C9AE06C00D9A58C /* Team.m in Sources */,
 				59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */,

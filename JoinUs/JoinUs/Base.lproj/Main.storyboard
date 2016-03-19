@@ -10,7 +10,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="G4r-qL-ROP" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tab_bar_backgroud" id="rjh-zQ-D5y">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rjh-zQ-D5y">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -176,7 +176,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tab_bar_backgroud" width="200" height="49"/>
         <image name="tab_bar_button_forum" width="31" height="25"/>
         <image name="tab_bar_button_forum_selected" width="31" height="25"/>
         <image name="tab_bar_button_home" width="41" height="28"/>
