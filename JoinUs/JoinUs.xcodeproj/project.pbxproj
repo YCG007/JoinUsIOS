@@ -12,12 +12,6 @@
 		5952D2021C9D41F200E761F9 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2011C9D41F200E761F9 /* Market.storyboard */; };
 		5952D2041C9D434D00E761F9 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2031C9D434D00E761F9 /* Message.storyboard */; };
 		5952D2081C9D441300E761F9 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2071C9D441300E761F9 /* Personal.storyboard */; };
-		5952D20B1C9D46D200E761F9 /* HomeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D20A1C9D46D200E761F9 /* HomeNavigationController.m */; };
-		5952D2111C9D482100E761F9 /* MarketNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2101C9D482100E761F9 /* MarketNavigationController.m */; };
-		5952D2141C9D483200E761F9 /* MessageNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2131C9D483200E761F9 /* MessageNavigationController.m */; };
-		5952D2171C9D484800E761F9 /* PersonalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2161C9D484800E761F9 /* PersonalNavigationController.m */; };
-		5952D21A1C9D499F00E761F9 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2191C9D499F00E761F9 /* TabBarController.m */; };
-		5952D2201C9D4AEA00E761F9 /* ForumNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D21F1C9D4AEA00E761F9 /* ForumNavigationController.m */; };
 		5952D2231C9D4FED00E761F9 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2221C9D4FED00E761F9 /* UIColor+Utils.m */; };
 		5952D2261C9D50A700E761F9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2251C9D50A700E761F9 /* Utils.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
@@ -47,18 +41,6 @@
 		5952D2011C9D41F200E761F9 /* Market.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
 		5952D2031C9D434D00E761F9 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		5952D2071C9D441300E761F9 /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
-		5952D2091C9D46D200E761F9 /* HomeNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavigationController.h; sourceTree = "<group>"; };
-		5952D20A1C9D46D200E761F9 /* HomeNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavigationController.m; sourceTree = "<group>"; };
-		5952D20F1C9D482100E761F9 /* MarketNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketNavigationController.h; sourceTree = "<group>"; };
-		5952D2101C9D482100E761F9 /* MarketNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketNavigationController.m; sourceTree = "<group>"; };
-		5952D2121C9D483200E761F9 /* MessageNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNavigationController.h; sourceTree = "<group>"; };
-		5952D2131C9D483200E761F9 /* MessageNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNavigationController.m; sourceTree = "<group>"; };
-		5952D2151C9D484800E761F9 /* PersonalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalNavigationController.h; sourceTree = "<group>"; };
-		5952D2161C9D484800E761F9 /* PersonalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalNavigationController.m; sourceTree = "<group>"; };
-		5952D2181C9D499F00E761F9 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		5952D2191C9D499F00E761F9 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		5952D21E1C9D4AEA00E761F9 /* ForumNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumNavigationController.h; sourceTree = "<group>"; };
-		5952D21F1C9D4AEA00E761F9 /* ForumNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumNavigationController.m; sourceTree = "<group>"; };
 		5952D2211C9D4FED00E761F9 /* UIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
 		5952D2221C9D4FED00E761F9 /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 		5952D2241C9D50A700E761F9 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -152,25 +134,6 @@
 			path = Personal;
 			sourceTree = "<group>";
 		};
-		5952D1FB1C9D3E4E00E761F9 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				5952D2091C9D46D200E761F9 /* HomeNavigationController.h */,
-				5952D20A1C9D46D200E761F9 /* HomeNavigationController.m */,
-				5952D21E1C9D4AEA00E761F9 /* ForumNavigationController.h */,
-				5952D21F1C9D4AEA00E761F9 /* ForumNavigationController.m */,
-				5952D20F1C9D482100E761F9 /* MarketNavigationController.h */,
-				5952D2101C9D482100E761F9 /* MarketNavigationController.m */,
-				5952D2121C9D483200E761F9 /* MessageNavigationController.h */,
-				5952D2131C9D483200E761F9 /* MessageNavigationController.m */,
-				5952D2151C9D484800E761F9 /* PersonalNavigationController.h */,
-				5952D2161C9D484800E761F9 /* PersonalNavigationController.m */,
-				5952D2181C9D499F00E761F9 /* TabBarController.h */,
-				5952D2191C9D499F00E761F9 /* TabBarController.m */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		5952D1FC1C9D3E4E00E761F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +164,6 @@
 		59BD2A901C9ACC9D00D9A58C /* JoinUs */ = {
 			isa = PBXGroup;
 			children = (
-				5952D1FB1C9D3E4E00E761F9 /* TabBar */,
 				5952D1F71C9D3E4E00E761F9 /* Home */,
 				5952D1F61C9D3E4E00E761F9 /* Forum */,
 				5952D1F81C9D3E4E00E761F9 /* Market */,
@@ -388,20 +350,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5952D21A1C9D499F00E761F9 /* TabBarController.m in Sources */,
 				59BD2ACA1C9ADF2300D9A58C /* JSONHTTPClient.m in Sources */,
-				5952D2141C9D483200E761F9 /* MessageNavigationController.m in Sources */,
 				59BD2AC51C9ADF2300D9A58C /* JSONModelArray.m in Sources */,
-				5952D2201C9D4AEA00E761F9 /* ForumNavigationController.m in Sources */,
-				5952D20B1C9D46D200E761F9 /* HomeNavigationController.m in Sources */,
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
-				5952D2111C9D482100E761F9 /* MarketNavigationController.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
-				5952D2171C9D484800E761F9 /* PersonalNavigationController.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
 				59BD2AC81C9ADF2300D9A58C /* NSArray+JSONModel.m in Sources */,
 				59BD2AFA1C9AE06C00D9A58C /* Team.m in Sources */,
