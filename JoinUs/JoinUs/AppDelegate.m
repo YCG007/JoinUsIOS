@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Utils.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,13 @@
     
     // Tab bar tint color
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
+    
+    // nav bar backgroud color
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRGBValue:0x1093f6]];
+    // nav bar item button color
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    // nav bar title color
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     // Programtically create Tab bar
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

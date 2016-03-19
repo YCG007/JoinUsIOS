@@ -7,10 +7,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="spu-JW-BjQ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="G4r-qL-ROP" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="G4r-qL-ROP" customClass="TabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="rjh-zQ-D5y">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tab_bar_backgroud" id="rjh-zQ-D5y">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -29,7 +29,7 @@
         <!--市场-->
         <scene sceneID="57e-Ug-JSb">
             <objects>
-                <navigationController id="ueH-oG-kzJ" sceneMemberID="viewController">
+                <navigationController id="ueH-oG-kzJ" customClass="MarketNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="市场" image="tab_bar_button_market" selectedImage="tab_bar_button_market_selected" id="bOB-61-RQc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="duk-Sb-pBE">
@@ -57,7 +57,7 @@
         <!--首页-->
         <scene sceneID="z1n-Q0-MRC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iOb-cp-fxr" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iOb-cp-fxr" customClass="HomeNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="tab_bar_button_home" selectedImage="tab_bar_button_home_selected" id="RU2-A6-tS1"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -77,7 +77,7 @@
         <!--论坛-->
         <scene sceneID="bfT-xN-ejJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oau-m9-sU7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Oau-m9-sU7" customClass="ForumNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="论坛" image="tab_bar_button_forum" selectedImage="tab_bar_button_forum_selected" id="ahJ-eF-aQo"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="-48" y="1588"/>
         </scene>
-        <!--Froum-->
+        <!--Forum-->
         <scene sceneID="rsq-6v-qUi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Froum" id="7xp-uk-f04" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Forum" id="7xp-uk-f04" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="FL6-Qj-2TD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmW-st-K5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,7 +117,7 @@
         <!--消息-->
         <scene sceneID="Yg6-C2-SN6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maS-Hf-3ld" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maS-Hf-3ld" customClass="MessageNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="消息" image="tab_bar_button_message" selectedImage="tab_bar_button_message_selected" id="v5v-pM-In0"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -147,7 +147,7 @@
         <!--我的-->
         <scene sceneID="Qpm-Bv-fCt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J55-yw-gey" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J55-yw-gey" customClass="PersonalNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="tab_bar_button_personal" selectedImage="tab_bar_button_personal_selected" id="qLV-DJ-ekJ"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -176,6 +176,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="tab_bar_backgroud" width="200" height="49"/>
         <image name="tab_bar_button_forum" width="31" height="25"/>
         <image name="tab_bar_button_forum_selected" width="31" height="25"/>
         <image name="tab_bar_button_home" width="41" height="28"/>
