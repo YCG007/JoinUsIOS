@@ -17,6 +17,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIViewController* personalViewController = [[UIViewController alloc] init];
+    personalViewController.view.backgroundColor = [UIColor whiteColor];
+    UINavigationController* personalNavigationController = [[UINavigationController alloc] initWithRootViewController:personalViewController];
+    
+    personalNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"tab_bar_button_test"] selectedImage:[UIImage imageNamed:@"tab_bar_button_test_selected"]];
+    
+    UIViewController* homeViewController = [[UIViewController alloc] init];
+    homeViewController.view.backgroundColor = [UIColor whiteColor];
+
+    UINavigationController* homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    
+    homeNavigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[[UIImage imageNamed:@"tab_bar_button_test1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"tab_bar_button_test1_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    UITabBarController* tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[homeNavigationController,personalNavigationController];
+    
+    self.window.rootViewController = tabBarController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
