@@ -9,8 +9,8 @@
 #import "NetworkManager.h"
 #import <UIKit/UIKit.h>
 
-static NSString* const apiUrl = @"http://localhost/joinus/api/";
-static NSString* const imageUrl = @"http://localhost/joinus/images/";
+static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
+static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
 
 @implementation NetworkManager {
     NSURLSession* _dataSession;
@@ -58,24 +58,23 @@ static NSString* const imageUrl = @"http://localhost/joinus/images/";
 
 - (NSURLSessionDataTask *)requestDataWithUrl:(NSString *)url method:(NSString *)method data:(NSData *)data completionHandler:(void (^)(long, NSData *))completionHandler {
     
-    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[apiUrl stringByAppendingPathComponent:url]]];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[kApiUrl stringByAppendingPathComponent:url]]];
     
     [request setHTTPMethod:method];
     
-    if ([method isEqual: @"POST"] || [method isEqual: @"PUT"]) {
+    if ([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"] || [method isEqualToString:@"DELETE"]) {
         [request setHTTPBody:data];
     }
     
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
-    [request addValue:[self deviceId] forHTTPHeaderField:@"device_id"];
+    [request addValue:[self deviceId] forHTTPHeaderField:@"device-id"];
     [request addValue:[self channel] forHTTPHeaderField:@"channel"];
     [request addValue:[self os] forHTTPHeaderField:@"os"];
-    [request addValue:[self version] forHTTPHeaderField:@"client_version"];
-    [request addValue:[self pushAgency] forHTTPHeaderField:@"push_agency"];
-    [request addValue:[self pushToken] forHTTPHeaderField:@"push_token"];
-    
+    [request addValue:[self version] forHTTPHeaderField:@"client-version"];
+    [request addValue:[self pushAgency] forHTTPHeaderField:@"push-agency"];
+    [request addValue:[self pushToken] forHTTPHeaderField:@"push-token"];
     
     NSURLSessionDataTask* dataTask = [_dataSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSInteger statusCode;

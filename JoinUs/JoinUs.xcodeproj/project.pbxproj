@@ -30,9 +30,11 @@
 		59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2ABD1C9ADF2300D9A58C /* JSONModel+networking.m */; };
 		59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC01C9ADF2300D9A58C /* JSONKeyMapper.m */; };
 		59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */; };
-		59BD2AF71C9ADF9100D9A58C /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AF61C9ADF9100D9A58C /* Student.m */; };
-		59BD2AFA1C9AE06C00D9A58C /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AF91C9AE06C00D9A58C /* Team.m */; };
 		59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D191E01C9D82E500FF696C /* NetworkManager.m */; };
+		59E458251CA01AFC00A48E95 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E458241CA01AFC00A48E95 /* LoginAndRegister.storyboard */; };
+		59E458281CA01E2E00A48E95 /* LoginWithPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E458271CA01E2E00A48E95 /* LoginWithPasswordViewController.m */; };
+		59E4582B1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4582A1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m */; };
+		59E4582E1CA02AEF00A48E95 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4582D1CA02AEF00A48E95 /* Models.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,12 +77,15 @@
 		59BD2AC01C9ADF2300D9A58C /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		59BD2AC11C9ADF2300D9A58C /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		59BD2AF51C9ADF9100D9A58C /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
-		59BD2AF61C9ADF9100D9A58C /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		59BD2AF81C9AE06C00D9A58C /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
-		59BD2AF91C9AE06C00D9A58C /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		59D191DF1C9D82E500FF696C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		59D191E01C9D82E500FF696C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		59E458241CA01AFC00A48E95 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
+		59E458261CA01E2E00A48E95 /* LoginWithPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWithPasswordViewController.h; sourceTree = "<group>"; };
+		59E458271CA01E2E00A48E95 /* LoginWithPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWithPasswordViewController.m; sourceTree = "<group>"; };
+		59E458291CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterGetVerifyCodeViewController.h; sourceTree = "<group>"; };
+		59E4582A1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterGetVerifyCodeViewController.m; sourceTree = "<group>"; };
+		59E4582C1CA02AEF00A48E95 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		59E4582D1CA02AEF00A48E95 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +135,11 @@
 			isa = PBXGroup;
 			children = (
 				5952D2071C9D441300E761F9 /* Personal.storyboard */,
+				59E458241CA01AFC00A48E95 /* LoginAndRegister.storyboard */,
+				59E458261CA01E2E00A48E95 /* LoginWithPasswordViewController.h */,
+				59E458271CA01E2E00A48E95 /* LoginWithPasswordViewController.m */,
+				59E458291CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.h */,
+				59E4582A1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -256,10 +266,8 @@
 		59BD2AF41C9ADF7700D9A58C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				59BD2AF51C9ADF9100D9A58C /* Student.h */,
-				59BD2AF61C9ADF9100D9A58C /* Student.m */,
-				59BD2AF81C9AE06C00D9A58C /* Team.h */,
-				59BD2AF91C9AE06C00D9A58C /* Team.m */,
+				59E4582C1CA02AEF00A48E95 /* Models.h */,
+				59E4582D1CA02AEF00A48E95 /* Models.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 				5952D2021C9D41F200E761F9 /* Market.storyboard in Resources */,
 				5952D2001C9D415100E761F9 /* Forum.storyboard in Resources */,
 				59BD2AC31C9ADF2300D9A58C /* Info.plist in Resources */,
+				59E458251CA01AFC00A48E95 /* LoginAndRegister.storyboard in Resources */,
 				5952D1FE1C9D408000E761F9 /* Home.storyboard in Resources */,
 				59BD2AA11C9ACC9D00D9A58C /* LaunchScreen.storyboard in Resources */,
 				59BD2A9E1C9ACC9D00D9A58C /* Assets.xcassets in Resources */,
@@ -351,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59BD2ACA1C9ADF2300D9A58C /* JSONHTTPClient.m in Sources */,
+				59E4582B1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m in Sources */,
 				59BD2AC51C9ADF2300D9A58C /* JSONModelArray.m in Sources */,
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
@@ -360,13 +370,13 @@
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
 				59BD2AC81C9ADF2300D9A58C /* NSArray+JSONModel.m in Sources */,
-				59BD2AFA1C9AE06C00D9A58C /* Team.m in Sources */,
+				59E458281CA01E2E00A48E95 /* LoginWithPasswordViewController.m in Sources */,
 				59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */,
-				59BD2AF71C9ADF9100D9A58C /* Student.m in Sources */,
 				5952D2231C9D4FED00E761F9 /* UIColor+Utils.m in Sources */,
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
+				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
