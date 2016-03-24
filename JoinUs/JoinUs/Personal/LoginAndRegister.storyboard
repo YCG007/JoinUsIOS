@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gmN-lk-TFy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gmN-lk-TFy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -81,6 +81,9 @@
                                 <rect key="frame" x="16" y="72" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fim-Gp-Bio" id="9Tt-hv-G9c"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册代表同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-bx-Oqw">
                                 <rect key="frame" x="69" y="158" width="78" height="16"/>
@@ -127,11 +130,31 @@
                     <connections>
                         <outlet property="getVerifyCodeButton" destination="13G-K2-fs0" id="rQi-pT-25R"/>
                         <outlet property="mobileTextField" destination="jln-FW-pNR" id="qQP-5E-VkW"/>
+                        <segue destination="CwK-GJ-uVy" kind="show" identifier="PushRegisterWIthVerifyCode" id="xHj-GY-Ty8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83x-CN-bWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079" y="332"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Rw-sh-dc0">
+            <objects>
+                <viewController id="CwK-GJ-uVy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NmI-3g-TGY"/>
+                        <viewControllerLayoutGuide type="bottom" id="rLg-Wy-NXr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N7a-xg-fU0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VC8-AD-Z4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560" y="332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VmW-a9-n2y">

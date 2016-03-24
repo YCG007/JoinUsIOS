@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UIColor+Utils.h"
+#import "UIView+Toast.h"
 
 @interface Utils : NSObject
 

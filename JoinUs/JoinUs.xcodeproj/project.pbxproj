@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E1C881CA40A0400045E39 /* UIView+Toast.m */; };
 		5952D1FE1C9D408000E761F9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D1FD1C9D408000E761F9 /* Home.storyboard */; };
 		5952D2001C9D415100E761F9 /* Forum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D1FF1C9D415100E761F9 /* Forum.storyboard */; };
 		5952D2021C9D41F200E761F9 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2011C9D41F200E761F9 /* Market.storyboard */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		591E1C871CA40A0400045E39 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		591E1C881CA40A0400045E39 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		5952D1FD1C9D408000E761F9 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5952D1FF1C9D415100E761F9 /* Forum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forum.storyboard; sourceTree = "<group>"; };
 		5952D2011C9D41F200E761F9 /* Market.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 		5952D1FC1C9D3E4E00E761F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				591E1C871CA40A0400045E39 /* UIView+Toast.h */,
+				591E1C881CA40A0400045E39 /* UIView+Toast.m */,
 				5952D2211C9D4FED00E761F9 /* UIColor+Utils.h */,
 				5952D2221C9D4FED00E761F9 /* UIColor+Utils.m */,
 				5952D2241C9D50A700E761F9 /* Utils.h */,
@@ -366,6 +371,7 @@
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
+				591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,

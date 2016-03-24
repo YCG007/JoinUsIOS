@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterGetVerifyCodeViewController : UIViewController
+@interface RegisterGetVerifyCodeViewController : UIViewController <UITextFieldDelegate>
 
 @end
