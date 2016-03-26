@@ -35,8 +35,6 @@ const float kTableHeaderHeight = 270.0f;
     self.tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0, 0, 0);
     self.tableView.contentOffset = CGPointMake(0, -kTableHeaderHeight);
     
-    _headerView.frame = CGRectMake(0, -kTableHeaderHeight, self.tableView.frame.size.width, kTableHeaderHeight);
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -46,7 +44,7 @@ const float kTableHeaderHeight = 270.0f;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"Conent offset Y:%f", self.tableView.contentOffset.y);
 
-    CGRect headerRect = CGRectMake(0, -kTableHeaderHeight, self.tableView.frame.size.width, kTableHeaderHeight);
+    CGRect headerRect = CGRectMake(0, -kTableHeaderHeight, self.view.frame.size.width, kTableHeaderHeight);
     if (self.tableView.contentOffset.y < -kTableHeaderHeight) {
         headerRect.origin.y = self.tableView.contentOffset.y;
         headerRect.size.height = -self.tableView.contentOffset.y;
