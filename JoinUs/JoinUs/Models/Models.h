@@ -11,3 +11,24 @@
 @interface Message : JSONModel
 @property (nonatomic) NSString* message;
 @end
+
+@interface Gender : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@end
+
+@interface Role : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@end
+
+@interface Province : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@end
+
+@interface City : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@property (nonatomic) Province* province;
+@end

@@ -217,15 +217,15 @@ extern BOOL isNull(id value)
     static NSDateFormatter* inputDateFormatter;
     dispatch_once(&onceInput, ^{
         inputDateFormatter = [[NSDateFormatter alloc] init];
-        [inputDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        [inputDateFormatter setDateFormat:@"yyyy-MM-dd'T'HHmmssZZZ"];
+//        [inputDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        [inputDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
     });
     return inputDateFormatter;
 }
 
 -(NSDate*)__NSDateFromNSString:(NSString*)string
 {
-    string = [string stringByReplacingOccurrencesOfString:@":" withString:@""]; // this is such an ugly code, is this the only way?
+//    string = [string stringByReplacingOccurrencesOfString:@":" withString:@""]; // this is such an ugly code, is this the only way?
     return [self.importDateFormatter dateFromString: string];
 }
 
@@ -235,8 +235,8 @@ extern BOOL isNull(id value)
 	static NSDateFormatter *outputDateFormatter;
     dispatch_once(&onceOutput, ^{
         outputDateFormatter = [[NSDateFormatter alloc] init];
-        [outputDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        [outputDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
+//        [outputDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        [outputDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
     });
     return [outputDateFormatter stringFromDate:date];
 }

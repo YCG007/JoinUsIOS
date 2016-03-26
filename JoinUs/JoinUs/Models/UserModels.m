@@ -10,3 +10,12 @@
 
 @implementation MobileVerifyCode
 @end
+
+@implementation UserProfile
+@end
+
+@implementation UserToken
+@end
+
+@implementation UserProfileWithToken
+@end

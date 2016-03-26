@@ -9,8 +9,6 @@
 #import "RegisterWithVerifyCodeViewController.h"
 #import "Utils.h"
 #import "NetworkManager.h"
-#import "Models.h"
-#import "UserModels.h"
 
 @interface RegisterWithVerifyCodeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *mobileNumberLabel;
@@ -36,6 +34,7 @@
     self.registerSubmitButton.layer.cornerRadius = 5;
     
     // disable resend button
+    [self.resendVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", _countDown] forState:UIControlStateDisabled];
     self.resendVerifyCodeButton.enabled = NO;
     self.resendVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
     
@@ -58,15 +57,13 @@
 
 - (void)onTick {
     NSLog(@"Tick!");
-    if (_countDown > 0) {
         _countDown--;
-    }
     
     if (_countDown > 0) {
-        [self.resendVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", _countDown] forState:UIControlStateNormal];
+        [self.resendVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", _countDown] forState:UIControlStateDisabled];
         self.resendVerifyCodeButton.enabled = NO;
         self.resendVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
-    } else {
+    } else if (_countDown == 0) {
         [self.resendVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取"] forState:UIControlStateNormal];
         self.resendVerifyCodeButton.enabled = YES;
         self.resendVerifyCodeButton.backgroundColor = [UIColor colorWithRGBValue:0x00bbd5];
@@ -132,6 +129,17 @@
         if (statusCode == 200) {
             NSString* responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"Response body: %@", responseBody);
+            NSError* error;
+            UserProfileWithToken* userProfileWithToken = [[UserProfileWithToken alloc] initWithData:data error:&error];
+            
+            if (error == nil) {
+                [[NetworkManager sharedManager] setMyProfile:[userProfileWithToken userProfile]];
+                [[NetworkManager sharedManager] setToken:[userProfileWithToken userToken]];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            } else {
+                NSLog(@"JSON parsing error: %@", error);
+            }
+            
             
         } else  if (statusCode == 400) {
             Message* msg = [[Message alloc] initWithData:data error:nil];

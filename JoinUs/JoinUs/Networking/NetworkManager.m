@@ -40,6 +40,13 @@ static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
     return self;
 }
 
+- (BOOL)isLoggedIn {
+    if (_token && [_token userId] && [[_token experiationDate] compare:[[NSDate alloc] init]] == NSOrderedDescending) {
+        return YES;
+    }
+    return NO;
+}
+
 - (NSURLSessionDataTask*)getDataWithUrl:(NSString *)url completionHandler:(void (^)(long, NSData *))completionHandler {
     return [self requestDataWithUrl:url method:@"GET" data:nil completionHandler:completionHandler];
 }

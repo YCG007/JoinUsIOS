@@ -9,5 +9,16 @@
 #import "Models.h"
 
 @implementation Message
+@end
 
+@implementation Gender
+@end
+
+@implementation Role
+@end
+
+@implementation Province
+@end
+
+@implementation City
 @end

@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserModels.h"
 
 @interface NetworkManager : NSObject
 
+@property (nonatomic) UserProfile* myProfile;
+@property (nonatomic) UserToken* token;
+
 + (NetworkManager*)sharedManager;
+
+- (BOOL)isLoggedIn;
 
 - (NSURLSessionDataTask*)getDataWithUrl:(NSString*)url completionHandler:(void(^)(long statusCode, NSData* data))completionHandler;
 
