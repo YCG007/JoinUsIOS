@@ -52,7 +52,7 @@ static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
 }
 
 - (NSURLSessionDataTask *)postDataWithUrl:(NSString *)url data:(NSData *)data completionHandler:(void (^)(long, NSData *))completionHandler {
-    return [self requestDataWithUrl:url method:@"POST" data:nil completionHandler:completionHandler];
+    return [self requestDataWithUrl:url method:@"POST" data:data completionHandler:completionHandler];
 }
 
 - (NSURLSessionDataTask *)putDataWithUrl:(NSString *)url data:(NSData *)data completionHandler:(void (^)(long, NSData *))completionHandler {
