@@ -31,6 +31,8 @@
 		59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2ABD1C9ADF2300D9A58C /* JSONModel+networking.m */; };
 		59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC01C9ADF2300D9A58C /* JSONKeyMapper.m */; };
 		59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */; };
+		59CF80D01CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80CF1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m */; };
+		59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80D21CA627FE005F0CA6 /* UserModels.m */; };
 		59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D191E01C9D82E500FF696C /* NetworkManager.m */; };
 		59E458251CA01AFC00A48E95 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E458241CA01AFC00A48E95 /* LoginAndRegister.storyboard */; };
 		59E458281CA01E2E00A48E95 /* LoginWithPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E458271CA01E2E00A48E95 /* LoginWithPasswordViewController.m */; };
@@ -80,6 +82,10 @@
 		59BD2AC01C9ADF2300D9A58C /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		59BD2AC11C9ADF2300D9A58C /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		59CF80CE1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterWithVerifyCodeViewController.h; sourceTree = "<group>"; };
+		59CF80CF1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterWithVerifyCodeViewController.m; sourceTree = "<group>"; };
+		59CF80D11CA627FE005F0CA6 /* UserModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModels.h; sourceTree = "<group>"; };
+		59CF80D21CA627FE005F0CA6 /* UserModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModels.m; sourceTree = "<group>"; };
 		59D191DF1C9D82E500FF696C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		59D191E01C9D82E500FF696C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		59E458241CA01AFC00A48E95 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 				59E458271CA01E2E00A48E95 /* LoginWithPasswordViewController.m */,
 				59E458291CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.h */,
 				59E4582A1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m */,
+				59CF80CE1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.h */,
+				59CF80CF1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -273,6 +281,8 @@
 			children = (
 				59E4582C1CA02AEF00A48E95 /* Models.h */,
 				59E4582D1CA02AEF00A48E95 /* Models.m */,
+				59CF80D11CA627FE005F0CA6 /* UserModels.h */,
+				59CF80D21CA627FE005F0CA6 /* UserModels.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +382,7 @@
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
 				591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */,
+				59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
@@ -381,6 +392,7 @@
 				5952D2231C9D4FED00E761F9 /* UIColor+Utils.m in Sources */,
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
+				59CF80D01CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
 				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 			);

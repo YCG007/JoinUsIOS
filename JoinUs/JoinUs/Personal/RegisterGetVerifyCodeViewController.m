@@ -10,6 +10,7 @@
 #import "NetworkManager.h"
 #import "Models.h"
 #import "Utils.h"
+#import "RegisterWithVerifyCodeViewController.h"
 
 @interface RegisterGetVerifyCodeViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
@@ -39,7 +40,7 @@
     } else {
         text = [text stringByAppendingString:string];
     }
-    NSLog(@"Range location: %ld, length: %ld, string: %@, text: %@, will be: %@", range.location, range.length, string, textField.text, text);
+//    NSLog(@"Range location: %ld, length: %ld, string: %@, text: %@, will be: %@", range.location, range.length, string, textField.text, text);
     if (text.length < 11) {
         self.getVerifyCodeButton.enabled = NO;
         self.getVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
@@ -88,15 +89,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PushRegisterWIthVerifyCode"]) {
+        RegisterWithVerifyCodeViewController* registerWithVerifyCode = segue.destinationViewController;
+        registerWithVerifyCode.mobileNumber = self.mobileTextField.text;
+    }
 }
-*/
+
 
 @end
 
