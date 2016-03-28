@@ -139,7 +139,7 @@
                         <outlet property="photoImageView" destination="JYD-4x-33I" id="15o-Ur-eMy"/>
                         <outlet property="registerTimeLabel" destination="nHz-7N-Icy" id="Wgx-nB-uFM"/>
                         <outlet property="tableView" destination="PND-Uv-XMb" id="b71-kZ-0TR"/>
-                        <segue destination="mXE-2h-pFw" kind="presentation" identifier="PresentLoginAndRegister" id="QzR-Fw-thj"/>
+                        <segue destination="mXE-2h-pFw" kind="presentation" identifier="PresentLoginAndRegister" modalTransitionStyle="coverVertical" id="QzR-Fw-thj"/>
                         <segue destination="aof-q2-4JO" kind="show" identifier="PushMyProfile" id="mfM-fI-kM1"/>
                     </connections>
                 </viewController>

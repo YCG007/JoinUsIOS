@@ -28,30 +28,48 @@ const float kTableHeaderHeight = 220.0f;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    
+    // take away table header view and add it as table view's subview
     _headerView = self.tableView.tableHeaderView;
-//    self.tableView.tableHeaderView = nil;
-    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 10)];
     [self.tableView addSubview:_headerView];
     
+    // set table header view height
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 10)];
+
+    // adjust table content postition
     self.tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0, 0, 0);
     self.tableView.contentOffset = CGPointMake(0, -kTableHeaderHeight);
     
+    // round up photo image
     self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2;
     self.photoImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.photoImageView.layer.borderWidth = 4;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // transparent nav bar
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     [self loadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    // remove transparent nav bar
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+ 
 }
 
 - (void)loadData{
@@ -69,9 +87,7 @@ const float kTableHeaderHeight = 220.0f;
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
-    
     [self performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
-    
 }
 
 
@@ -81,7 +97,6 @@ const float kTableHeaderHeight = 220.0f;
     } else {
         [self performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
     }
-    
 }
 
 

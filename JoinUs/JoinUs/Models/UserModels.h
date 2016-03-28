@@ -16,6 +16,13 @@
 
 @end
 
+@interface MobilePassword : JSONModel
+
+@property (nonatomic) NSString* mobile;
+@property (nonatomic) NSString* password;
+
+@end
+
 @protocol Role
 @end
 

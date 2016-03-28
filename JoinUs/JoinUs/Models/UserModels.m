@@ -11,6 +11,9 @@
 @implementation MobileVerifyCode
 @end
 
+@implementation MobilePassword
+@end
+
 @implementation UserProfile
 @end
 
