@@ -28,6 +28,7 @@
 @property (nonatomic) Gender* gender;
 @property (nonatomic) City<Optional>* city;
 @property (nonatomic) NSDate* lastUpdateDate;
+@property (nonatomic) NSDate* registerDate;
 @property (nonatomic) NSArray<Role>* roles;
 @end
 

@@ -9,10 +9,14 @@
 #import "PersonalViewController.h"
 #import "NetworkManager.h"
 
-const float kTableHeaderHeight = 270.0f;
+const float kTableHeaderHeight = 220.0f;
 
 @interface PersonalViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *registerTimeLabel;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 @end
 
@@ -26,7 +30,7 @@ const float kTableHeaderHeight = 270.0f;
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-
+    
     _headerView = self.tableView.tableHeaderView;
 //    self.tableView.tableHeaderView = nil;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 10)];
@@ -35,11 +39,51 @@ const float kTableHeaderHeight = 270.0f;
     self.tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0, 0, 0);
     self.tableView.contentOffset = CGPointMake(0, -kTableHeaderHeight);
     
+    self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2;
+    self.photoImageView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.photoImageView.layer.borderWidth = 4;
+    
+    [self loadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
+- (void)loadData{
+    if ([[NetworkManager sharedManager] isLoggedIn]) {
+        self.nameLabel.text = [NetworkManager sharedManager].myProfile.name;
+        NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
+        [dateFormater setDateFormat:@"yyyy-MM-dd"];
+        self.registerTimeLabel.text =  [NSString stringWithFormat:@"注册时间 %@", [dateFormater stringFromDate:[NetworkManager sharedManager].myProfile.registerDate]];
+        self.navigationItem.rightBarButtonItem = nil;
+    } else {
+        self.nameLabel.text = @"登录/注册";
+        self.registerTimeLabel.text = @"注册会员体验更多功能!";
+        self.navigationItem.rightBarButtonItem = self.loginButton;
+    }
+}
+
+- (IBAction)loginButtonPressed:(id)sender {
+    
+    [self performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
+    
+}
+
+
+- (IBAction)myProfileViewTapped:(UITapGestureRecognizer *)sender {
+    if ([[NetworkManager sharedManager] isLoggedIn]) {
+        [self performSegueWithIdentifier:@"PushMyProfile" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
+    }
+    
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"Conent offset Y:%f", self.tableView.contentOffset.y);
