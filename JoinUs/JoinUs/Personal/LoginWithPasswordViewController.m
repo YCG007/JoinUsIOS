@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -22,6 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.loginButton.layer.cornerRadius = self.loginButton.bounds.size.height / 2;
+    //    self.loginButton.layer.borderWidth = 1.0f;
+    //    self.loginButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.loginButton.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.loginButton.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
+    self.loginButton.layer.shadowRadius = 5.0f;
+    self.loginButton.layer.shadowOpacity = 1.0f;
 }
 
 - (IBAction)loginButtonPressed:(id)sender {

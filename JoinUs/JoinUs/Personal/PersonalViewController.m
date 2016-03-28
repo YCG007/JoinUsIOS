@@ -26,14 +26,15 @@ const float kTableHeaderHeight = 220.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    // take away table header view and add it as table view's subview
+    // take away table header view
     _headerView = self.tableView.tableHeaderView;
-    [self.tableView addSubview:_headerView];
     
     // set table header view height
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 10)];
+    
+    // add it as table view's subview
+    [self.tableView addSubview:_headerView];
 
     // adjust table content postition
     self.tableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0, 0, 0);
@@ -47,6 +48,7 @@ const float kTableHeaderHeight = 220.0f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear");
     // transparent nav bar
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -54,22 +56,32 @@ const float kTableHeaderHeight = 220.0f;
     [self loadData];
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSLog(@"viewWillLayoutSubviews");
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    NSLog(@"viewDidLayoutSubviews");
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
+    NSLog(@"viewDidAppear");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
+    NSLog(@"viewWillDisappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    NSLog(@"viewDidDisappear");
     // remove transparent nav bar
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
- 
 }
 
 - (void)loadData{
@@ -99,10 +111,10 @@ const float kTableHeaderHeight = 220.0f;
     }
 }
 
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"Conent offset Y:%f", self.tableView.contentOffset.y);
+//    NSLog(@"Conent offset Y:%f", self.tableView.contentOffset.y);
 
+    // update header view's position and height
     CGRect headerRect = CGRectMake(0, -kTableHeaderHeight, self.view.frame.size.width, kTableHeaderHeight);
     if (self.tableView.contentOffset.y < -kTableHeaderHeight) {
         headerRect.origin.y = self.tableView.contentOffset.y;

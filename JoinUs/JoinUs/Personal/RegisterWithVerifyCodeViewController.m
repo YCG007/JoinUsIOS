@@ -57,7 +57,7 @@
 
 - (void)onTick {
     NSLog(@"Tick!");
-        _countDown--;
+    _countDown--;
     
     if (_countDown > 0) {
         [self.resendVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", _countDown] forState:UIControlStateDisabled];
@@ -92,8 +92,8 @@
 }
 
 - (IBAction)resendVerifyCodeButtonPressed:(id)sender {
-    self.registerSubmitButton.enabled = NO;
-    self.registerSubmitButton.backgroundColor = [UIColor lightGrayColor];
+    self.resendVerifyCodeButton.enabled = NO;
+    self.resendVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
     _countDown = 10;
     
     [self.view makeToastActivity:CSToastPositionCenter];
