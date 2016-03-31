@@ -34,20 +34,15 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    NSString* text = textField.text;
-    if (range.length > 0) {
-        text = [text substringToIndex:(text.length - range.length)];
-    } else {
-        text = [text stringByAppendingString:string];
-    }
-//    NSLog(@"Range location: %ld, length: %ld, string: %@, text: %@, will be: %@", range.location, range.length, string, textField.text, text);
-    if (text.length < 11) {
+    NSString* proposedtext = [textField.text stringByReplacingCharactersInRange:range withString:string];
+
+    if (proposedtext.length < 11) {
         self.getVerifyCodeButton.enabled = NO;
         self.getVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
-    } else if (text.length == 11) {
+    } else if (proposedtext.length == 11) {
         self.getVerifyCodeButton.enabled = YES;
         self.getVerifyCodeButton.backgroundColor = [UIColor colorWithRGBValue:0x88c43f];
-    } else if (text.length > 11) {
+    } else if (proposedtext.length > 11) {
         return NO;
     }
     return YES;
@@ -56,7 +51,7 @@
 - (IBAction)getVerifyCodeButtonPressed:(id)sender {
     [self.view makeToastActivity:CSToastPositionCenter];
     NSString* url = [NSString stringWithFormat:@"register/%@", self.mobileTextField.text];
-    [[NetworkManager sharedManager] getDataWithUrl:url completionHandler:^(long statusCode, NSData *data) {
+    [[NetworkManager sharedManager] getDataWithUrl:url completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
         [self.view hideToastActivity];
         if (statusCode == 200) {
 //            NSString* responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -67,14 +62,8 @@
                 [self performSegueWithIdentifier:@"PushRegisterWIthVerifyCode" sender:self];
             }];
             
-        } else  if (statusCode == 400) {
-            Message* msg = [[Message alloc] initWithData:data error:nil];
-            [self.view makeToast:msg.message duration:1.0f position:CSToastPositionCenter];
-        } else if (statusCode == kCFURLErrorNotConnectedToInternet) {
-            [self.view makeToast:@"请检查您的网络连接" duration:1.0f position:CSToastPositionCenter];
         } else {
-            [self.view makeToast:@"网络异常" duration:1.0f position:CSToastPositionCenter];
-            NSLog(@"Status Code: %ld; Data:%@", statusCode, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+            [self.view makeToast:errorMessage];
         }
     }];
     

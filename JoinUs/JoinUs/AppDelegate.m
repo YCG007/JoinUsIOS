@@ -50,6 +50,19 @@
 //    self.window.rootViewController = tabBarController;
 //    [self.window makeKeyAndVisible];
     
+    // create a new toast style
+    CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
+    // this is just one of many style options
+    style.messageColor = [UIColor whiteColor];
+    // just set the shared style and there's no need to provide the style again
+    [CSToastManager setSharedStyle:style];
+    // toggle "tap to dismiss" functionality
+    [CSToastManager setTapToDismissEnabled:YES];
+    // toggle queueing behavior
+    [CSToastManager setQueueEnabled:YES];
+    // set default postion
+    [CSToastManager setDefaultPosition:CSToastPositionCenter];
+    
     return YES;
 }
 

@@ -15,6 +15,7 @@
 		5952D2081C9D441300E761F9 /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2071C9D441300E761F9 /* Personal.storyboard */; };
 		5952D2231C9D4FED00E761F9 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2221C9D4FED00E761F9 /* UIColor+Utils.m */; };
 		5952D2261C9D50A700E761F9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2251C9D50A700E761F9 /* Utils.m */; };
+		59657BCA1CAD51B20013F1F8 /* MyProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59657BC91CAD51B20013F1F8 /* MyProfileTableViewController.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
@@ -53,6 +54,8 @@
 		5952D2221C9D4FED00E761F9 /* UIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
 		5952D2241C9D50A700E761F9 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		5952D2251C9D50A700E761F9 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		59657BC81CAD51B20013F1F8 /* MyProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileTableViewController.h; sourceTree = "<group>"; };
+		59657BC91CAD51B20013F1F8 /* MyProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileTableViewController.m; sourceTree = "<group>"; };
 		59BD2A8E1C9ACC9D00D9A58C /* JoinUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				59E4582A1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m */,
 				59CF80CE1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.h */,
 				59CF80CF1CA616E1005F0CA6 /* RegisterWithVerifyCodeViewController.m */,
+				59657BC81CAD51B20013F1F8 /* MyProfileTableViewController.h */,
+				59657BC91CAD51B20013F1F8 /* MyProfileTableViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				59E4582B1CA0223F00A48E95 /* RegisterGetVerifyCodeViewController.m in Sources */,
 				59BD2AC51C9ADF2300D9A58C /* JSONModelArray.m in Sources */,
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
+				59657BCA1CAD51B20013F1F8 /* MyProfileTableViewController.m in Sources */,
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,

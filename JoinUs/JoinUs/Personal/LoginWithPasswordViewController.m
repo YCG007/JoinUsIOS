@@ -41,7 +41,8 @@
     mobilePassword.mobile = self.mobileTextField.text;
     mobilePassword.password = self.passwordTextField.text;
     
-    [[NetworkManager sharedManager] postDataWithUrl:@"login/password" data:[mobilePassword toJSONData] completionHandler:^(long statusCode, NSData *data) {
+    [[NetworkManager sharedManager] postDataWithUrl:@"login/password" data:[mobilePassword toJSONData] completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
+        
         [self.view hideToastActivity];
         if (statusCode == 200) {
             NSString* responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -56,16 +57,8 @@
             } else {
                 NSLog(@"JSON parsing error: %@", error);
             }
-            
-            
-        } else  if (statusCode == 400) {
-            Message* msg = [[Message alloc] initWithData:data error:nil];
-            [self.view makeToast:msg.message duration:1.0f position:CSToastPositionCenter];
-        } else if (statusCode == kCFURLErrorNotConnectedToInternet) {
-            [self.view makeToast:@"请检查您的网络连接" duration:1.0f position:CSToastPositionCenter];
         } else {
-            [self.view makeToast:@"网络异常" duration:1.0f position:CSToastPositionCenter];
-            NSLog(@"Status Code: %ld; Data:%@", statusCode, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+            [self.view makeToast:errorMessage];
         }
     }];
     
