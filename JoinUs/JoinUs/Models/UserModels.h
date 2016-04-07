@@ -33,10 +33,11 @@
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString<Optional>* photo;
 @property (nonatomic) Gender* gender;
+@property (nonatomic) Role* role;
 @property (nonatomic) City<Optional>* city;
 @property (nonatomic) NSDate* lastUpdateDate;
 @property (nonatomic) NSDate* registerDate;
-@property (nonatomic) NSArray<Role>* roles;
+
 @end
 
 @interface UserToken : JSONModel
