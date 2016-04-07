@@ -18,6 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Set app-wide shared cache (first number is megabyte value)
+    NSUInteger cacheSizeMemory = 256*1024*1024; // 256 MB
+    NSUInteger cacheSizeDisk = 512*1024*1024; // 512 MB
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"nsurlcache"];
+    [NSURLCache setSharedURLCache:sharedCache];
+    sleep(1); // Critically important line, sadly, but it's worth it!
+    
+    NSLog(@"DiskCache: %@ of %@", @([[NSURLCache sharedURLCache] currentDiskUsage]), @([[NSURLCache sharedURLCache] diskCapacity]));
+    NSLog(@"MemoryCache: %@ of %@", @([[NSURLCache sharedURLCache] currentMemoryUsage]), @([[NSURLCache sharedURLCache] memoryCapacity]));
+    
+    
     // Tab bar tint color
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
     

@@ -17,6 +17,7 @@ static NSString* const kImageUrl = @"http://localhost/joinus/images/";
 
 @implementation NetworkManager {
     NSURLSession* _dataSession;
+    NSURLSession* _imageSession;
 }
 
 @synthesize myProfile = _myProfile;
@@ -42,6 +43,14 @@ static NSString* const kImageUrl = @"http://localhost/joinus/images/";
 //        dataSessionConfigration.HTTPMaximumConnectionsPerHost = 1;
         
         _dataSession = [NSURLSession sessionWithConfiguration:dataSessionConfigration];
+        
+        NSURLSessionConfiguration* imageSessionConfigration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        [imageSessionConfigration setURLCache:[NSURLCache sharedURLCache]];
+        [imageSessionConfigration setRequestCachePolicy:NSURLRequestReturnCacheDataElseLoad];
+        imageSessionConfigration.timeoutIntervalForRequest = 30.0;
+        imageSessionConfigration.timeoutIntervalForResource = 60.0;
+        
+        _imageSession = [NSURLSession sessionWithConfiguration:imageSessionConfigration];
     }
     return self;
 }
@@ -156,6 +165,128 @@ static NSString* const kImageUrl = @"http://localhost/joinus/images/";
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             completionHandler(statusCode, data, errorMessage);
+        });
+    }];
+    [dataTask resume];
+    return dataTask;
+}
+
+
+- (NSURLSessionDataTask *)uploadImageWithUrl:(NSString *)url data:(NSData *)data completionHandler:(void (^)(long, NSData *, NSString *))completionHandler {
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[kApiUrl stringByAppendingPathComponent:url]]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = [[NSUUID UUID] UUIDString];
+    // set Content-Type in HTTP header
+    [request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forHTTPHeaderField: @"Content-Type"];
+    
+    if ([self isLoggedIn]) {
+        [request setValue:[_token userId] forHTTPHeaderField:@"user-id"];
+        [request setValue:[_token securityToken] forHTTPHeaderField:@"security-token"];
+        
+        [request setValue:[self deviceId] forHTTPHeaderField:@"device-id"];
+        [request setValue:[self channel] forHTTPHeaderField:@"channel"];
+        [request setValue:[self os] forHTTPHeaderField:@"os"];
+        [request setValue:[self version] forHTTPHeaderField:@"client-version"];
+        [request setValue:[self pushAgency] forHTTPHeaderField:@"push-agency"];
+        [request setValue:[self pushToken] forHTTPHeaderField:@"push-token"];
+    }
+    
+    // post body
+    NSMutableData *body = [NSMutableData data];
+    
+    // add params (all params are strings)
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=%@\r\n\r\n", @"key"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"%@\r\n", @"value"] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // add image data
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=%@; filename=%@\r\n", @"file", @"photo.jpg"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // body end
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // setting the body of the post to the reqeust
+    [request setHTTPBody:body];
+    
+    // set the content-length
+    //NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[body length]];
+    //[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    
+    NSURLSessionDataTask* dataTask = [_dataSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        long statusCode;
+        NSString *errorMessage;
+        if (error == nil) {
+            statusCode = [(NSHTTPURLResponse *)response statusCode];
+            if (statusCode == 400 || statusCode == 401) {
+                if (data != nil) {
+                    NSError *jsonError = nil;
+                    id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+                    
+                    if (jsonError == nil && [jsonObject isKindOfClass:[NSDictionary class]]) {
+                        NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
+                        errorMessage = [jsonDictionary objectForKey:@"message"];
+                    }
+                }
+            } else {
+                errorMessage = [NSString stringWithFormat:@"%ld", statusCode];
+            }
+        } else {
+            statusCode = error.code;
+            errorMessage = error.localizedDescription;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(statusCode, data, errorMessage);
+        });
+    }];
+    [dataTask resume];
+    return dataTask;
+}
+
+- (NSURLSessionDataTask *)getUploadImageWithName:(NSString *)name completionHandler:(void (^)(long, NSData *))completionHandler {
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/upload/%@%@", name, @".jpg"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask* dataTask = [_imageSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSInteger statusCode;
+        if (error == nil) {
+            statusCode = [(NSHTTPURLResponse *)response statusCode];
+        } else {
+            statusCode = error.code;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(statusCode, data);
+        });
+    }];
+    [dataTask resume];
+    return dataTask;
+}
+
+- (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long, NSData *))completionHandler {
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/resized/%@_%d%@", name, dimension, @".jpg"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask* dataTask = [_imageSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSInteger statusCode;
+        if (error == nil) {
+            statusCode = [(NSHTTPURLResponse *)response statusCode];
+        } else {
+            statusCode = error.code;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(statusCode, data);
         });
     }];
     [dataTask resume];
