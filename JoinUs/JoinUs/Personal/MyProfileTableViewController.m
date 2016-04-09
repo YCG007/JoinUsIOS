@@ -38,7 +38,11 @@
 - (void)loadData {
     UserProfile* myProfile = [[NetworkManager sharedManager] myProfile];
     if (myProfile.photo) {
-        
+        [[NetworkManager sharedManager] getResizedImageWithName:myProfile.photo dimension:80 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                self.photoImageView.image = [UIImage imageWithData:data];
+            }
+        }];
     } else {
         self.photoImageView.image = [UIImage imageNamed:@"no_photo"];
     }

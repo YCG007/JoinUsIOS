@@ -29,4 +29,11 @@
 
 - (NSURLSessionDataTask*)requestDataWithUrl:(NSString*)url method:(NSString*)method data:(NSData*)data completionHandler:(void(^)(long statusCode, NSData* data, NSString* errorMessage))completionHandler;
 
+- (NSURLSessionDataTask*)uploadImageWithUrl:(NSString*)url data:(NSData*)data completionHandler:(void(^)(long statusCode, NSData* data, NSString* errorMessage))completionHandler;
+
+- (NSURLSessionDataTask *)getUploadImageWithName:(NSString *)name completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
+
+- (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
+
+
 @end

@@ -26,20 +26,41 @@
     
     _isNewImagePicked = NO;
     
-    self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2;
-    self.photoImageView.layer.borderWidth = 4;
-    self.photoImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    
     self.submitButton.enabled = NO;
     self.submitButton.backgroundColor = [UIColor lightGrayColor];
     
     UserProfile* myProfile = [[NetworkManager sharedManager] myProfile];
     if (myProfile.photo) {
-        
+        [[NetworkManager sharedManager] getResizedImageWithName:myProfile.photo dimension:320 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                self.photoImageView.image = [UIImage imageWithData:data];
+            }
+        }];
     } else {
         self.photoImageView.image = [UIImage imageNamed:@"no_photo"];
     }
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    self.photoImageView.layer.cornerRadius = self.photoImageView.frame.size.width / 2;
+    self.photoImageView.layer.borderWidth = 4;
+    self.photoImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (IBAction)pickImageButtonPressed:(id)sender {
     UIAlertController* alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction* takeNewPhotoAlertAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -95,6 +116,26 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
+    
+    if (_isNewImagePicked) {
+        [self.view makeToastActivity:CSToastPositionCenter];
+        
+        NSData* imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.9);
+        [[NetworkManager sharedManager] uploadImageWithUrl:@"myProfile/photo" data:imageData completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
+            [self.view hideToastActivity];
+            if (statusCode == 200) {
+                NSError *error;
+                UserProfile* myProfile = [[UserProfile alloc] initWithData:data error:&error];
+                if (error != nil) NSLog(@"%@", error);
+                
+                [[NetworkManager sharedManager] setMyProfile:myProfile];
+                //                NSLog(@"%@", myProfile);
+                [self.navigationController popViewControllerAnimated:YES];
+            } else {
+                [self.view makeToast:errorMessage];
+            }
+        }];
+    }
     
 }
 

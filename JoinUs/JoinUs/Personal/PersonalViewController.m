@@ -86,12 +86,23 @@ const float kTableHeaderHeight = 220.0f;
 
 - (void)loadData{
     if ([[NetworkManager sharedManager] isLoggedIn]) {
+        UserProfile* myProfile = [NetworkManager sharedManager].myProfile;
+        if (myProfile.photo) {
+            [[NetworkManager sharedManager] getResizedImageWithName:myProfile.photo dimension:160 completionHandler:^(long statusCode, NSData *data) {
+                if (statusCode == 200) {
+                    self.photoImageView.image = [UIImage imageWithData:data];
+                }
+            }];
+        } else {
+            self.photoImageView.image = [UIImage imageNamed:@"no_photo"];
+        }
         self.nameLabel.text = [NetworkManager sharedManager].myProfile.name;
         NSDateFormatter* dateFormater = [[NSDateFormatter alloc] init];
         [dateFormater setDateFormat:@"yyyy-MM-dd"];
         self.registerTimeLabel.text =  [NSString stringWithFormat:@"注册时间 %@", [dateFormater stringFromDate:[NetworkManager sharedManager].myProfile.registerDate]];
         self.navigationItem.rightBarButtonItem = nil;
     } else {
+        self.photoImageView.image = [UIImage imageNamed:@"no_photo"];
         self.nameLabel.text = @"登录/注册";
         self.registerTimeLabel.text = @"注册会员体验更多功能!";
         self.navigationItem.rightBarButtonItem = self.loginButton;
