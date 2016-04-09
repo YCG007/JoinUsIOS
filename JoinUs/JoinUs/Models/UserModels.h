@@ -51,6 +51,11 @@
 @property (nonatomic) UserToken* userToken;
 @end
 
+@interface UserPassword : JSONModel
+@property (nonatomic) NSString* currentPassword;
+@property (nonatomic) NSString* password;
+
+@end
 
 
 

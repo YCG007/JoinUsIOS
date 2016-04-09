@@ -26,6 +26,17 @@
     
     _isNewImagePicked = NO;
     
+    CAGradientLayer* gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(id)[UIColor colorWithRGBValue:0xff0000].CGColor,
+                             (id)[UIColor colorWithRGBValue:0x00ff00].CGColor,
+                             (id)[UIColor colorWithRGBValue:0x0000ff].CGColor];
+    gradientLayer.locations = @[@0.0f, @0.5f, @1.0f];
+    gradientLayer.startPoint = CGPointMake(0.0, 0.0);
+    gradientLayer.endPoint = CGPointMake(1.0, 1.0);
+    gradientLayer.frame = self.view.frame;
+    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+//    [self.view.layer addSublayer:gradientLayer];
+    
     self.submitButton.enabled = NO;
     self.submitButton.backgroundColor = [UIColor lightGrayColor];
     
@@ -118,6 +129,7 @@
 - (IBAction)submitButtonPressed:(id)sender {
     
     if (_isNewImagePicked) {
+        
         [self.view makeToastActivity:CSToastPositionCenter];
         
         NSData* imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.9);

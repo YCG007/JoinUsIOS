@@ -22,3 +22,6 @@
 
 @implementation UserProfileWithToken
 @end
+
+@implementation UserPassword
+@end
