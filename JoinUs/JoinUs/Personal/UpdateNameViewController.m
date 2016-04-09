@@ -42,10 +42,10 @@
         
         if (statusCode == 200) {
             NSError *error;
-            UserName* userName = [[UserName alloc] initWithData:data error:&error];
+            UserName* validUserName = [[UserName alloc] initWithData:data error:&error];
             if (error != nil) NSLog(@"%@", error);
             
-            if ([userName.name isEqualToString:self.nameTextField.text]) {
+            if ([validUserName.name isEqualToString:self.nameTextField.text]) {
                 self.messageLabel.text = @"      ";
                 self.nameTextField.layer.borderColor = [UIColor greenColor].CGColor;
                 self.nameTextField.layer.borderWidth = 1;
