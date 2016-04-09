@@ -509,6 +509,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="nameTextFieldTextChanged:" destination="ooH-rx-rB6" eventType="editingChanged" id="0CT-5e-vWm"/>
                                     <outlet property="delegate" destination="ooH-rx-rB6" id="iyE-6B-gFi"/>
                                 </connections>
                             </textField>

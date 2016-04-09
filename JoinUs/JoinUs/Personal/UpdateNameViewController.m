@@ -23,11 +23,19 @@
     // Do any additional setup after loading the view.
     UserProfile* myProfile = [[NetworkManager sharedManager] myProfile];
     self.nameTextField.text = myProfile.name;
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(textChanged:)
+//                                                 name:UITextFieldTextDidChangeNotification
+//                                               object:nil];
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
-    NSString* proposedtext = [textField.text stringByReplacingCharactersInRange:range withString:string];
+- (IBAction)nameTextFieldTextChanged:(UITextField *)sender {
+    NSLog(@"%@", sender.text);
+    [self validateName:sender.text];
+}
+
+- (void)validateName:(NSString*)name {
     
     self.nameTextField.layer.borderColor = [UIColor blueColor].CGColor;
     self.nameTextField.layer.borderWidth = 1;
@@ -36,7 +44,7 @@
     self.submitButton.backgroundColor = [UIColor lightGrayColor];
     
     UserName* userName = [[UserName alloc] init];
-    userName.name = proposedtext;
+    userName.name = name;
     
     [[NetworkManager sharedManager] postDataWithUrl:@"myProfile/validateName" data:[userName toJSONData] completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
         
@@ -67,10 +75,15 @@
             
         }
     }];
-    
-    
-    return YES;
 }
+
+
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    
+////    NSString* proposedtext = [textField.text stringByReplacingCharactersInRange:range withString:string];
+//
+//    return YES;
+//}
 
 - (IBAction)submitButtonPressed:(id)sender {
     UserName* userName = [[UserName alloc] init];
