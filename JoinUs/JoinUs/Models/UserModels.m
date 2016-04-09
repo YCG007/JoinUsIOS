@@ -25,3 +25,6 @@
 
 @implementation UserPassword
 @end
+
+@implementation UserName
+@end

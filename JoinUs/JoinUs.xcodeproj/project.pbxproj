@@ -38,6 +38,7 @@
 		59BF18B91CB74C1B00033F41 /* LoginWithPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BF18B21CB74C1B00033F41 /* LoginWithPasswordViewController.m */; };
 		59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF08AE1CB88A1200FD2040 /* UpdatePhotoViewController.m */; };
 		59CF08B21CB8F0E300FD2040 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF08B11CB8F0E300FD2040 /* UpdatePasswordViewController.m */; };
+		59CF08B51CB925AF00FD2040 /* UpdateNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF08B41CB925AF00FD2040 /* UpdateNameViewController.m */; };
 		59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80D21CA627FE005F0CA6 /* UserModels.m */; };
 		59CF80D61CA667ED005F0CA6 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80D51CA667ED005F0CA6 /* PersonalViewController.m */; };
 		59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D191E01C9D82E500FF696C /* NetworkManager.m */; };
@@ -99,6 +100,8 @@
 		59CF08AE1CB88A1200FD2040 /* UpdatePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePhotoViewController.m; sourceTree = "<group>"; };
 		59CF08B01CB8F0E300FD2040 /* UpdatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePasswordViewController.h; sourceTree = "<group>"; };
 		59CF08B11CB8F0E300FD2040 /* UpdatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePasswordViewController.m; sourceTree = "<group>"; };
+		59CF08B31CB925AF00FD2040 /* UpdateNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateNameViewController.h; sourceTree = "<group>"; };
+		59CF08B41CB925AF00FD2040 /* UpdateNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateNameViewController.m; sourceTree = "<group>"; };
 		59CF80D11CA627FE005F0CA6 /* UserModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModels.h; sourceTree = "<group>"; };
 		59CF80D21CA627FE005F0CA6 /* UserModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModels.m; sourceTree = "<group>"; };
 		59CF80D41CA667ED005F0CA6 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				59CF08AE1CB88A1200FD2040 /* UpdatePhotoViewController.m */,
 				59CF08B01CB8F0E300FD2040 /* UpdatePasswordViewController.h */,
 				59CF08B11CB8F0E300FD2040 /* UpdatePasswordViewController.m */,
+				59CF08B31CB925AF00FD2040 /* UpdateNameViewController.h */,
+				59CF08B41CB925AF00FD2040 /* UpdateNameViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
+				59CF08B51CB925AF00FD2040 /* UpdateNameViewController.m in Sources */,
 				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
