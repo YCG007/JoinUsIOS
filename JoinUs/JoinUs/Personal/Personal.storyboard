@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0mt-7n-ja6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--我的-->
@@ -200,6 +202,9 @@
                                                 <constraint firstItem="QId-72-PKR" firstAttribute="centerY" secondItem="uJt-z2-Bup" secondAttribute="centerY" id="yRQ-EE-tzI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Y1v-Cv-4eX" kind="show" id="yxu-ey-Ffq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Rsc-kz-aTz">
                                         <rect key="frame" x="0.0" y="155" width="320" height="44"/>
@@ -460,6 +465,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4R-si-62t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072" y="65"/>
+        </scene>
+        <!--Update Photo View Controller-->
+        <scene sceneID="Jcl-JW-nSH">
+            <objects>
+                <viewController id="Y1v-Cv-4eX" customClass="UpdatePhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="idF-ke-1gq"/>
+                        <viewControllerLayoutGuide type="bottom" id="n20-zx-sue"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kdr-fo-Hkh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_photo" translatesAutoresizingMaskIntoConstraints="NO" id="baZ-1o-Fks">
+                                <rect key="frame" x="80" y="94" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="baZ-1o-Fks" secondAttribute="height" multiplier="1:1" id="Udr-pm-ila"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbp-68-MzT">
+                                <rect key="frame" x="30" y="284" width="260" height="33"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.67450980390000004" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="选择照片">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickImageButtonPressed:" destination="Y1v-Cv-4eX" eventType="touchUpInside" id="Lsp-HP-B8J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRS-8u-jZx">
+                                <rect key="frame" x="30" y="337" width="260" height="33"/>
+                                <color key="backgroundColor" red="0.47058823529999999" green="0.73333333329999995" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="保存头像">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="Y1v-Cv-4eX" eventType="touchUpInside" id="vpf-G7-vJB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cRS-8u-jZx" firstAttribute="leading" secondItem="kdr-fo-Hkh" secondAttribute="leading" constant="30" id="E8S-6K-aMo"/>
+                            <constraint firstItem="Kbp-68-MzT" firstAttribute="leading" secondItem="kdr-fo-Hkh" secondAttribute="leading" constant="30" id="Xmn-JR-NN9"/>
+                            <constraint firstAttribute="trailing" secondItem="cRS-8u-jZx" secondAttribute="trailing" constant="30" id="Zy1-5q-pp6"/>
+                            <constraint firstItem="Kbp-68-MzT" firstAttribute="top" secondItem="baZ-1o-Fks" secondAttribute="bottom" constant="30" id="aVf-cU-CiR"/>
+                            <constraint firstItem="cRS-8u-jZx" firstAttribute="top" secondItem="Kbp-68-MzT" secondAttribute="bottom" constant="20" id="bM7-Np-b6o"/>
+                            <constraint firstItem="baZ-1o-Fks" firstAttribute="centerX" secondItem="kdr-fo-Hkh" secondAttribute="centerX" id="gfU-ma-SgQ"/>
+                            <constraint firstItem="baZ-1o-Fks" firstAttribute="width" secondItem="kdr-fo-Hkh" secondAttribute="width" multiplier="0.5" id="m2T-82-3gu"/>
+                            <constraint firstItem="baZ-1o-Fks" firstAttribute="top" secondItem="idF-ke-1gq" secondAttribute="bottom" constant="30" id="zWz-7f-pkR"/>
+                            <constraint firstAttribute="trailing" secondItem="Kbp-68-MzT" secondAttribute="trailing" constant="30" id="zlR-kb-WT4"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="baZ-1o-Fks" id="uef-hX-kUw"/>
+                        <outlet property="submitButton" destination="cRS-8u-jZx" id="T8L-lo-d2D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpV-ON-jhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515" y="-1"/>
         </scene>
     </scenes>
     <resources>

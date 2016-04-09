@@ -10,6 +10,14 @@
 
 @implementation UIColor (Utils)
 
++ (instancetype)colorForButtonParimary {
+    return [[self alloc] initWithRGBValue:0x88c43f];
+}
+
++ (instancetype)colorForButtonSecondary {
+    return [[self alloc] initWithRGBValue:0x009687];
+}
+
 - (void)getRGBAComponents:(CGFloat[4])rgba
 {
     CGColorSpaceModel model = CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
