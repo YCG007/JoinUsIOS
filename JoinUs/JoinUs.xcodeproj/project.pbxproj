@@ -42,6 +42,8 @@
 		59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80D21CA627FE005F0CA6 /* UserModels.m */; };
 		59CF80D61CA667ED005F0CA6 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF80D51CA667ED005F0CA6 /* PersonalViewController.m */; };
 		59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D191E01C9D82E500FF696C /* NetworkManager.m */; };
+		59D1C1E31CBFB3AD006D1A26 /* CoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D1C1E21CBFB3AD006D1A26 /* CoreAnimationViewController.m */; };
+		59D1C1E61CBFC748006D1A26 /* GMDCircleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D1C1E51CBFC748006D1A26 /* GMDCircleLoader.m */; };
 		59E4582E1CA02AEF00A48E95 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4582D1CA02AEF00A48E95 /* Models.m */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,10 @@
 		59CF80D51CA667ED005F0CA6 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		59D191DF1C9D82E500FF696C /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		59D191E01C9D82E500FF696C /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		59D1C1E11CBFB3AD006D1A26 /* CoreAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationViewController.h; sourceTree = "<group>"; };
+		59D1C1E21CBFB3AD006D1A26 /* CoreAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationViewController.m; sourceTree = "<group>"; };
+		59D1C1E41CBFC748006D1A26 /* GMDCircleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDCircleLoader.h; sourceTree = "<group>"; };
+		59D1C1E51CBFC748006D1A26 /* GMDCircleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDCircleLoader.m; sourceTree = "<group>"; };
 		59E4582C1CA02AEF00A48E95 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		59E4582D1CA02AEF00A48E95 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				5952D1FD1C9D408000E761F9 /* Home.storyboard */,
+				59D1C1E11CBFB3AD006D1A26 /* CoreAnimationViewController.h */,
+				59D1C1E21CBFB3AD006D1A26 /* CoreAnimationViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -177,6 +185,8 @@
 		5952D1FC1C9D3E4E00E761F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				59D1C1E41CBFC748006D1A26 /* GMDCircleLoader.h */,
+				59D1C1E51CBFC748006D1A26 /* GMDCircleLoader.m */,
 				591E1C871CA40A0400045E39 /* UIView+Toast.h */,
 				591E1C881CA40A0400045E39 /* UIView+Toast.m */,
 				5952D2211C9D4FED00E761F9 /* UIColor+Utils.h */,
@@ -412,8 +422,10 @@
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
 				59657BCA1CAD51B20013F1F8 /* MyProfileTableViewController.m in Sources */,
 				59BD2AC91C9ADF2300D9A58C /* JSONAPI.m in Sources */,
+				59D1C1E61CBFC748006D1A26 /* GMDCircleLoader.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BF18B71CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m in Sources */,
+				59D1C1E31CBFB3AD006D1A26 /* CoreAnimationViewController.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
 				591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */,
 				59BF18B91CB74C1B00033F41 /* LoginWithPasswordViewController.m in Sources */,
