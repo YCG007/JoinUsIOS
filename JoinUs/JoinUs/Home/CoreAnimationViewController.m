@@ -38,12 +38,12 @@
 //        NSLog(@"Animaiton finished!");
 //    }];
 //    
-//    [UIView animateWithDuration:1.0f delay:1.0f options:UIViewAnimationOptionAutoreverse animations:^{
-//        self.myViewTop.constant = 347;
-//        [self.view layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//        //
-//    }];
+    [UIView animateWithDuration:1.0f delay:1.0f options:UIViewAnimationOptionRepeat animations:^{
+        self.myViewTop.constant = 347;
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        //
+    }];
     
 //    for (NSLayoutConstraint* co in self.view.constraints) {
 //        if ([co.identifier isEqualToString:@"myViewTop"]) {

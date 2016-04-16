@@ -22,3 +22,19 @@
 
 @implementation City
 @end
+
+@implementation CityItem
+
+@end
+
+@implementation ProvinceItem
+
+@end
+
+@implementation ProvinceList
+
+@end
+
+
+
+

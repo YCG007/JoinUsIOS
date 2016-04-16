@@ -32,3 +32,28 @@
 @property (nonatomic) NSString* name;
 @property (nonatomic) Province* province;
 @end
+
+@interface CityItem : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@end
+
+@protocol CityItem
+@end
+
+@interface ProvinceItem : JSONModel
+@property (nonatomic) int id;
+@property (nonatomic) NSString* name;
+@property (nonatomic) NSArray<CityItem>* cities;
+
+@end
+
+@protocol ProvinceItem
+@end
+
+@interface ProvinceList : JSONModel
+@property (nonatomic) NSArray<ProvinceItem>* provinces;
+@end
+
+
+

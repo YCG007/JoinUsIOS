@@ -28,3 +28,7 @@
 
 @implementation UserName
 @end
+
+@implementation UserCity
+
+@end

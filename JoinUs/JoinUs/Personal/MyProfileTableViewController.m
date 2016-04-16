@@ -50,7 +50,7 @@
     self.mobileLabel.text = myProfile.mobile;
     self.emailLabel.text = myProfile.email ? myProfile.email : @"未设置";
     self.genderLabel.text = myProfile.gender.name;
-    self.cityLabel.text = myProfile.city ? myProfile.city.name : @"未设置";
+    self.cityLabel.text = myProfile.city ? [NSString stringWithFormat:@"%@ %@", myProfile.city.province.name, myProfile.city.name] : @"未设置";
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
@@ -83,6 +83,12 @@
 }
 
 #pragma mark - Navigation
+
+- (IBAction)unwindToMyProfile:(UIStoryboardSegue*)sender
+{
+    // UIViewController *sourceViewController = sender.sourceViewController;
+    // Pull any data from the view controller which initiated the unwind segue.
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

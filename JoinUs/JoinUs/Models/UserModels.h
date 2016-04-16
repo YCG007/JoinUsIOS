@@ -60,5 +60,9 @@
 @property (nonatomic) NSString* name;
 @end
 
+@interface UserCity : JSONModel
+@property (nonatomic) int cityId;
+@end
+
 
 

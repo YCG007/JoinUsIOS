@@ -9,11 +9,11 @@
 #import "NetworkManager.h"
 #import <UIKit/UIKit.h>
 
-//static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
-//static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
+static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
+static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
 
-static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
-static NSString* const kImageUrl = @"http://192.168.3.2/joinus/images/";
+//static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
+//static NSString* const kImageUrl = @"http://192.168.3.2/joinus/images/";
 
 //static NSString* const kApiUrl = @"http://localhost/joinus/api/";
 //static NSString* const kImageUrl = @"http://localhost/joinus/images/";
