@@ -62,6 +62,7 @@
 		599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */; };
 		599F42641CCB4FE8001BC33A /* CreateForumStepThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */; };
 		599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */; };
+		599F426A1CCB9337001BC33A /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42691CCB9337001BC33A /* RefreshView.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
@@ -200,6 +201,8 @@
 		599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepThreeViewController.m; sourceTree = "<group>"; };
 		599F42651CCB6A32001BC33A /* ForumItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumItemTableViewCell.h; sourceTree = "<group>"; };
 		599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumItemTableViewCell.m; sourceTree = "<group>"; };
+		599F42681CCB9337001BC33A /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
+		599F42691CCB9337001BC33A /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
 		59BD2A8E1C9ACC9D00D9A58C /* JoinUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */,
 				599F42651CCB6A32001BC33A /* ForumItemTableViewCell.h */,
 				599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */,
+				599F42681CCB9337001BC33A /* RefreshView.h */,
+				599F42691CCB9337001BC33A /* RefreshView.m */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 				597E237B1CC1DFEF009DCA6B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				597E23661CC1DFEF009DCA6B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */,
+				599F426A1CCB9337001BC33A /* RefreshView.m in Sources */,
 				599F425E1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m in Sources */,
 				599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */,
 				597E23771CC1DFEF009DCA6B /* DGActivityIndicatorNineDotsAnimation.m in Sources */,

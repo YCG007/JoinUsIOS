@@ -11,6 +11,7 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "ForumItemTableViewCell.h"
+#import "RefreshView.h"
 
 typedef enum : NSUInteger {
     LoadingStatusInitLoading,
@@ -25,7 +26,8 @@ typedef enum : NSUInteger {
 @end
 
 @implementation HotForumsViewController {
-    UIRefreshControl* _refreshControl;
+    RefreshView* _refreshView;
+//    UIRefreshControl* _refreshControl;
     LoadingStatus _loadingStatus;
     NSMutableArray<ForumItem*>* _forumItems;
     UIView* _loadingView;
@@ -36,11 +38,14 @@ typedef enum : NSUInteger {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _refreshControl = [[UIRefreshControl alloc] init];
-    _refreshControl.backgroundColor = [UIColor redColor];
-    _refreshControl.tintColor = [UIColor yellowColor];
-    [_refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:_refreshControl];
+//    _refreshControl = [[UIRefreshControl alloc] init];
+//    _refreshControl.backgroundColor = [UIColor redColor];
+//    _refreshControl.tintColor = [UIColor yellowColor];
+//    [_refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
+//    [self.tableView addSubview:_refreshControl];
+    
+    _refreshView = [[RefreshView alloc] initWithFrame:CGRectMake(0, -kRefreshViewHeight, self.view.frame.size.width, kRefreshViewHeight)];
+    [self.tableView insertSubview:_refreshView atIndex:0];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
     self.tableView.tableFooterView.backgroundColor = [UIColor clearColor];
@@ -97,7 +102,16 @@ typedef enum : NSUInteger {
         if (_loadingStatus == LoadingStatusInitLoading) {
             [_loadingView removeFromSuperview];
         } else if (_loadingStatus == LoadingStatusReloading) {
-            [_refreshControl endRefreshing];
+//            [_refreshControl endRefreshing];
+            [_refreshView endRefreshing];
+            
+            [UIView animateWithDuration:1.0f animations:^{
+                UIEdgeInsets insets = self.tableView.contentInset;
+                insets.top -= kRefreshViewHeight;
+                self.tableView.contentInset = insets;
+            } completion:^(BOOL finished) {
+                [_refreshView reset];
+            }];
         } else if (_loadingStatus == LoadingStatusLoadingMore) {
             [self stopLoadMoreAnimation];
         } else {
@@ -112,14 +126,29 @@ typedef enum : NSUInteger {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-//    [_refreshView setVisibleHeight:-scrollView.contentOffset.y];
+    [_refreshView setVisibleHeight:-(scrollView.contentOffset.y + 64)];
     
     float maximumOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
-    NSLog(@"content offset: %f / max: %f", self.tableView.contentOffset.y, maximumOffset);
+//    NSLog(@"content offset: %f / max: %f", self.tableView.contentOffset.y, maximumOffset);
     if (_loadingStatus == LoadingStatusIdle && !_noMoreData && (maximumOffset - self.tableView.contentOffset.y <= -2)) {
         _loadingStatus = LoadingStatusLoadingMore;
         [self loadData];
         [self startLoadMoreAnimation];
+    }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+        NSLog(@"velocity: %f; offset:%f", velocity.y, targetContentOffset->y);
+    if (_loadingStatus == LoadingStatusIdle && self.tableView.contentOffset.y < -kRefreshViewHeight - scrollView.contentInset.top) {
+        UIEdgeInsets insets = self.tableView.contentInset;
+        insets.top += kRefreshViewHeight;
+        self.tableView.contentInset = insets;
+        
+        targetContentOffset->y = -kRefreshViewHeight - scrollView.contentInset.top;
+        
+        _loadingStatus = LoadingStatusReloading;
+        [self loadData];
+        [_refreshView beginRefreshing];
     }
 }
 
