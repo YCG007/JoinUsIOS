@@ -37,7 +37,6 @@
 @property (nonatomic) City<Optional>* city;
 @property (nonatomic) NSDate* lastUpdateDate;
 @property (nonatomic) NSDate* registerDate;
-
 @end
 
 @interface UserToken : JSONModel

@@ -55,5 +55,10 @@
 @property (nonatomic) NSArray<ProvinceItem>* provinces;
 @end
 
+@interface UploadImage : JSONModel
+@property (nonatomic) NSString* imageId;
+@property (nonatomic) NSString* name;
+@end
+
 
 

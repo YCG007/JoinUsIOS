@@ -35,6 +35,9 @@
 
 @end
 
+@implementation UploadImage
+@end
+
 
 
 

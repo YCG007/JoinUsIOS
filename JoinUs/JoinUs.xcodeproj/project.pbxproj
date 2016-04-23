@@ -54,6 +54,13 @@
 		597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23821CC1E228009DCA6B /* ChooseProvinceViewController.m */; };
 		597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23851CC1E241009DCA6B /* ChooseCityViewController.m */; };
 		597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */; };
+		599F42521CCB04F6001BC33A /* HotForumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42511CCB04F6001BC33A /* HotForumsViewController.m */; };
+		599F42551CCB0BE2001BC33A /* ForumModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42541CCB0BE2001BC33A /* ForumModels.m */; };
+		599F42581CCB1350001BC33A /* CreateForumStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42571CCB1350001BC33A /* CreateForumStepOneViewController.m */; };
+		599F425B1CCB23A7001BC33A /* CreateForumStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F425A1CCB23A7001BC33A /* CreateForumStepTwoViewController.m */; };
+		599F425E1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F425D1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m */; };
+		599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */; };
+		599F42641CCB4FE8001BC33A /* CreateForumStepThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
@@ -176,6 +183,20 @@
 		597E23851CC1E241009DCA6B /* ChooseCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCityViewController.m; sourceTree = "<group>"; };
 		597E23871CC1E326009DCA6B /* ProvinceCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceCityTableViewCell.h; sourceTree = "<group>"; };
 		597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceCityTableViewCell.m; sourceTree = "<group>"; };
+		599F42501CCB04F6001BC33A /* HotForumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotForumsViewController.h; sourceTree = "<group>"; };
+		599F42511CCB04F6001BC33A /* HotForumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotForumsViewController.m; sourceTree = "<group>"; };
+		599F42531CCB0BE2001BC33A /* ForumModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumModels.h; sourceTree = "<group>"; };
+		599F42541CCB0BE2001BC33A /* ForumModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumModels.m; sourceTree = "<group>"; };
+		599F42561CCB1350001BC33A /* CreateForumStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepOneViewController.h; sourceTree = "<group>"; };
+		599F42571CCB1350001BC33A /* CreateForumStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepOneViewController.m; sourceTree = "<group>"; };
+		599F42591CCB23A7001BC33A /* CreateForumStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepTwoViewController.h; sourceTree = "<group>"; };
+		599F425A1CCB23A7001BC33A /* CreateForumStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepTwoViewController.m; sourceTree = "<group>"; };
+		599F425C1CCB23C7001BC33A /* CreateForumSummaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumSummaryTableViewController.h; sourceTree = "<group>"; };
+		599F425D1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumSummaryTableViewController.m; sourceTree = "<group>"; };
+		599F425F1CCB4B24001BC33A /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
+		599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		599F42621CCB4FE8001BC33A /* CreateForumStepThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepThreeViewController.h; sourceTree = "<group>"; };
+		599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepThreeViewController.m; sourceTree = "<group>"; };
 		59BD2A8E1C9ACC9D00D9A58C /* JoinUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -248,6 +269,18 @@
 			isa = PBXGroup;
 			children = (
 				5952D1FF1C9D415100E761F9 /* Forum.storyboard */,
+				599F42501CCB04F6001BC33A /* HotForumsViewController.h */,
+				599F42511CCB04F6001BC33A /* HotForumsViewController.m */,
+				599F42561CCB1350001BC33A /* CreateForumStepOneViewController.h */,
+				599F42571CCB1350001BC33A /* CreateForumStepOneViewController.m */,
+				599F42591CCB23A7001BC33A /* CreateForumStepTwoViewController.h */,
+				599F425A1CCB23A7001BC33A /* CreateForumStepTwoViewController.m */,
+				599F42621CCB4FE8001BC33A /* CreateForumStepThreeViewController.h */,
+				599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */,
+				599F425C1CCB23C7001BC33A /* CreateForumSummaryTableViewController.h */,
+				599F425D1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m */,
+				599F425F1CCB4B24001BC33A /* CategoryCollectionViewCell.h */,
+				599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -534,6 +567,8 @@
 				59E4582D1CA02AEF00A48E95 /* Models.m */,
 				59CF80D11CA627FE005F0CA6 /* UserModels.h */,
 				59CF80D21CA627FE005F0CA6 /* UserModels.m */,
+				599F42531CCB0BE2001BC33A /* ForumModels.h */,
+				599F42541CCB0BE2001BC33A /* ForumModels.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -630,6 +665,7 @@
 				597E23611CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				597E236C1CC1DFEF009DCA6B /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				597E23741CC1DFEF009DCA6B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				599F42551CCB0BE2001BC33A /* ForumModels.m in Sources */,
 				597E23621CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
 				597E23721CC1DFEF009DCA6B /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
@@ -643,19 +679,25 @@
 				59D1C1E61CBFC748006D1A26 /* GMDCircleLoader.m in Sources */,
 				597E236A1CC1DFEF009DCA6B /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				597E23641CC1DFEF009DCA6B /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				599F42641CCB4FE8001BC33A /* CreateForumStepThreeViewController.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
 				59BF18B71CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m in Sources */,
+				599F425B1CCB23A7001BC33A /* CreateForumStepTwoViewController.m in Sources */,
 				59D1C1E31CBFB3AD006D1A26 /* CoreAnimationViewController.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
+				599F42581CCB1350001BC33A /* CreateForumStepOneViewController.m in Sources */,
 				597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */,
 				597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */,
 				597E237E1CC1DFEF009DCA6B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */,
 				597E23631CC1DFEF009DCA6B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				59BF18B91CB74C1B00033F41 /* LoginWithPasswordViewController.m in Sources */,
+				599F42521CCB04F6001BC33A /* HotForumsViewController.m in Sources */,
 				597E237B1CC1DFEF009DCA6B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				597E23661CC1DFEF009DCA6B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */,
+				599F425E1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m in Sources */,
+				599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */,
 				597E23771CC1DFEF009DCA6B /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */,
 				597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */,
