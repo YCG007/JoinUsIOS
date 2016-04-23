@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HotForumsViewController : UIViewController
+@interface HotForumsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
 @end

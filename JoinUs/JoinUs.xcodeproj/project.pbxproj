@@ -61,6 +61,7 @@
 		599F425E1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F425D1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m */; };
 		599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */; };
 		599F42641CCB4FE8001BC33A /* CreateForumStepThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */; };
+		599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
@@ -197,6 +198,8 @@
 		599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 		599F42621CCB4FE8001BC33A /* CreateForumStepThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepThreeViewController.h; sourceTree = "<group>"; };
 		599F42631CCB4FE8001BC33A /* CreateForumStepThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepThreeViewController.m; sourceTree = "<group>"; };
+		599F42651CCB6A32001BC33A /* ForumItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumItemTableViewCell.h; sourceTree = "<group>"; };
+		599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumItemTableViewCell.m; sourceTree = "<group>"; };
 		59BD2A8E1C9ACC9D00D9A58C /* JoinUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +284,8 @@
 				599F425D1CCB23C7001BC33A /* CreateForumSummaryTableViewController.m */,
 				599F425F1CCB4B24001BC33A /* CategoryCollectionViewCell.h */,
 				599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */,
+				599F42651CCB6A32001BC33A /* ForumItemTableViewCell.h */,
+				599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 				597E237D1CC1DFEF009DCA6B /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				597E23601CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
+				599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */,
 				59CF80D61CA667ED005F0CA6 /* PersonalViewController.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				59CF08B21CB8F0E300FD2040 /* UpdatePasswordViewController.m in Sources */,
