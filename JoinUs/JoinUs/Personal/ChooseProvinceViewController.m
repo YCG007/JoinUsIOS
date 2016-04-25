@@ -65,8 +65,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        if (_provinceList != nil && _provinceList.provinces != nil) {
-            return _provinceList.provinces.count;
+        if (_provinceList != nil && _provinceList.provinceItems != nil) {
+            return _provinceList.provinceItems.count;
         }
     }
     return 0;
@@ -74,7 +74,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProvinceCityTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    ProvinceItem* provinceItem = [_provinceList.provinces objectAtIndex:indexPath.row];
+    ProvinceItem* provinceItem = [_provinceList.provinceItems objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = provinceItem.name;
     UserProfile* myProfile = [[NetworkManager sharedManager] myProfile];
@@ -117,7 +117,7 @@
     if ([segue.identifier isEqualToString:@"PushChooseCity"]) {
         
         ChooseCityViewController* chooseCityViewController = segue.destinationViewController;
-        chooseCityViewController.provinceItem = [_provinceList.provinces objectAtIndex:self.tableView.indexPathForSelectedRow.row];;
+        chooseCityViewController.provinceItem = [_provinceList.provinceItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];;
     }
 }
 

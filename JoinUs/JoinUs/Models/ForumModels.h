@@ -20,7 +20,7 @@
 @end
 
 @interface CategoryList : JSONModel
-@property (nonatomic) NSArray<Category>* list;
+@property (nonatomic) NSArray<Category>* categories;
 @end
 
 @interface ForumAdd : JSONModel
@@ -43,7 +43,7 @@
 @end
 
 @interface ForumListLimited : JSONModel
-@property (nonatomic) NSArray<ForumItem>* list;
+@property (nonatomic) NSArray<ForumItem>* forumItems;
 @property (nonatomic) int offset;
 @property (nonatomic) int limit;
 @end

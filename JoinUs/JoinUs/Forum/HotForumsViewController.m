@@ -26,8 +26,8 @@ typedef enum : NSUInteger {
 @end
 
 @implementation HotForumsViewController {
-    RefreshView* _refreshView;
 //    UIRefreshControl* _refreshControl;
+    RefreshView* _refreshView;
     LoadingStatus _loadingStatus;
     NSMutableArray<ForumItem*>* _forumItems;
     UIView* _loadingView;
@@ -73,7 +73,7 @@ typedef enum : NSUInteger {
             NSError* error;
             ForumListLimited* forumList = [[ForumListLimited alloc] initWithData:data error:&error];
             if (error == nil) {
-                if (forumList.limit > forumList.list.count) {
+                if (forumList.limit > forumList.forumItems.count) {
                     _noMoreData = YES;
                 } else {
                     _noMoreData = NO;
@@ -83,7 +83,7 @@ typedef enum : NSUInteger {
                     [_forumItems removeAllObjects];
                 }
                 
-                for (ForumItem* item in forumList.list) {
+                for (ForumItem* item in forumList.forumItems) {
                     [_forumItems addObject:item];
                 }
                 
@@ -126,7 +126,7 @@ typedef enum : NSUInteger {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    [_refreshView setVisibleHeight:-(scrollView.contentOffset.y + 64)];
+    [_refreshView setVisibleHeight:-(scrollView.contentOffset.y)];
     
     float maximumOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
 //    NSLog(@"content offset: %f / max: %f", self.tableView.contentOffset.y, maximumOffset);

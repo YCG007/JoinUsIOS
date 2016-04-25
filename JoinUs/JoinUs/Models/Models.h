@@ -52,7 +52,7 @@
 @end
 
 @interface ProvinceList : JSONModel
-@property (nonatomic) NSArray<ProvinceItem>* provinces;
+@property (nonatomic) NSArray<ProvinceItem>* provinceItems;
 @end
 
 @interface UploadImage : JSONModel

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E1C881CA40A0400045E39 /* UIView+Toast.m */; };
+		59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */; };
 		5952D1FE1C9D408000E761F9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D1FD1C9D408000E761F9 /* Home.storyboard */; };
 		5952D2001C9D415100E761F9 /* Forum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D1FF1C9D415100E761F9 /* Forum.storyboard */; };
 		5952D2021C9D41F200E761F9 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5952D2011C9D41F200E761F9 /* Market.storyboard */; };
@@ -97,6 +98,8 @@
 /* Begin PBXFileReference section */
 		591E1C871CA40A0400045E39 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		591E1C881CA40A0400045E39 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		59363F461CCE322B00EEDC96 /* ForumHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumHomeViewController.h; sourceTree = "<group>"; };
+		59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumHomeViewController.m; sourceTree = "<group>"; };
 		5952D1FD1C9D408000E761F9 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5952D1FF1C9D415100E761F9 /* Forum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Forum.storyboard; sourceTree = "<group>"; };
 		5952D2011C9D41F200E761F9 /* Market.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				5952D1FF1C9D415100E761F9 /* Forum.storyboard */,
+				59363F461CCE322B00EEDC96 /* ForumHomeViewController.h */,
+				59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */,
 				599F42501CCB04F6001BC33A /* HotForumsViewController.h */,
 				599F42511CCB04F6001BC33A /* HotForumsViewController.m */,
 				599F42561CCB1350001BC33A /* CreateForumStepOneViewController.h */,
@@ -743,6 +748,7 @@
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
+				59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */,
 				59CF08B51CB925AF00FD2040 /* UpdateNameViewController.m in Sources */,
 				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 			);

@@ -36,7 +36,7 @@
             NSError* error;
             CategoryList* categoryList = [[CategoryList alloc] initWithData:data error:&error];
             if (error == nil) {
-                _categories = categoryList.list;
+                _categories = categoryList.categories;
                 for (Category* category in _categories) {
                     category.selected = nil;
                     for (NSNumber* categoryId in self.forumAdd.categoryIds) {
