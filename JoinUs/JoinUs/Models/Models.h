@@ -44,7 +44,7 @@
 @interface ProvinceItem : JSONModel
 @property (nonatomic) int id;
 @property (nonatomic) NSString* name;
-@property (nonatomic) NSArray<CityItem>* cities;
+@property (nonatomic) NSArray<CityItem>* cityItems;
 
 @end
 

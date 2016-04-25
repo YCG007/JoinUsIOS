@@ -39,8 +39,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        if (self.provinceItem != nil && self.provinceItem.cities != nil) {
-            return self.provinceItem.cities.count;
+        if (self.provinceItem != nil && self.provinceItem.cityItems != nil) {
+            return self.provinceItem.cityItems.count;
         }
     }
     return 0;
@@ -48,7 +48,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProvinceCityTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    CityItem* cityItem = [self.provinceItem.cities objectAtIndex:indexPath.row];
+    CityItem* cityItem = [self.provinceItem.cityItems objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = cityItem.name;
     UserProfile* myProfile = [[NetworkManager sharedManager] myProfile];
@@ -64,7 +64,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    CityItem* cityItem = [self.provinceItem.cities objectAtIndex:indexPath.row];
+    CityItem* cityItem = [self.provinceItem.cityItems objectAtIndex:indexPath.row];
     
     UserCity* userCity = [[UserCity alloc] init];
     userCity.cityId = cityItem.id;
