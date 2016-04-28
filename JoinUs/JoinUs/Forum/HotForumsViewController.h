@@ -6,8 +6,8 @@
 //  Copyright © 2016 North Gate Code. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseListViewController.h"
 
-@interface HotForumsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface HotForumsViewController : BaseListViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

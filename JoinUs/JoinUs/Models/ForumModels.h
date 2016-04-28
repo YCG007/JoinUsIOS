@@ -10,6 +10,81 @@
 #import "Models.h"
 #import <UIKit/UIKit.h>
 
+@interface ForumUserInfo : JSONModel
+@property (nonatomic) NSString* userId;
+@property (nonatomic) NSString* name;
+@property (nonatomic) NSString* photo;
+@property (nonatomic) Gender* gender;
+@property (nonatomic) NSDate* registerDate;
+@property (nonatomic) int level;
+@property (nonatomic) int posts;
+@property (nonatomic) BOOL isAdmin;
+@property (nonatomic) NSDate* joinDate;
+@property (nonatomic) NSDate* lastPostDate;
+@end
+
+@interface ReplyAdd : JSONModel
+@property (nonatomic) NSString* postId;
+@property (nonatomic) NSString* content;
+@end
+
+@interface ReplyItem : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) ForumUserInfo* repliedBy;
+@property (nonatomic) NSString* content;
+@property (nonatomic) NSDate* replyDate;
+@end
+
+@interface PostAdd : JSONModel
+@property (nonatomic) NSString* topicId;
+@property (nonatomic) NSString* content;
+@property (nonatomic) NSArray<NSString*>* imageIds;
+@end
+
+@interface PostItem : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) ForumUserInfo* postedBy;
+@property (nonatomic) NSString* content;
+@property (nonatomic) NSDate* postDate;
+@property (nonatomic) NSArray<NSString*>* images;
+@property (nonatomic) NSArray<ReplyItem*>* replyItems;
+@end
+
+@interface PostInfo : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) ForumUserInfo* postedBy;
+@property (nonatomic) NSString* content;
+@property (nonatomic) NSDate* postDate;
+@property (nonatomic) NSArray<NSString*>* images;
+@end
+
+@interface TopicAdd : JSONModel
+@property (nonatomic) NSString* forumId;
+@property (nonatomic) NSString* title;
+@property (nonatomic) PostAdd* firstPost;
+@end
+
+@interface TopicItem : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) NSString* title;
+@property (nonatomic) ForumUserInfo* postedBy;
+@property (nonatomic) int posts;
+@property (nonatomic) int views;
+@property (nonatomic) PostInfo* firstPost;
+@property (nonatomic) NSDate* firstPostDate;
+@property (nonatomic) PostInfo* lastPost;
+@property (nonatomic) NSDate* lastPostDate;
+@property (nonatomic) BOOL onTop;
+@end
+
+@interface TopicInfo : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) NSString* title;
+@property (nonatomic) ForumUserInfo* postedBy;
+@property (nonatomic) int posts;
+@property (nonatomic) int views;
+@end
+
 @interface Category : JSONModel
 @property (nonatomic) int id;
 @property (nonatomic) NSString* name;
@@ -32,11 +107,44 @@
 @end
 
 @interface ForumItem : JSONModel
+@property (nonatomic) NSString* id;
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* desc;
 @property (nonatomic) NSString* icon;
 @property (nonatomic) int posts;
 @property (nonatomic) int watch;
+@end
+
+@interface ForumInfo : JSONModel
+@property (nonatomic) NSString* id;
+@property (nonatomic) NSString* name;
+@property (nonatomic) NSString* desc;
+@property (nonatomic) NSString* icon;
+@property (nonatomic) int posts;
+@property (nonatomic) int watch;
+@property (nonatomic) int activity;
+@property (nonatomic) ForumUserInfo* createdBy;
+@property (nonatomic) NSDate* createDate;
+@end
+
+@protocol PostItem
+@end
+
+@interface PostListLimited : JSONModel
+@property (nonatomic) TopicInfo* topicInfo;
+@property (nonatomic) NSArray<PostItem*>* postItems;
+@property (nonatomic) int offset;
+@property (nonatomic) int limit;
+@end
+
+@protocol TopicItem
+@end
+
+@interface TopicListLimited : JSONModel
+@property (nonatomic) ForumInfo* forumInfo;
+@property (nonatomic) NSArray<TopicItem*>* topicItems;
+@property (nonatomic) int offset;
+@property (nonatomic) int limit;
 @end
 
 @protocol ForumItem
@@ -47,3 +155,9 @@
 @property (nonatomic) int offset;
 @property (nonatomic) int limit;
 @end
+
+
+
+
+
+

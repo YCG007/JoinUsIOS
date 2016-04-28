@@ -10,6 +10,9 @@
 
 @interface ForumHomeViewController ()
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation ForumHomeViewController
@@ -18,6 +21,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (IBAction)segmentValueChanged:(id)sender {
+    NSLog(@"segment index: %ld", (long)self.segment.selectedSegmentIndex);
+    
+    [UIView animateWithDuration:0.5f animations:^{
+        self.scrollView.contentOffset = CGPointMake(self.segment.selectedSegmentIndex * self.view.bounds.size.width, 0);
+    }];
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"offset x: %f", scrollView.contentOffset.x);
+    float offset = scrollView.contentOffset.x;
+    float screenWidth = self.view.bounds.size.width;
+    
+    int index =  (int)roundf(offset / screenWidth);
+    self.segment.selectedSegmentIndex = index;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForumHomeViewController : UIViewController
+@interface ForumHomeViewController : UIViewController <UIScrollViewDelegate>
 
 @end

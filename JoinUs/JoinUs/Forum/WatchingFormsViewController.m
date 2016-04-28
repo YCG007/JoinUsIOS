@@ -1,23 +1,22 @@
 //
-//  HotForumsViewController.m
+//  WatchingFormsViewController.m
 //  JoinUs
 //
-//  Created by Liang Qian on 23/4/2016.
+//  Created by Liang Qian on 26/4/2016.
 //  Copyright © 2016 North Gate Code. All rights reserved.
 //
 
-#import "HotForumsViewController.h"
+#import "WatchingFormsViewController.h"
 #import "Utils.h"
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "ForumItemTableViewCell.h"
-#import "TopicsViewController.h"
 
-@interface HotForumsViewController ()
+@interface WatchingFormsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
-@implementation HotForumsViewController {
+@implementation WatchingFormsViewController {
     NSMutableArray<ForumItem*>* _listItems;
 }
 
@@ -32,7 +31,7 @@
 }
 
 - (void)loadData {
-    NSString* url = [NSString stringWithFormat:@"forum?offset=%d&limit=%d", self.loadingStatus == LoadingStatusLoadingMore ? (int)_listItems.count : 0, 10];
+    NSString* url = [NSString stringWithFormat:@"forum/watching?offset=%d&limit=%d", self.loadingStatus == LoadingStatusLoadingMore ? (int)_listItems.count : 0, 10];
     [[NetworkManager sharedManager] getDataWithUrl:url completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
         if (statusCode == 200) {
             NSError* error;
@@ -72,9 +71,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (_listItems == nil || _listItems.count == 0) {
-        return 0;
-    }
     return 1;
 }
 
@@ -87,28 +83,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ForumItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-        
-        ForumItem* item = _listItems[indexPath.row];
-        if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
-            [cell.task cancel];
-        }
-        
-        if (item.icon != nil) {
-            cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
-                if (statusCode == 200) {
-                    cell.iconImageView.image = [UIImage imageWithData:data];
-                } else {
-                    cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
-                }
-            }];
-        } else {
-            cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
-        }
-        cell.nameLabel.text = item.name;
-        cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
-        cell.descLabel.text = item.desc;
-
+    
+    
+    ForumItem* item = _listItems[indexPath.row];
+    if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
+        [cell.task cancel];
+    }
+    
+    if (item.icon != nil) {
+        cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                cell.iconImageView.image = [UIImage imageWithData:data];
+            } else {
+                cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+            }
+        }];
+    } else {
+        cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+    }
+    cell.nameLabel.text = item.name;
+    cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
+    cell.descLabel.text = item.desc;
+    
     
     return cell;
 }
@@ -130,17 +126,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"PushTopics" sender:self];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"PushTopics"]) {
-        TopicsViewController* topicsViewController = segue.destinationViewController;
-        topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
 

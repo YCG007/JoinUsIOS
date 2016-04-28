@@ -8,6 +8,33 @@
 
 #import "ForumModels.h"
 
+@implementation ForumUserInfo
+@end
+
+@implementation ReplyAdd
+@end
+
+@implementation ReplyItem
+@end
+
+@implementation PostAdd
+@end
+
+@implementation PostItem
+@end
+
+@implementation PostInfo
+@end
+
+@implementation TopicAdd
+@end
+
+@implementation TopicItem
+@end
+
+@implementation TopicInfo
+@end
+
 @implementation Category
 @end
 
@@ -18,6 +45,12 @@
 @end
 
 @implementation ForumItem
+@end
+
+@implementation PostListLimited
+@end
+
+@implementation TopicListLimited
 @end
 
 @implementation ForumListLimited
