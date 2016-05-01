@@ -47,6 +47,9 @@
 @implementation ForumItem
 @end
 
+@implementation ForumInfo
+@end
+
 @implementation PostListLimited
 @end
 

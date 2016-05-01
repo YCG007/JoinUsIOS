@@ -17,6 +17,9 @@
 @implementation Role
 @end
 
+@implementation Country
+@end
+
 @implementation Province
 @end
 

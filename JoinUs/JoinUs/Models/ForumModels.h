@@ -20,7 +20,7 @@
 @property (nonatomic) int posts;
 @property (nonatomic) BOOL isAdmin;
 @property (nonatomic) NSDate* joinDate;
-@property (nonatomic) NSDate* lastPostDate;
+@property (nonatomic) NSDate<Optional>* lastPostDate;
 @end
 
 @interface ReplyAdd : JSONModel
@@ -41,13 +41,16 @@
 @property (nonatomic) NSArray<NSString*>* imageIds;
 @end
 
+@protocol ReplyItem
+@end
+
 @interface PostItem : JSONModel
 @property (nonatomic) NSString* id;
 @property (nonatomic) ForumUserInfo* postedBy;
 @property (nonatomic) NSString* content;
 @property (nonatomic) NSDate* postDate;
 @property (nonatomic) NSArray<NSString*>* images;
-@property (nonatomic) NSArray<ReplyItem*>* replyItems;
+@property (nonatomic) NSArray<ReplyItem>* replyItems;
 @end
 
 @interface PostInfo : JSONModel
@@ -132,7 +135,7 @@
 
 @interface PostListLimited : JSONModel
 @property (nonatomic) TopicInfo* topicInfo;
-@property (nonatomic) NSArray<PostItem*>* postItems;
+@property (nonatomic) NSArray<PostItem>* postItems;
 @property (nonatomic) int offset;
 @property (nonatomic) int limit;
 @end
@@ -142,7 +145,7 @@
 
 @interface TopicListLimited : JSONModel
 @property (nonatomic) ForumInfo* forumInfo;
-@property (nonatomic) NSArray<TopicItem*>* topicItems;
+@property (nonatomic) NSArray<TopicItem>* topicItems;
 @property (nonatomic) int offset;
 @property (nonatomic) int limit;
 @end
