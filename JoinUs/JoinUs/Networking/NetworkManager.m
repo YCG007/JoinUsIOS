@@ -10,11 +10,9 @@
 #import <UIKit/UIKit.h>
 
 //static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
-
-static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
+//static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
+static NSString* const kApiUrl = @"http://120.27.140.162/joinus/api/";
 static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyuncs.com/joinus/";
-
-//static NSString* const kApiUrl = @"http://120.27.140.162/joinus/api/";
 
 @implementation NetworkManager {
     NSURLSession* _dataSession;
@@ -253,7 +251,7 @@ static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyun
 }
 
 - (NSURLSessionDataTask *)getUploadImageWithName:(NSString *)name completionHandler:(void (^)(long, NSData *))completionHandler {
-    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/upload/%@%@", name, @".jpg"]];
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@%@", name, @".jpg"]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     
