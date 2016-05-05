@@ -15,10 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdateDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *registerDateLabel;
+
 
 @end
 
@@ -47,13 +49,14 @@
         self.photoImageView.image = [UIImage imageNamed:@"no_photo"];
     }
     self.nameLabel.text = myProfile.name;
-    self.mobileLabel.text = myProfile.mobile;
+    self.mobileLabel.text = myProfile.mobile ? myProfile.mobile : @"未设置";
     self.emailLabel.text = myProfile.email ? myProfile.email : @"未设置";
+    self.passwordLabel.text = myProfile.isPasswordSet ? @"修改密码" : @"设置密码";
     self.genderLabel.text = myProfile.gender.name;
-    self.cityLabel.text = myProfile.city ? [NSString stringWithFormat:@"%@ %@", myProfile.city.province.name, myProfile.city.name] : @"未设置";
+    self.cityLabel.text = myProfile.city ? [NSString stringWithFormat:@"%@ %@", myProfile.city.province.name, myProfile.city.name] : @"选择所在地区";
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
     self.lastUpdateDateLabel.text = [dateFormatter stringFromDate:myProfile.lastUpdateDate];
     self.registerDateLabel.text = [dateFormatter stringFromDate:myProfile.registerDate];
 }

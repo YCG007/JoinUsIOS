@@ -69,6 +69,13 @@
 		599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42601CCB4B24001BC33A /* CategoryCollectionViewCell.m */; };
 		599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */; };
 		599F426A1CCB9337001BC33A /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42691CCB9337001BC33A /* RefreshView.m */; };
+		59A3BC201CD7647500BB1001 /* CreateForum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A3BC1F1CD7647500BB1001 /* CreateForum.storyboard */; };
+		59B888EA1CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888E91CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m */; };
+		59B888F01CDB07C0008850CC /* RegisterWithEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888EF1CDB07C0008850CC /* RegisterWithEmailViewController.m */; };
+		59B888F31CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888F21CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m */; };
+		59B888F61CDB23C9008850CC /* UpdateGenderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888F41CDB23C9008850CC /* UpdateGenderTableViewController.m */; };
+		59B888F91CDB3387008850CC /* UpdateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888F81CDB3387008850CC /* UpdateEmailViewController.m */; };
+		59B888FC1CDB339B008850CC /* UpdateMobileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B888FB1CDB339B008850CC /* UpdateMobileViewController.m */; };
 		59BD2A931C9ACC9D00D9A58C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A921C9ACC9D00D9A58C /* main.m */; };
 		59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2A951C9ACC9D00D9A58C /* AppDelegate.m */; };
 		59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BD2A9A1C9ACC9D00D9A58C /* Main.storyboard */; };
@@ -86,8 +93,7 @@
 		59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC01C9ADF2300D9A58C /* JSONKeyMapper.m */; };
 		59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */; };
 		59BF18B61CB74C1B00033F41 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59BF18AF1CB74C1B00033F41 /* LoginAndRegister.storyboard */; };
-		59BF18B71CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BF18B01CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m */; };
-		59BF18B81CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BF18B11CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.m */; };
+		59BF18B81CB74C1B00033F41 /* RegisterWithMobileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BF18B11CB74C1B00033F41 /* RegisterWithMobileViewController.m */; };
 		59BF18B91CB74C1B00033F41 /* LoginWithPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BF18B21CB74C1B00033F41 /* LoginWithPasswordViewController.m */; };
 		59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF08AE1CB88A1200FD2040 /* UpdatePhotoViewController.m */; };
 		59CF08B21CB8F0E300FD2040 /* UpdatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CF08B11CB8F0E300FD2040 /* UpdatePasswordViewController.m */; };
@@ -221,6 +227,19 @@
 		599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumItemTableViewCell.m; sourceTree = "<group>"; };
 		599F42681CCB9337001BC33A /* RefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshView.h; sourceTree = "<group>"; };
 		599F42691CCB9337001BC33A /* RefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshView.m; sourceTree = "<group>"; };
+		59A3BC1F1CD7647500BB1001 /* CreateForum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateForum.storyboard; sourceTree = "<group>"; };
+		59B888E81CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWithMobileVerifyCodeViewController.h; sourceTree = "<group>"; };
+		59B888E91CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWithMobileVerifyCodeViewController.m; sourceTree = "<group>"; };
+		59B888EE1CDB07C0008850CC /* RegisterWithEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterWithEmailViewController.h; sourceTree = "<group>"; };
+		59B888EF1CDB07C0008850CC /* RegisterWithEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterWithEmailViewController.m; sourceTree = "<group>"; };
+		59B888F11CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWithEmailVeifyCodeViewController.h; sourceTree = "<group>"; };
+		59B888F21CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWithEmailVeifyCodeViewController.m; sourceTree = "<group>"; };
+		59B888F41CDB23C9008850CC /* UpdateGenderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateGenderTableViewController.m; sourceTree = "<group>"; };
+		59B888F51CDB23C9008850CC /* UpdateGenderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateGenderTableViewController.h; sourceTree = "<group>"; };
+		59B888F71CDB3387008850CC /* UpdateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateEmailViewController.h; sourceTree = "<group>"; };
+		59B888F81CDB3387008850CC /* UpdateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateEmailViewController.m; sourceTree = "<group>"; };
+		59B888FA1CDB339B008850CC /* UpdateMobileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMobileViewController.h; sourceTree = "<group>"; };
+		59B888FB1CDB339B008850CC /* UpdateMobileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMobileViewController.m; sourceTree = "<group>"; };
 		59BD2A8E1C9ACC9D00D9A58C /* JoinUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BD2A921C9ACC9D00D9A58C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59BD2A941C9ACC9D00D9A58C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -252,11 +271,9 @@
 		59BD2AC11C9ADF2300D9A58C /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		59BD2AC21C9ADF2300D9A58C /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		59BF18AF1CB74C1B00033F41 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
-		59BF18B01CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterGetVerifyCodeViewController.m; sourceTree = "<group>"; };
-		59BF18B11CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterWithVerifyCodeViewController.m; sourceTree = "<group>"; };
+		59BF18B11CB74C1B00033F41 /* RegisterWithMobileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterWithMobileViewController.m; sourceTree = "<group>"; };
 		59BF18B21CB74C1B00033F41 /* LoginWithPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWithPasswordViewController.m; sourceTree = "<group>"; };
-		59BF18B31CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterWithVerifyCodeViewController.h; sourceTree = "<group>"; };
-		59BF18B41CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterGetVerifyCodeViewController.h; sourceTree = "<group>"; };
+		59BF18B31CB74C1B00033F41 /* RegisterWithMobileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterWithMobileViewController.h; sourceTree = "<group>"; };
 		59BF18B51CB74C1B00033F41 /* LoginWithPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWithPasswordViewController.h; sourceTree = "<group>"; };
 		59CF08AD1CB88A1200FD2040 /* UpdatePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePhotoViewController.h; sourceTree = "<group>"; };
 		59CF08AE1CB88A1200FD2040 /* UpdatePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePhotoViewController.m; sourceTree = "<group>"; };
@@ -359,12 +376,18 @@
 				59CF08B11CB8F0E300FD2040 /* UpdatePasswordViewController.m */,
 				59CF08B31CB925AF00FD2040 /* UpdateNameViewController.h */,
 				59CF08B41CB925AF00FD2040 /* UpdateNameViewController.m */,
+				59B888F51CDB23C9008850CC /* UpdateGenderTableViewController.h */,
+				59B888F41CDB23C9008850CC /* UpdateGenderTableViewController.m */,
 				597E23811CC1E228009DCA6B /* ChooseProvinceViewController.h */,
 				597E23821CC1E228009DCA6B /* ChooseProvinceViewController.m */,
 				597E23841CC1E241009DCA6B /* ChooseCityViewController.h */,
 				597E23851CC1E241009DCA6B /* ChooseCityViewController.m */,
 				597E23871CC1E326009DCA6B /* ProvinceCityTableViewCell.h */,
 				597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */,
+				59B888F71CDB3387008850CC /* UpdateEmailViewController.h */,
+				59B888F81CDB3387008850CC /* UpdateEmailViewController.m */,
+				59B888FA1CDB339B008850CC /* UpdateMobileViewController.h */,
+				59B888FB1CDB339B008850CC /* UpdateMobileViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -391,12 +414,16 @@
 			isa = PBXGroup;
 			children = (
 				59BF18AF1CB74C1B00033F41 /* LoginAndRegister.storyboard */,
-				59BF18B01CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m */,
-				59BF18B11CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.m */,
-				59BF18B21CB74C1B00033F41 /* LoginWithPasswordViewController.m */,
-				59BF18B31CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.h */,
-				59BF18B41CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.h */,
+				59BF18B31CB74C1B00033F41 /* RegisterWithMobileViewController.h */,
+				59BF18B11CB74C1B00033F41 /* RegisterWithMobileViewController.m */,
+				59B888EE1CDB07C0008850CC /* RegisterWithEmailViewController.h */,
+				59B888EF1CDB07C0008850CC /* RegisterWithEmailViewController.m */,
 				59BF18B51CB74C1B00033F41 /* LoginWithPasswordViewController.h */,
+				59BF18B21CB74C1B00033F41 /* LoginWithPasswordViewController.m */,
+				59B888E81CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.h */,
+				59B888E91CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m */,
+				59B888F11CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.h */,
+				59B888F21CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m */,
 			);
 			path = LoginAndRegister;
 			sourceTree = "<group>";
@@ -404,6 +431,7 @@
 		59604EC61CCFC25500A8D14A /* CreateForum */ = {
 			isa = PBXGroup;
 			children = (
+				59A3BC1F1CD7647500BB1001 /* CreateForum.storyboard */,
 				59604EC71CCFC25500A8D14A /* CreateForumStepOneViewController.h */,
 				59604EC81CCFC25500A8D14A /* CreateForumStepOneViewController.m */,
 				59604EC91CCFC25500A8D14A /* CreateForumStepThreeViewController.h */,
@@ -693,6 +721,7 @@
 				59BD2AC31C9ADF2300D9A58C /* Info.plist in Resources */,
 				59BF18B61CB74C1B00033F41 /* LoginAndRegister.storyboard in Resources */,
 				5952D1FE1C9D408000E761F9 /* Home.storyboard in Resources */,
+				59A3BC201CD7647500BB1001 /* CreateForum.storyboard in Resources */,
 				59BD2AA11C9ACC9D00D9A58C /* LaunchScreen.storyboard in Resources */,
 				59BD2A9E1C9ACC9D00D9A58C /* Assets.xcassets in Resources */,
 				5952D2081C9D441300E761F9 /* Personal.storyboard in Resources */,
@@ -713,6 +742,7 @@
 				597E23611CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				597E236C1CC1DFEF009DCA6B /* DGActivityIndicatorBallSpinFadeLoader.m in Sources */,
 				597E23741CC1DFEF009DCA6B /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
+				59B888F61CDB23C9008850CC /* UpdateGenderTableViewController.m in Sources */,
 				599F42551CCB0BE2001BC33A /* ForumModels.m in Sources */,
 				597E23621CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				59BD2AC71C9ADF2300D9A58C /* JSONModelError.m in Sources */,
@@ -720,6 +750,7 @@
 				597E23751CC1DFEF009DCA6B /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
 				597E236E1CC1DFEF009DCA6B /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				59604ED11CCFC25500A8D14A /* CreateForumStepTwoViewController.m in Sources */,
+				59B888F01CDB07C0008850CC /* RegisterWithEmailViewController.m in Sources */,
 				59657BCA1CAD51B20013F1F8 /* MyProfileTableViewController.m in Sources */,
 				597E237A1CC1DFEF009DCA6B /* DGActivityIndicatorRotatingTrigonAnimation.m in Sources */,
 				597E23691CC1DFEF009DCA6B /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
@@ -729,7 +760,6 @@
 				597E236A1CC1DFEF009DCA6B /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
 				597E23641CC1DFEF009DCA6B /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				59BD2ACD1C9ADF2300D9A58C /* JSONValueTransformer.m in Sources */,
-				59BF18B71CB74C1B00033F41 /* RegisterGetVerifyCodeViewController.m in Sources */,
 				59D1C1E31CBFB3AD006D1A26 /* CoreAnimationViewController.m in Sources */,
 				59BD2AC41C9ADF2300D9A58C /* JSONModel.m in Sources */,
 				597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */,
@@ -744,6 +774,7 @@
 				597E237B1CC1DFEF009DCA6B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				597E23661CC1DFEF009DCA6B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */,
+				59B888F31CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m in Sources */,
 				599F426A1CCB9337001BC33A /* RefreshView.m in Sources */,
 				599F42611CCB4B24001BC33A /* CategoryCollectionViewCell.m in Sources */,
 				597E23771CC1DFEF009DCA6B /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
@@ -751,6 +782,7 @@
 				59604EC51CCFC03400A8D14A /* TopicItemTableViewCell.m in Sources */,
 				59604EB61CCE800900A8D14A /* BaseListViewController.m in Sources */,
 				597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */,
+				59B888FC1CDB339B008850CC /* UpdateMobileViewController.m in Sources */,
 				597E237D1CC1DFEF009DCA6B /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				597E23601CC1DFEF009DCA6B /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
@@ -772,8 +804,9 @@
 				597E23671CC1DFEF009DCA6B /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				597E23791CC1DFEF009DCA6B /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				59BD2AC81C9ADF2300D9A58C /* NSArray+JSONModel.m in Sources */,
+				59B888F91CDB3387008850CC /* UpdateEmailViewController.m in Sources */,
 				59604ED21CCFC25500A8D14A /* CreateForumSummaryTableViewController.m in Sources */,
-				59BF18B81CB74C1B00033F41 /* RegisterWithVerifyCodeViewController.m in Sources */,
+				59BF18B81CB74C1B00033F41 /* RegisterWithMobileViewController.m in Sources */,
 				59BD2A961C9ACC9D00D9A58C /* AppDelegate.m in Sources */,
 				597E23171CC1DF82009DCA6B /* NSString+Validation.m in Sources */,
 				597E23781CC1DFEF009DCA6B /* DGActivityIndicatorRotatingSandglassAnimation.m in Sources */,
@@ -786,6 +819,7 @@
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
 				59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */,
+				59B888EA1CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m in Sources */,
 				59CF08B51CB925AF00FD2040 /* UpdateNameViewController.m in Sources */,
 				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 				59604ED01CCFC25500A8D14A /* CreateForumStepThreeViewController.m in Sources */,

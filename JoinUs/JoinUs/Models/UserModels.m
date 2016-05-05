@@ -11,7 +11,10 @@
 @implementation MobileVerifyCode
 @end
 
-@implementation MobilePassword
+@implementation EmailVerifyCode
+@end
+
+@implementation AccountPassword
 @end
 
 @implementation UserProfile
@@ -21,6 +24,9 @@
 @end
 
 @implementation UserProfileWithToken
+@end
+
+@implementation UserGender
 @end
 
 @implementation UserPassword

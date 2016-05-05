@@ -23,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([NetworkManager sharedManager].myProfile.isPasswordSet) {
+        self.currentPasswordTextField.hidden = NO;
+    } else {
+        self.currentPasswordTextField.hidden = YES;
+    }
     self.submitButton.enabled = NO;
     self.submitButton.backgroundColor = [UIColor lightGrayColor];
 }
@@ -82,6 +87,11 @@
         //        NSLog(@"Status code: %ld, Data: %@", statusCode, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         [self.view hideToastActivity];
         if (statusCode == 200) {
+            NSError *error;
+            UserProfile* myProfile = [[UserProfile alloc] initWithData:data error:&error];
+            if (error != nil) NSLog(@"%@", error);
+            [[NetworkManager sharedManager] setMyProfile:myProfile];
+            
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [self.view makeToast:errorMessage];

@@ -16,9 +16,16 @@
 
 @end
 
-@interface MobilePassword : JSONModel
+@interface EmailVerifyCode : JSONModel
 
-@property (nonatomic) NSString* mobile;
+@property (nonatomic) NSString* email;
+@property (nonatomic) NSString* verifyCode;
+
+@end
+
+@interface AccountPassword : JSONModel
+
+@property (nonatomic) NSString* account;
 @property (nonatomic) NSString* password;
 
 @end
@@ -28,8 +35,9 @@
 
 @interface UserProfile : JSONModel
 @property (nonatomic) NSString* id;
-@property (nonatomic) NSString* mobile;
+@property (nonatomic) NSString<Optional>* mobile;
 @property (nonatomic) NSString<Optional>* email;
+@property (nonatomic) BOOL isPasswordSet;
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString<Optional>* photo;
 @property (nonatomic) Gender* gender;
@@ -48,6 +56,10 @@
 @interface UserProfileWithToken : JSONModel
 @property (nonatomic) UserProfile* userProfile;
 @property (nonatomic) UserToken* userToken;
+@end
+
+@interface UserGender : JSONModel
+@property (nonatomic) int genderId;
 @end
 
 @interface UserPassword : JSONModel

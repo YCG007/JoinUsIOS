@@ -10,13 +10,11 @@
 #import <UIKit/UIKit.h>
 
 //static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
-//static NSString* const kImageUrl = @"http://192.168.1.2/joinus/images/";
 
-//static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
-//static NSString* const kImageUrl = @"http://192.168.3.2/joinus/images/";
+static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
+static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyuncs.com/joinus/";
 
-static NSString* const kApiUrl = @"http://120.27.140.162/joinus/api/";
-static NSString* const kImageUrl = @"http://120.27.140.162/joinus/images/";
+//static NSString* const kApiUrl = @"http://120.27.140.162/joinus/api/";
 
 @implementation NetworkManager {
     NSURLSession* _dataSession;
@@ -276,7 +274,7 @@ static NSString* const kImageUrl = @"http://120.27.140.162/joinus/images/";
 }
 
 - (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long, NSData *))completionHandler {
-    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/resized/%@_%d%@", name, dimension, @".jpg"]];
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@%@@%dh_%dw_1e", name, @".jpg", dimension, dimension]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     
