@@ -23,7 +23,7 @@
 @end
 
 @interface Country : JSONModel
-@property (nonatomic) int id;
+@property (nonatomic) NSString* id;
 @property (nonatomic) NSString* name;
 @property (nonatomic) NSString* code;
 @end

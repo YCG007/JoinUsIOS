@@ -59,7 +59,7 @@
                 self.nameTextField.layer.borderWidth = 1;
                 self.nameTextField.layer.cornerRadius = 5;
                 self.submitButton.enabled = YES;
-                self.submitButton.backgroundColor = [UIColor colorForButtonParimary];
+                self.submitButton.backgroundColor = [UIColor parimaryButton];
             }
             
         } else if (statusCode == 406) {

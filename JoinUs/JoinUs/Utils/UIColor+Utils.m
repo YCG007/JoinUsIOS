@@ -10,12 +10,12 @@
 
 @implementation UIColor (Utils)
 
-+ (instancetype)colorForButtonParimary {
++ (instancetype)parimaryButton {
     return [[self alloc] initWithRGBValue:0x88c43f];
 }
 
-+ (instancetype)colorForButtonSecondary {
-    return [[self alloc] initWithRGBValue:0x009687];
++ (instancetype)secondaryButton {
+    return [[self alloc] initWithRGBValue:0x00bbd5];
 }
 
 - (void)getRGBAComponents:(CGFloat[4])rgba

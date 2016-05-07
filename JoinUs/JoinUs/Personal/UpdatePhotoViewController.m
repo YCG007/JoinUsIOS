@@ -117,7 +117,7 @@
     _isNewImagePicked = YES;
     
     self.submitButton.enabled = YES;
-    self.submitButton.backgroundColor = [UIColor colorForButtonParimary];
+    self.submitButton.backgroundColor = [UIColor parimaryButton];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

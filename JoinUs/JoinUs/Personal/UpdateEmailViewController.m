@@ -18,9 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @end
 
+static NSTimer* kTimer = nil;
+static int kCountDown = 0;
+
 @implementation UpdateEmailViewController{
-    NSTimer* _timer;
-    int _countDown;
 }
 
 - (void)viewDidLoad {
@@ -36,39 +37,45 @@
         self.currentEmailLabel.text = @"未设置";
     }
     
+    if (kTimer != nil) {
+        [kTimer invalidate];
+        kTimer = nil;
+        kTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(onTick) userInfo:nil repeats:YES];
+        [self onTick];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    if (_timer != nil) {
-        [_timer invalidate];
-        _timer = nil;
-    }
 }
 
 - (void)onTick {
-    NSLog(@"Tick!");
-    _countDown--;
+    if (kCountDown > 0) {
+        kCountDown--;
+    }
+    NSLog(@"Tick! %d", kCountDown);
     
-    if (_countDown > 0) {
-        [self.getVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", _countDown] forState:UIControlStateDisabled];
+    if (kCountDown > 0) {
+        [self.getVerifyCodeButton setTitle:[NSString stringWithFormat:@"重新获取(%ds)", kCountDown] forState:UIControlStateDisabled];
         self.getVerifyCodeButton.enabled = NO;
         self.getVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
-    } else if (_countDown == 0) {
+    } else {
         [self.getVerifyCodeButton setTitle:[NSString stringWithFormat:@"获取验证码"] forState:UIControlStateNormal];
         self.getVerifyCodeButton.enabled = YES;
-        self.getVerifyCodeButton.backgroundColor = [UIColor colorWithRGBValue:0x00bbd5];
-        [_timer invalidate];
-        _timer = nil;
+        self.getVerifyCodeButton.backgroundColor = [UIColor secondaryButton];
+        
+        [kTimer invalidate];
+        kTimer = nil;
     }
 }
 
 - (IBAction)getVerifyCodeButtonPressed:(id)sender {
     self.getVerifyCodeButton.enabled = NO;
     self.getVerifyCodeButton.backgroundColor = [UIColor lightGrayColor];
-    _countDown = 10;
-    if (_timer == nil) {
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(onTick) userInfo:nil repeats:YES];
+    
+    kCountDown = 60;
+    if (kTimer == nil) {
+        kTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(onTick) userInfo:nil repeats:YES];
     }
     
     [self.view makeToastActivity:CSToastPositionCenter];

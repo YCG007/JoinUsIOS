@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) CGFloat blue;
 @property (nonatomic, readonly) CGFloat alpha;
 
-+ (instancetype)colorForButtonParimary;
-+ (instancetype)colorForButtonSecondary;
++ (instancetype)parimaryButton;
++ (instancetype)secondaryButton;
 
 + (instancetype)colorWithRGBValue:(uint32_t)rgb;
 + (instancetype)colorWithRGBAValue:(uint32_t)rgba;

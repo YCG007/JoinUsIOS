@@ -63,7 +63,7 @@
             self.confirmPasswordTextField.layer.borderWidth = 1;
             self.confirmPasswordTextField.layer.cornerRadius = 5;
             self.submitButton.enabled = YES;
-            self.submitButton.backgroundColor = [UIColor colorForButtonParimary];
+            self.submitButton.backgroundColor = [UIColor parimaryButton];
         } else {
             self.confirmPasswordTextField.layer.borderColor = [UIColor redColor].CGColor;
             self.confirmPasswordTextField.layer.borderWidth = 1;
