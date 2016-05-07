@@ -104,6 +104,8 @@
 		59D1C1E31CBFB3AD006D1A26 /* CoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D1C1E21CBFB3AD006D1A26 /* CoreAnimationViewController.m */; };
 		59D1C1E61CBFC748006D1A26 /* GMDCircleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D1C1E51CBFC748006D1A26 /* GMDCircleLoader.m */; };
 		59E4582E1CA02AEF00A48E95 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E4582D1CA02AEF00A48E95 /* Models.m */; };
+		59F08C7A1CDCAB3D001F7415 /* CountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F08C791CDCAB3D001F7415 /* CountriesViewController.m */; };
+		59F08C7D1CDCBE33001F7415 /* CountriesSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F08C7C1CDCBE33001F7415 /* CountriesSearchResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -293,6 +295,10 @@
 		59D1C1E51CBFC748006D1A26 /* GMDCircleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDCircleLoader.m; sourceTree = "<group>"; };
 		59E4582C1CA02AEF00A48E95 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		59E4582D1CA02AEF00A48E95 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
+		59F08C781CDCAB3D001F7415 /* CountriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesViewController.h; sourceTree = "<group>"; };
+		59F08C791CDCAB3D001F7415 /* CountriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesViewController.m; sourceTree = "<group>"; };
+		59F08C7B1CDCBE33001F7415 /* CountriesSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesSearchResultViewController.h; sourceTree = "<group>"; };
+		59F08C7C1CDCBE33001F7415 /* CountriesSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesSearchResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +347,10 @@
 				5952D1FD1C9D408000E761F9 /* Home.storyboard */,
 				59D1C1E11CBFB3AD006D1A26 /* CoreAnimationViewController.h */,
 				59D1C1E21CBFB3AD006D1A26 /* CoreAnimationViewController.m */,
+				59F08C781CDCAB3D001F7415 /* CountriesViewController.h */,
+				59F08C791CDCAB3D001F7415 /* CountriesViewController.m */,
+				59F08C7B1CDCBE33001F7415 /* CountriesSearchResultViewController.h */,
+				59F08C7C1CDCBE33001F7415 /* CountriesSearchResultViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -793,6 +803,7 @@
 				597E23761CC1DFEF009DCA6B /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
 				597E23651CC1DFEF009DCA6B /* DGActivityIndicatorBallPulseAnimation.m in Sources */,
 				597E237F1CC1DFEF009DCA6B /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
+				59F08C7D1CDCBE33001F7415 /* CountriesSearchResultViewController.m in Sources */,
 				597E23701CC1DFEF009DCA6B /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
 				597E23731CC1DFEF009DCA6B /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
@@ -821,6 +832,7 @@
 				59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */,
 				59B888EA1CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m in Sources */,
 				59CF08B51CB925AF00FD2040 /* UpdateNameViewController.m in Sources */,
+				59F08C7A1CDCAB3D001F7415 /* CountriesViewController.m in Sources */,
 				59E4582E1CA02AEF00A48E95 /* Models.m in Sources */,
 				59604ED01CCFC25500A8D14A /* CreateForumStepThreeViewController.m in Sources */,
 			);

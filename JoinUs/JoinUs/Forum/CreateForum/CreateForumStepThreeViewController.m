@@ -78,7 +78,7 @@
     if (category.selected == nil) {
         cell.backgroundColor = [UIColor whiteColor];
     } else {
-        cell.backgroundColor = [UIColor colorForButtonParimary];
+        cell.backgroundColor = [UIColor parimaryButton];
     }
     
     return cell;

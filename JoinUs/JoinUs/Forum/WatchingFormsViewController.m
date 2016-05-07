@@ -26,8 +26,30 @@
     _listItems = [[NSMutableArray alloc] initWithCapacity:100];
     
     [self addLoadingViews];
-    [self showLoadingView];
-    [self startupLoad];
+    
+    if ([[NetworkManager sharedManager] isLoggedIn]) {
+        [self showLoadingView];
+        [self startupLoad];
+    } else {
+        [self showLoginView];
+    }
+}
+
+- (void)presentLoginTapped {
+    [self.parentViewController performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([[NetworkManager sharedManager] isLoggedIn] && self.loginView != nil) {
+        [self removeLoginView];
+        [self showLoadingView];
+        [self startupLoad];
+    }
+    
+    if (![[NetworkManager sharedManager] isLoggedIn] && self.loginView == nil)
+    {
+        [self showLoginView];
+    }
 }
 
 - (void)loadData {
@@ -43,7 +65,7 @@
                     self.noMoreData = NO;
                 }
                 
-                if (self.loadingStatus == LoadingStatusReloading) {
+                if (self.loadingStatus == LoadingStatusReloading || self.loadingStatus == LoadingStatusStartupLoading) {
                     [_listItems removeAllObjects];
                 }
                 
@@ -56,7 +78,9 @@
                 NSLog(@"JSON Error: %@", error);
             }
         } else {
-            if (self.loadingStatus == LoadingStatusStartupLoading) {
+            if (statusCode == 401) {
+                [self showLoginView];
+            } else if (self.loadingStatus == LoadingStatusStartupLoading) {
                 [self showErrorViewWithMessage:errorMessage];
             } else {
                 [self.view makeToast:errorMessage];
@@ -84,7 +108,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ForumItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    
     ForumItem* item = _listItems[indexPath.row];
     if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
         [cell.task cancel];
@@ -95,11 +118,11 @@
             if (statusCode == 200) {
                 cell.iconImageView.image = [UIImage imageWithData:data];
             } else {
-                cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+                cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
             }
         }];
     } else {
-        cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+        cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
     }
     cell.nameLabel.text = item.name;
     cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];

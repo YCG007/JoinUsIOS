@@ -14,8 +14,13 @@
 
 @interface TopicsViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *forumNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *forumIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *forumStatisticsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *forumWatchButton;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -41,6 +46,21 @@
             NSError* error;
             TopicListLimited* topicList = [[TopicListLimited alloc] initWithData:data error:&error];
             if (error == nil) {
+                
+                self.forumNameLabel.text = topicList.forumInfo.name;
+                if (topicList.forumInfo.icon != nil) {
+                    [[NetworkManager sharedManager] getResizedImageWithName:topicList.forumInfo.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
+                        if (statusCode == 200) {
+                            self.forumIconImageView.image = [UIImage imageWithData:data];
+                        } else {
+                            self.forumIconImageView.image = [UIImage imageNamed:@"no_image"];
+                        }
+                    }];
+                } else {
+                    self.forumIconImageView.image = [UIImage imageNamed:@"no_photo"];
+                }
+                self.forumStatisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", topicList.forumInfo.watch, topicList.forumInfo.posts];
+                
                 if (topicList.limit > topicList.topicItems.count) {
                     self.noMoreData = YES;
                 } else {
@@ -75,9 +95,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (_listItems != nil) {
-        return 0;
+        return 1;
     }
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -89,29 +109,93 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    TopicItem* topic = _listItems[indexPath.row];
     
-    TopicItem* item = _listItems[indexPath.row];
-    if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
-        [cell.task cancel];
+    if (cell.tasks != nil && cell.tasks.count > 0) {
+        for (NSURLSessionTask* task in cell.tasks) {
+            if (task.state == NSURLSessionTaskStateRunning) {
+                [task cancel];
+            }
+        }
     }
     
-//    if (item.icon != nil) {
-//        cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
-//            if (statusCode == 200) {
-//                cell.iconImageView.image = [UIImage imageWithData:data];
-//            } else {
-//                cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
-//            }
-//        }];
-//    } else {
-//        cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
-//    }
+    if (cell == nil) {
+        cell.tasks = [[NSMutableArray alloc] init];
+    }
+    
+    cell.userPhotoImageView.layer.cornerRadius = cell.userPhotoImageView.frame.size.width / 2;
+    if (topic.postedBy.photo != nil) {
+        NSURLSessionDataTask* task = [[NetworkManager sharedManager] getResizedImageWithName:topic.postedBy.photo dimension:160 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                cell.userPhotoImageView.image = [UIImage imageWithData:data];
+            } else {
+                cell.userPhotoImageView.image = [UIImage imageNamed:@"no_photo"];
+            }
+        }];
+        [cell.tasks addObject:task];
+    } else {
+        cell.userPhotoImageView.image = [UIImage imageNamed:@"no_photo"];
+    }
+    
+    cell.userNameLabel.text = topic.postedBy.name;
+    if (topic.postedBy.gender.id == 2) {
+        cell.userGenderImageView.image = [UIImage imageNamed:@"icon_male"];
+    } else if (topic.postedBy.gender.id == 3) {
+        cell.userGenderImageView.image = [UIImage imageNamed:@"icon_female"];
+    } else {
+        cell.userGenderImageView.image = [UIImage imageNamed:@"icon_no_gender"];
+    }
+    cell.userLevelLabel.text = [NSString stringWithFormat:@" LV.%d ", topic.postedBy.level];
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    cell.topicPostDateLabel.text = [dateFormatter stringFromDate:topic.firstPostDate];
+    cell.topicTitleLabel.text = topic.title;
+    cell.topicStatisticsLabel.text = [NSString stringWithFormat:@"帖子:%d 浏览:%d", topic.posts, topic.views];
+    cell.firstPostContentLabel.text = topic.firstPost.content;
+    
+    cell.firstPostImageView1.image = nil;
+    cell.firstPostImageView2.image = nil;
+    cell.firstPostImageView3.image = nil;
+    
+    if (topic.firstPost.images != nil && topic.firstPost.images.count > 0) {
+        cell.firstPostImageStackViewHeightConstraint.constant = (cell.frame.size.width - 16 - 6) / 3;
+    } else {
+        cell.firstPostImageStackViewHeightConstraint.constant = 0;
+    }
+    
+    if (topic.firstPost.images != nil && topic.firstPost.images.count > 0) {
+        NSURLSessionDataTask* task = [[NetworkManager sharedManager] getResizedImageWithName:topic.firstPost.images[0] dimension:240 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                cell.firstPostImageView1.image = [UIImage imageWithData:data];
+            }
+        }];
+        [cell.tasks addObject:task];
+    }
+    
+    if (topic.firstPost.images != nil && topic.firstPost.images.count > 1) {
+        NSURLSessionDataTask* task = [[NetworkManager sharedManager] getResizedImageWithName:topic.firstPost.images[1] dimension:240 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                cell.firstPostImageView2.image = [UIImage imageWithData:data];
+            }
+        }];
+        [cell.tasks addObject:task];
+    }
+    
+    if (topic.firstPost.images != nil && topic.firstPost.images.count > 2) {
+        NSURLSessionDataTask* task = [[NetworkManager sharedManager] getResizedImageWithName:topic.firstPost.images[2] dimension:240 completionHandler:^(long statusCode, NSData *data) {
+            if (statusCode == 200) {
+                cell.firstPostImageView3.image = [UIImage imageWithData:data];
+            }
+        }];
+        [cell.tasks addObject:task];
+    }
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CGFLOAT_MIN;
+    return 5;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

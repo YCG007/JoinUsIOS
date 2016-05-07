@@ -89,10 +89,10 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    [_refreshView setVisibleHeight:-(scrollView.contentOffset.y)];
+    [_refreshView setVisibleHeight:-(scrollView.contentOffset.y + scrollView.contentInset.top)];
     
     float maximumOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
-    //    NSLog(@"content offset: %f / max: %f", self.tableView.contentOffset.y, maximumOffset);
+    NSLog(@"content offset: %f / max: %f", self.tableView.contentOffset.y, maximumOffset);
     if (_loadingStatus == LoadingStatusIdle && !_noMoreData && (maximumOffset - self.tableView.contentOffset.y <= -2)) {
         [self startLoadMoreAnimation];
         [self loadMore];
@@ -100,7 +100,7 @@
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-//    NSLog(@"velocity: %f; offset:%f", velocity.y, targetContentOffset->y);
+    NSLog(@"velocity: %f; offset:%f", velocity.y, targetContentOffset->y);
     if (_loadingStatus == LoadingStatusIdle && self.tableView.contentOffset.y < -kRefreshViewHeight - scrollView.contentInset.top) {
         UIEdgeInsets insets = self.tableView.contentInset;
         insets.top += kRefreshViewHeight;
@@ -109,6 +109,7 @@
         targetContentOffset->y = -kRefreshViewHeight - scrollView.contentInset.top;
         
         [_refreshView beginRefreshing];
+        [_refreshView setVisibleHeight:kRefreshViewHeight];
         [self reloadData];
     }
 }
@@ -272,6 +273,44 @@
     if (_loadingStatus == LoadingStatusIdle) {
         [_errorView removeFromSuperview];
         [self startupLoad];
+    }
+}
+
+- (void)showLoginView {
+    _loginView = [[UIView alloc] init];
+    _loginView.backgroundColor = [UIColor whiteColor];
+    _loginView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.view addSubview:_loginView];
+    
+    [_loginView.topAnchor constraintEqualToAnchor:_loginView.superview.topAnchor].active = YES;
+    [_loginView.bottomAnchor constraintEqualToAnchor:_loginView.superview.bottomAnchor].active = YES;
+    [_loginView.leadingAnchor constraintEqualToAnchor:_loginView.superview.leadingAnchor].active = YES;
+    [_loginView.trailingAnchor constraintEqualToAnchor:_loginView.superview.trailingAnchor].active = YES;
+    
+    UILabel* titleLabel = [[UILabel alloc] init];
+    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    titleLabel.textColor = [UIColor colorWithRed:0.129 green:0.455 blue:0.627 alpha:1.0];
+    titleLabel.text = @"请点击登录后浏览";
+    
+    [_loginView addSubview:titleLabel];
+    
+    [titleLabel.centerXAnchor constraintEqualToAnchor:_loginView.centerXAnchor constant:0].active = YES;
+    [titleLabel.centerYAnchor constraintEqualToAnchor:_loginView.centerYAnchor constant:0].active = YES;
+    
+    UITapGestureRecognizer *pushLoginTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentLoginTapped)];
+    [_loginView addGestureRecognizer:pushLoginTap];
+}
+
+- (void)presentLoginTapped {
+    [NSException raise:@"Wo KAO!" format:@"You must override this method!"];
+}
+
+- (void)removeLoginView {
+    if (_loginView != nil) {
+        [_loginView removeFromSuperview];
+        _loginView = nil;
     }
 }
 

@@ -23,22 +23,36 @@
 }
 
 - (IBAction)segmentValueChanged:(id)sender {
-    NSLog(@"segment index: %ld", (long)self.segment.selectedSegmentIndex);
+//    NSLog(@"segment index: %ld", (long)self.segment.selectedSegmentIndex);
     
     [UIView animateWithDuration:0.5f animations:^{
         self.scrollView.contentOffset = CGPointMake(self.segment.selectedSegmentIndex * self.view.bounds.size.width, 0);
     }];
-
+//    [self onScreenViewControllerChangedToIndex:self.segment.selectedSegmentIndex];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"offset x: %f", scrollView.contentOffset.x);
+//    NSLog(@"offset x: %f", scrollView.contentOffset.x);
     float offset = scrollView.contentOffset.x;
     float screenWidth = self.view.bounds.size.width;
     
     int index =  (int)roundf(offset / screenWidth);
     self.segment.selectedSegmentIndex = index;
+//    [self onScreenViewControllerChangedToIndex:index];
 }
+
+//- (void)onScreenViewControllerChangedToIndex:(int)index {
+//    for (int i = 0; i < self.childViewControllers.count; i++) {
+//        if (i == index) {
+//            id childViewController = [self.childViewControllers objectAtIndex:index];
+//            if ([childViewController respondsToSelector:@selector(isOnScreen)]) {
+//                [childViewController performSelector:@selector(isOnScreen)];
+//            }
+//        } else {
+//            
+//        }
+//    }
+//}
 
 
 - (void)didReceiveMemoryWarning {

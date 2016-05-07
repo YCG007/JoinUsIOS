@@ -99,11 +99,11 @@
                 if (statusCode == 200) {
                     cell.iconImageView.image = [UIImage imageWithData:data];
                 } else {
-                    cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+                    cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
                 }
             }];
         } else {
-            cell.iconImageView.image = [UIImage imageNamed:@"no_photo"];
+            cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
         }
         cell.nameLabel.text = item.name;
         cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
@@ -140,6 +140,7 @@
     if ([segue.identifier isEqualToString:@"PushTopics"]) {
         TopicsViewController* topicsViewController = segue.destinationViewController;
         topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
     }
 }
 

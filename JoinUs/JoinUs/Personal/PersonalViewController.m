@@ -58,27 +58,27 @@ const float kTableHeaderHeight = 220.0f;
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    NSLog(@"viewWillLayoutSubviews");
+//    NSLog(@"viewWillLayoutSubviews");
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    NSLog(@"viewDidLayoutSubviews");
+//    NSLog(@"viewDidLayoutSubviews");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear");
+//    NSLog(@"viewDidAppear");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    NSLog(@"viewWillDisappear");
+//    NSLog(@"viewWillDisappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    NSLog(@"viewDidDisappear");
+//    NSLog(@"viewDidDisappear");
     // remove transparent nav bar
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];

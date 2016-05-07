@@ -9,5 +9,4 @@
 #import "BaseListViewController.h"
 
 @interface WatchingFormsViewController : BaseListViewController  <UITableViewDataSource, UITableViewDelegate>
-
 @end

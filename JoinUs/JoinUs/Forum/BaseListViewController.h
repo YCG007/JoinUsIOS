@@ -22,6 +22,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) RefreshView* refreshView;
 @property (nonatomic) UIView* loadingView;
 @property (nonatomic) UIView* errorView;
+@property (nonatomic) UIView* loginView;
 @property (nonatomic) BOOL noMoreData;
 
 - (UITableView*)tableView;
@@ -37,4 +38,7 @@ typedef enum : NSUInteger {
 - (void)showLoadingView;
 - (void)showErrorViewWithMessage:(NSString*)message;
 - (void)errorReload;
+- (void)showLoginView;
+- (void)presentLoginTapped;
+- (void)removeLoginView;
 @end

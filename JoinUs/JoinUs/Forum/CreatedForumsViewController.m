@@ -24,10 +24,31 @@
     [super viewDidLoad];
     
     _listItems = [[NSMutableArray alloc] initWithCapacity:100];
-    
     [self addLoadingViews];
-    [self showLoadingView];
-    [self startupLoad];
+    
+    if ([[NetworkManager sharedManager] isLoggedIn]) {
+        [self showLoadingView];
+        [self startupLoad];
+    } else {
+        [self showLoginView];
+    }
+}
+
+- (void)presentLoginTapped {
+    [self.parentViewController performSegueWithIdentifier:@"PresentLoginAndRegister" sender:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([[NetworkManager sharedManager] isLoggedIn] && self.loginView != nil) {
+        [self removeLoginView];
+        [self showLoadingView];
+        [self startupLoad];
+    }
+    
+    if (![[NetworkManager sharedManager] isLoggedIn] && self.loginView == nil)
+    {
+        [self showLoginView];
+    }
 }
 
 - (void)loadData {
@@ -43,7 +64,7 @@
                     self.noMoreData = NO;
                 }
                 
-                if (self.loadingStatus == LoadingStatusReloading) {
+                if (self.loadingStatus == LoadingStatusReloading || self.loadingStatus == LoadingStatusStartupLoading) {
                     [_listItems removeAllObjects];
                 }
                 

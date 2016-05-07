@@ -222,12 +222,6 @@
                                                         <constraint firstAttribute="trailing" secondItem="TC5-hs-kOs" secondAttribute="trailing" constant="8" id="zN7-8u-m45"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-9l-69Z">
-                                                    <rect key="frame" x="8" y="56" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="回帖:88 浏览:99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-Jm-2qL">
                                                     <rect key="frame" x="8" y="80" width="304" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -240,7 +234,7 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MjE-oM-vvJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="102"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brB-s3-W2C">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brB-s3-W2C">
                                                             <rect key="frame" x="103" y="0.0" width="99" height="102"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fwf-Iz-3gL">
@@ -254,6 +248,12 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-Ha-R8y">
                                                     <rect key="frame" x="8" y="99" width="304" height="28.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-9l-69Z">
+                                                    <rect key="frame" x="8" y="56" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -413,6 +413,7 @@
                     <connections>
                         <outlet property="scrollView" destination="5qS-2l-wnb" id="VsD-Zb-zhF"/>
                         <outlet property="segment" destination="82g-NX-ym4" id="Qge-6L-7hg"/>
+                        <segue destination="q0o-wt-5Ib" kind="presentation" identifier="PresentLoginAndRegister" id="ZOc-9P-MyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldz-Wx-bQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -610,6 +611,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQB-a9-FQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1692.5" y="287"/>
+        </scene>
+        <!--LoginAndRegister-->
+        <scene sceneID="JEx-fW-cl5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginAndRegister" id="q0o-wt-5Ib" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JX-gz-P9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795.5" y="550"/>
         </scene>
     </scenes>
     <resources>
