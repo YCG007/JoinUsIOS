@@ -11,9 +11,11 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "ForumItemTableViewCell.h"
+#import "ForumTopicsViewController.h"
 
 @interface CreatedForumsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *createForumImage;
 @end
 
 @implementation CreatedForumsViewController {
@@ -23,12 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _listItems = [[NSMutableArray alloc] initWithCapacity:100];
-    [self addLoadingViews];
+    _listItems = [[NSMutableArray alloc] initWithCapacity:10];
+    
+        self.createForumImage.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        self.createForumImage.layer.shadowOffset = CGSizeMake(2.0f, 2.0f);
+        self.createForumImage.layer.shadowRadius = 5.0f;
+        self.createForumImage.layer.shadowOpacity = 1.0f;
+    
+    [self addRefreshViewAndLoadMoreView];
     
     if ([[NetworkManager sharedManager] isLoggedIn]) {
-        [self showLoadingView];
-        [self startupLoad];
+        [self loadWithLoadingView];
     } else {
         [self showLoginView];
     }
@@ -41,8 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     if ([[NetworkManager sharedManager] isLoggedIn] && self.loginView != nil) {
         [self removeLoginView];
-        [self showLoadingView];
-        [self startupLoad];
+        [self loadWithLoadingView];
     }
     
     if (![[NetworkManager sharedManager] isLoggedIn] && self.loginView == nil)
@@ -50,6 +56,7 @@
         [self showLoginView];
     }
 }
+
 
 - (void)loadData {
     NSString* url = [NSString stringWithFormat:@"forum/created?offset=%d&limit=%d", self.loadingStatus == LoadingStatusLoadingMore ? (int)_listItems.count : 0, 10];
@@ -64,7 +71,10 @@
                     self.noMoreData = NO;
                 }
                 
-                if (self.loadingStatus == LoadingStatusReloading || self.loadingStatus == LoadingStatusStartupLoading) {
+                if (self.loadingStatus == LoadingStatusLoadingWithLoadingView
+                    || self.loadingStatus == LoadingStatusLoadingWithRefreshView
+                    || self.loadingStatus == LoadingStatusLoadingWithToastActivity)
+                {
                     [_listItems removeAllObjects];
                 }
                 
@@ -77,7 +87,7 @@
                 NSLog(@"JSON Error: %@", error);
             }
         } else {
-            if (self.loadingStatus == LoadingStatusStartupLoading) {
+            if (self.loadingStatus == LoadingStatusLoadingWithLoadingView) {
                 [self showErrorViewWithMessage:errorMessage];
             } else {
                 [self.view makeToast:errorMessage];
@@ -87,6 +97,11 @@
         [self removeLoadingViews];
     }];
 }
+
+- (IBAction)createForumImageTapped:(id)sender {
+        [self.parentViewController performSegueWithIdentifier:@"CreateForum" sender:self];
+}
+
 
 
 #pragma mark - Table view data source
@@ -110,17 +125,13 @@
     if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
         [cell.task cancel];
     }
-    
+    cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
     if (item.icon != nil) {
         cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
             if (statusCode == 200) {
                 cell.iconImageView.image = [UIImage imageWithData:data];
-            } else {
-                cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
             }
         }];
-    } else {
-        cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
     }
     cell.nameLabel.text = item.name;
     cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
@@ -147,6 +158,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
+    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

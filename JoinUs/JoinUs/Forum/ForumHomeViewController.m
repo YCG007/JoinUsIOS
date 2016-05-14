@@ -7,6 +7,7 @@
 //
 
 #import "ForumHomeViewController.h"
+#import "ForumSearchResultViewController.h"
 
 @interface ForumHomeViewController ()
 
@@ -15,12 +16,42 @@
 
 @end
 
-@implementation ForumHomeViewController
+@implementation ForumHomeViewController {
+    UISearchController* _searchController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    ForumSearchResultViewController* searchResultController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForumSearchResult"];
+    
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultController];
+    _searchController.searchResultsUpdater = searchResultController;
+    _searchController.delegate = self;
+    _searchController.hidesNavigationBarDuringPresentation = NO;
+    _searchController.dimsBackgroundDuringPresentation = YES;
+    _searchController.searchBar.placeholder = @"搜索热门论坛";
+    _searchController.searchBar.delegate = searchResultController;
+    self.navigationItem.titleView = _searchController.searchBar;
+    //
+    self.definesPresentationContext = YES;
 }
+
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    NSLog(@"willPresentSearchController");
+}
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    NSLog(@"didPresentSearchController");
+}
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    NSLog(@"willDismissSearchController");
+}
+- (void)didDismissSearchController:(UISearchController *)searchController {
+    NSLog(@"didDismissSearchController");
+}
+
+
 
 - (IBAction)segmentValueChanged:(id)sender {
 //    NSLog(@"segment index: %ld", (long)self.segment.selectedSegmentIndex);
@@ -28,7 +59,6 @@
     [UIView animateWithDuration:0.5f animations:^{
         self.scrollView.contentOffset = CGPointMake(self.segment.selectedSegmentIndex * self.view.bounds.size.width, 0);
     }];
-//    [self onScreenViewControllerChangedToIndex:self.segment.selectedSegmentIndex];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -40,19 +70,6 @@
     self.segment.selectedSegmentIndex = index;
 //    [self onScreenViewControllerChangedToIndex:index];
 }
-
-//- (void)onScreenViewControllerChangedToIndex:(int)index {
-//    for (int i = 0; i < self.childViewControllers.count; i++) {
-//        if (i == index) {
-//            id childViewController = [self.childViewControllers objectAtIndex:index];
-//            if ([childViewController respondsToSelector:@selector(isOnScreen)]) {
-//                [childViewController performSelector:@selector(isOnScreen)];
-//            }
-//        } else {
-//            
-//        }
-//    }
-//}
 
 
 - (void)didReceiveMemoryWarning {

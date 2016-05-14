@@ -11,6 +11,7 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "ForumItemTableViewCell.h"
+#import "ForumTopicsViewController.h"
 
 @interface WatchingFormsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,13 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _listItems = [[NSMutableArray alloc] initWithCapacity:100];
+    _listItems = [[NSMutableArray alloc] initWithCapacity:10];
     
-    [self addLoadingViews];
+    [self addRefreshViewAndLoadMoreView];
     
     if ([[NetworkManager sharedManager] isLoggedIn]) {
-        [self showLoadingView];
-        [self startupLoad];
+        [self loadWithLoadingView];
     } else {
         [self showLoginView];
     }
@@ -42,8 +42,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     if ([[NetworkManager sharedManager] isLoggedIn] && self.loginView != nil) {
         [self removeLoginView];
-        [self showLoadingView];
-        [self startupLoad];
+        [self loadWithLoadingView];
     }
     
     if (![[NetworkManager sharedManager] isLoggedIn] && self.loginView == nil)
@@ -65,7 +64,10 @@
                     self.noMoreData = NO;
                 }
                 
-                if (self.loadingStatus == LoadingStatusReloading || self.loadingStatus == LoadingStatusStartupLoading) {
+                if (self.loadingStatus == LoadingStatusLoadingWithLoadingView
+                    || self.loadingStatus == LoadingStatusLoadingWithRefreshView
+                    || self.loadingStatus == LoadingStatusLoadingWithToastActivity)
+                {
                     [_listItems removeAllObjects];
                 }
                 
@@ -80,7 +82,7 @@
         } else {
             if (statusCode == 401) {
                 [self showLoginView];
-            } else if (self.loadingStatus == LoadingStatusStartupLoading) {
+            } else if (self.loadingStatus == LoadingStatusLoadingWithLoadingView) {
                 [self showErrorViewWithMessage:errorMessage];
             } else {
                 [self.view makeToast:errorMessage];
@@ -112,17 +114,13 @@
     if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
         [cell.task cancel];
     }
-    
+    cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
     if (item.icon != nil) {
         cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
             if (statusCode == 200) {
                 cell.iconImageView.image = [UIImage imageWithData:data];
-            } else {
-                cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
             }
         }];
-    } else {
-        cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
     }
     cell.nameLabel.text = item.name;
     cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
@@ -149,6 +147,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
+    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

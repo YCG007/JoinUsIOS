@@ -11,7 +11,7 @@
 
 //static NSString* const kApiUrl = @"http://192.168.1.2/joinus/api/";
 //static NSString* const kApiUrl = @"http://192.168.3.2/joinus/api/";
-static NSString* const kApiUrl = @"http://120.27.140.162/joinus/api/";
+static NSString* const kApiUrl = @"http://www.northgatecode.com/joinus/api/";
 static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyuncs.com/joinus/";
 
 @implementation NetworkManager {

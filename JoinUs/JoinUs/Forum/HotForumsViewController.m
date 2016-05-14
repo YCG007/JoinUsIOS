@@ -11,7 +11,7 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "ForumItemTableViewCell.h"
-#import "TopicsViewController.h"
+#import "ForumTopicsViewController.h"
 
 @interface HotForumsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,11 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _listItems = [[NSMutableArray alloc] initWithCapacity:100];
+    _listItems = [[NSMutableArray alloc] initWithCapacity:10];
     
-    [self addLoadingViews];
-    [self showLoadingView];
-    [self startupLoad];
+    [self addRefreshViewAndLoadMoreView];
+    [self loadWithLoadingView];
 }
 
 - (void)loadData {
@@ -44,7 +43,10 @@
                     self.noMoreData = NO;
                 }
                 
-                if (self.loadingStatus == LoadingStatusReloading) {
+                if (self.loadingStatus == LoadingStatusLoadingWithLoadingView
+                    || self.loadingStatus == LoadingStatusLoadingWithRefreshView
+                    || self.loadingStatus == LoadingStatusLoadingWithToastActivity)
+                {
                     [_listItems removeAllObjects];
                 }
                 
@@ -57,7 +59,7 @@
                 NSLog(@"JSON Error: %@", error);
             }
         } else {
-            if (self.loadingStatus == LoadingStatusStartupLoading) {
+            if (self.loadingStatus == LoadingStatusLoadingWithLoadingView) {
                 [self showErrorViewWithMessage:errorMessage];
             } else {
                 [self.view makeToast:errorMessage];
@@ -93,17 +95,13 @@
         if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
             [cell.task cancel];
         }
-        
+        cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
         if (item.icon != nil) {
             cell.task = [[NetworkManager sharedManager] getResizedImageWithName:item.icon dimension:120 completionHandler:^(long statusCode, NSData *data) {
                 if (statusCode == 200) {
                     cell.iconImageView.image = [UIImage imageWithData:data];
-                } else {
-                    cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
                 }
             }];
-        } else {
-            cell.iconImageView.image = [UIImage imageNamed:@"no_image"];
         }
         cell.nameLabel.text = item.name;
         cell.statisticsLabel.text = [NSString stringWithFormat:@"关注:%d 帖子:%d", item.watch, item.posts];
@@ -130,19 +128,24 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"PushTopics" sender:self];
+//    [self performSegueWithIdentifier:@"PushTopics" sender:self];
+    
+    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
+    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"PushTopics"]) {
-        TopicsViewController* topicsViewController = segue.destinationViewController;
-        topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"PushTopics"]) {
+//        TopicsViewController* topicsViewController = segue.destinationViewController;
+//        topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+//        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+//    }
+//}
 
 
 @end

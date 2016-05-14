@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userGenderImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLevelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topicPostDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteTopicButton;
 @property (weak, nonatomic) IBOutlet UILabel *topicTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *topicStatisticsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *firstPostContentLabel;

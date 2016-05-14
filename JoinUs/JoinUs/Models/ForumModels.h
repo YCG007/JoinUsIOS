@@ -78,6 +78,7 @@
 @property (nonatomic) PostInfo* lastPost;
 @property (nonatomic) NSDate* lastPostDate;
 @property (nonatomic) BOOL onTop;
+@property (nonatomic) BOOL deleteable;
 @end
 
 @interface TopicInfo : JSONModel
@@ -128,6 +129,8 @@
 @property (nonatomic) int activity;
 @property (nonatomic) ForumUserInfo* createdBy;
 @property (nonatomic) NSDate* createDate;
+@property (nonatomic) ForumUserInfo<Optional>* watchedByMe;
+@property (nonatomic) BOOL deleteable;
 @end
 
 @protocol PostItem
