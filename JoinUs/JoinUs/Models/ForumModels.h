@@ -23,17 +23,17 @@
 @property (nonatomic) NSDate<Optional>* lastPostDate;
 @end
 
-@interface ReplyAdd : JSONModel
-@property (nonatomic) NSString* postId;
-@property (nonatomic) NSString* content;
-@end
-
-@interface ReplyItem : JSONModel
-@property (nonatomic) NSString* id;
-@property (nonatomic) ForumUserInfo* repliedBy;
-@property (nonatomic) NSString* content;
-@property (nonatomic) NSDate* replyDate;
-@end
+//@interface ReplyAdd : JSONModel
+//@property (nonatomic) NSString* postId;
+//@property (nonatomic) NSString* content;
+//@end
+//
+//@interface ReplyItem : JSONModel
+//@property (nonatomic) NSString* id;
+//@property (nonatomic) ForumUserInfo* repliedBy;
+//@property (nonatomic) NSString* content;
+//@property (nonatomic) NSDate* replyDate;
+//@end
 
 @interface PostAdd : JSONModel
 @property (nonatomic) NSString* topicId;
@@ -50,7 +50,7 @@
 @property (nonatomic) NSString* content;
 @property (nonatomic) NSDate* postDate;
 @property (nonatomic) NSArray<NSString*>* images;
-@property (nonatomic) NSArray<ReplyItem>* replyItems;
+//@property (nonatomic) NSArray<ReplyItem>* replyItems;
 @end
 
 @interface PostInfo : JSONModel

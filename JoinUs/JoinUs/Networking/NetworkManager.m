@@ -292,6 +292,28 @@ static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyun
     return dataTask;
 }
 
+- (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name width:(int)width completionHandler:(void (^)(long, NSData *))completionHandler {
+    // /example.jpg@500w
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@%@@%dw", name, @".jpg", width]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSessionDataTask* dataTask = [_imageSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSInteger statusCode;
+        if (error == nil) {
+            statusCode = [(NSHTTPURLResponse *)response statusCode];
+        } else {
+            statusCode = error.code;
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(statusCode, data);
+        });
+    }];
+    [dataTask resume];
+    return dataTask;
+}
+
 
 - (NSString*)deviceId {
     return [[[UIDevice currentDevice] identifierForVendor] UUIDString];

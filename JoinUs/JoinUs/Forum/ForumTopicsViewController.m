@@ -11,6 +11,7 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "TopicItemTableViewCell.h"
+#import "CreateTopicViewController.h"
 
 @interface ForumTopicsViewController ()
 @property (weak, nonatomic) IBOutlet UIStackView *actionsStackView;
@@ -267,7 +268,7 @@
     cell.firstPostImageView3.image = nil;
     
     if (topic.firstPost.images != nil && topic.firstPost.images.count > 0) {
-        cell.firstPostImageStackViewHeightConstraint.constant = (cell.frame.size.width - 16 - 6) / 3;
+        cell.firstPostImageStackViewHeightConstraint.constant = (self.view.frame.size.width - 16 - 6) / 3;
     } else {
         cell.firstPostImageStackViewHeightConstraint.constant = 0;
     }
@@ -299,6 +300,8 @@
         [cell.tasks addObject:task];
     }
     
+    [cell layoutSubviews];
+    
     return cell;
 }
 
@@ -325,7 +328,10 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([segue.identifier isEqualToString:@"PushCreateTopic"]) {
+        CreateTopicViewController* createTopicViewController = [segue destinationViewController];
+        createTopicViewController.forumId = _forumInfo.id;
+    }
 }
 
 

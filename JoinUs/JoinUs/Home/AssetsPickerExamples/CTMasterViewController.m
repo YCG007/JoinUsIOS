@@ -28,24 +28,24 @@
 #import "CTMasterViewController.h"
 
 #import "CTBasicViewController.h"
-//#import "CTMaxSelectionViewController.h"
-//#import "CTSelectedAssetsViewController.h"
-//#import "CTDefaultAlbumViewController.h"
-//#import "CTSelectionOrderViewController.h"
-//#import "CTUITweaksViewController.h"
-//
-//#import "CTSortedAssetsViewController.h"
-//
-//#import "CTPhotosViewController.h"
-//#import "CTLastWeekViewController.h"
-//#import "CTSloMoViewController.h"
-//#import "CTiCloudAlbumsViewController.h"
-//
-//#import "CTProgrammaticViewController.h"
+#import "CTMaxSelectionViewController.h"
+#import "CTSelectedAssetsViewController.h"
+#import "CTDefaultAlbumViewController.h"
+#import "CTSelectionOrderViewController.h"
+#import "CTUITweaksViewController.h"
+
+#import "CTSortedAssetsViewController.h"
+
+#import "CTPhotosViewController.h"
+#import "CTLastWeekViewController.h"
+#import "CTSloMoViewController.h"
+#import "CTiCloudAlbumsViewController.h"
+
+#import "CTProgrammaticViewController.h"
 
 //#import "CTApperanceViewController.h"
 
-//#import "CTLayoutViewController.h"
+#import "CTLayoutViewController.h"
 
 
 
@@ -227,47 +227,47 @@
         if (row == 0)
             vc = (UIViewController *)[CTBasicViewController new];
         
-//        if (row == 1)
-//            vc = (UIViewController *)[CTMaxSelectionViewController new];
-//        
-//        if (row == 2)
-//            vc = (UIViewController *)[CTSelectedAssetsViewController new];
-//        
-//        if (row == 3)
-//            vc = (UIViewController *)[CTDefaultAlbumViewController new];
-//        
-//        if (row == 4)
-//            vc = (UIViewController *)[CTSelectionOrderViewController new];
-//        
-//        if (row == 5)
-//            vc = (UIViewController *)[CTUITweaksViewController new];
+        if (row == 1)
+            vc = (UIViewController *)[CTMaxSelectionViewController new];
+
+        if (row == 2)
+            vc = (UIViewController *)[CTSelectedAssetsViewController new];
+
+        if (row == 3)
+            vc = (UIViewController *)[CTDefaultAlbumViewController new];
+        
+        if (row == 4)
+            vc = (UIViewController *)[CTSelectionOrderViewController new];
+        
+        if (row == 5)
+            vc = (UIViewController *)[CTUITweaksViewController new];
     }
     
     if (section == 1)
     {
-//        if (row == 0)
-//            vc = (UIViewController *)[CTSortedAssetsViewController new];
+        if (row == 0)
+            vc = (UIViewController *)[CTSortedAssetsViewController new];
     }
     
     if (section == 2)
     {
-//        if (row == 0)
-//            vc = (UIViewController *)[CTPhotosViewController new];
-//        
-//        if (row == 1)
-//            vc = (UIViewController *)[CTLastWeekViewController new];
-//        
-//        if (row == 2)
-//            vc = (UIViewController *)[CTSloMoViewController new];
-//        
-//        if (row == 3)
-//            vc = (UIViewController *)[CTiCloudAlbumsViewController new];
+        if (row == 0)
+            vc = (UIViewController *)[CTPhotosViewController new];
+        
+        if (row == 1)
+            vc = (UIViewController *)[CTLastWeekViewController new];
+        
+        if (row == 2)
+            vc = (UIViewController *)[CTSloMoViewController new];
+        
+        if (row == 3)
+            vc = (UIViewController *)[CTiCloudAlbumsViewController new];
     }
     
     if (section == 3)
     {
-//        if (row == 0)
-//            vc = (UIViewController *)[CTProgrammaticViewController new];
+        if (row == 0)
+            vc = (UIViewController *)[CTProgrammaticViewController new];
     }
     
     if (section == 4)
@@ -278,8 +278,8 @@
 
     if (section == 5)
     {
-//        if (row == 0)
-//            vc = (UIViewController *)[CTLayoutViewController new];
+        if (row == 0)
+            vc = (UIViewController *)[CTLayoutViewController new];
     }
     
     if (vc)

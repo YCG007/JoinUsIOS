@@ -11,11 +11,11 @@
 @implementation ForumUserInfo
 @end
 
-@implementation ReplyAdd
-@end
-
-@implementation ReplyItem
-@end
+//@implementation ReplyAdd
+//@end
+//
+//@implementation ReplyItem
+//@end
 
 @implementation PostAdd
 @end
