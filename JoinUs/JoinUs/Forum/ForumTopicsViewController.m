@@ -12,6 +12,7 @@
 #import "ForumModels.h"
 #import "TopicItemTableViewCell.h"
 #import "CreateTopicViewController.h"
+#import "TopicPostsViewController.h"
 
 @interface ForumTopicsViewController ()
 @property (weak, nonatomic) IBOutlet UIStackView *actionsStackView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *watchListButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteForumButton;
 
+@property (weak, nonatomic) IBOutlet UIView *forumView;
 @property (weak, nonatomic) IBOutlet UILabel *forumNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *forumIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *forumStatisticsLabel;
@@ -88,6 +90,12 @@
                     self.watchedByMeView.hidden = YES;
                     self.watchButton.hidden = NO;
                 }
+                
+                CGFloat height = [self.forumView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+                CGRect headerFrame = self.forumView.frame;
+                headerFrame.size.height = height;
+                self.forumView.frame = headerFrame;
+                self.tableView.tableHeaderView = self.forumView;
                 
                 if (topicList.forumInfo.deleteable) {
                     self.deleteForumButton.hidden = NO;
@@ -222,8 +230,10 @@
         }
     }
     
-    if (cell == nil) {
+    if (cell.tasks == nil) {
         cell.tasks = [[NSMutableArray alloc] init];
+    } else {
+        [cell.tasks removeAllObjects];
     }
     
     cell.userPhotoImageView.layer.cornerRadius = cell.userPhotoImageView.frame.size.width / 2;
@@ -300,7 +310,7 @@
         [cell.tasks addObject:task];
     }
     
-    [cell layoutSubviews];
+//    [cell layoutSubviews];
     
     return cell;
 }
@@ -322,7 +332,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"PushPosts" sender:self];
 }
 
 #pragma mark - Navigation
@@ -331,6 +341,11 @@
     if ([segue.identifier isEqualToString:@"PushCreateTopic"]) {
         CreateTopicViewController* createTopicViewController = [segue destinationViewController];
         createTopicViewController.forumId = _forumInfo.id;
+    } else if ([segue.identifier isEqualToString:@"PushPosts"]) {
+        TopicPostsViewController* topicPostsViewController = [segue destinationViewController];
+        TopicItem* topic = _listItems[self.tableView.indexPathForSelectedRow.row];
+        topicPostsViewController.topicId = topic.id;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
     }
 }
 

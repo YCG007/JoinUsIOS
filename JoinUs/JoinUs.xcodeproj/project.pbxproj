@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		590AF2EC1CEB7003004FD5F0 /* WatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */; };
 		590AF2EF1CEB7F7D004FD5F0 /* TopicPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */; };
-		590AF2F21CEB8128004FD5F0 /* PostItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2F11CEB8128004FD5F0 /* PostItemViewController.m */; };
 		590AF2F51CEB81B2004FD5F0 /* PostItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */; };
 		591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E1C881CA40A0400045E39 /* UIView+Toast.m */; };
 		59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */; };
@@ -184,8 +183,6 @@
 		590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchListViewController.m; sourceTree = "<group>"; };
 		590AF2ED1CEB7F7D004FD5F0 /* TopicPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPostsViewController.h; sourceTree = "<group>"; };
 		590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPostsViewController.m; sourceTree = "<group>"; };
-		590AF2F01CEB8128004FD5F0 /* PostItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItemViewController.h; sourceTree = "<group>"; };
-		590AF2F11CEB8128004FD5F0 /* PostItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItemViewController.m; sourceTree = "<group>"; };
 		590AF2F31CEB81B2004FD5F0 /* PostItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItemTableViewCell.h; sourceTree = "<group>"; };
 		590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItemTableViewCell.m; sourceTree = "<group>"; };
 		591E1C871CA40A0400045E39 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
@@ -577,8 +574,6 @@
 				590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */,
 				590AF2ED1CEB7F7D004FD5F0 /* TopicPostsViewController.h */,
 				590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */,
-				590AF2F01CEB8128004FD5F0 /* PostItemViewController.h */,
-				590AF2F11CEB8128004FD5F0 /* PostItemViewController.m */,
 				590AF2F31CEB81B2004FD5F0 /* PostItemTableViewCell.h */,
 				590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */,
 			);
@@ -1235,7 +1230,6 @@
 				597B29431CE6105B00869CD2 /* CTAssetsGridViewFooter.m in Sources */,
 				597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */,
 				597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */,
-				590AF2F21CEB8128004FD5F0 /* PostItemViewController.m in Sources */,
 				597B294D1CE6105B00869CD2 /* CTAssetThumbnailOverlay.m in Sources */,
 				597B29401CE6105B00869CD2 /* CTAssetsGridView.m in Sources */,
 				597729651CE84BC200EBE270 /* SelectedImageCollectionViewCell.m in Sources */,

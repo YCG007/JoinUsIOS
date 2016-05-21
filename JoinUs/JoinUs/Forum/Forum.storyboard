@@ -136,7 +136,7 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="论坛说明" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l05-s5-1RB">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="论坛说明" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l05-s5-1RB">
                                             <rect key="frame" x="8" y="96" width="304" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
@@ -425,6 +425,7 @@
                         <outlet property="forumIconImageView" destination="yoz-zY-mo8" id="8l5-Kq-fC0"/>
                         <outlet property="forumNameLabel" destination="gw2-xv-zKe" id="XSN-yM-ppB"/>
                         <outlet property="forumStatisticsLabel" destination="fS1-RI-yZj" id="KYS-wI-At4"/>
+                        <outlet property="forumView" destination="ULW-KD-MGh" id="0VX-qH-msq"/>
                         <outlet property="myLevelLabel" destination="tfc-CZ-aoj" id="S1e-HV-SLc"/>
                         <outlet property="myPostsLabel" destination="gEF-8C-jUC" id="VIg-dD-AuZ"/>
                         <outlet property="postTopicButton" destination="SqA-EV-DVL" id="j3S-Jp-74F"/>
@@ -463,7 +464,7 @@
         <!--主题贴-->
         <scene sceneID="xCZ-QL-snj">
             <objects>
-                <viewController id="Z3q-MO-rvN" sceneMemberID="viewController">
+                <viewController id="Z3q-MO-rvN" customClass="TopicPostsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u1I-iH-fUe"/>
                         <viewControllerLayoutGuide type="bottom" id="haL-jR-OgK"/>
@@ -486,6 +487,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="8Se-cW-bId" firstAttribute="leading" secondItem="MGW-nu-4Np" secondAttribute="leading" constant="8" id="J38-lK-LYx"/>
                                         <constraint firstAttribute="bottom" secondItem="8Se-cW-bId" secondAttribute="bottom" constant="8" id="QYn-oO-el1"/>
@@ -494,7 +496,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="170" id="Ael-lS-u9e">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="170" id="Ael-lS-u9e" customClass="PostItemTableViewCell">
                                         <rect key="frame" x="0.0" y="129" width="320" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ael-lS-u9e" id="eGm-0t-dWX">
@@ -502,7 +504,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNn-Va-2LX">
-                                                    <rect key="frame" x="8" y="0.0" width="304" height="40"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="40"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_photo" translatesAutoresizingMaskIntoConstraints="NO" id="t34-Cw-zvW">
                                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -565,20 +567,20 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kn-Z0-A8O">
-                                                    <rect key="frame" x="8" y="48" width="304" height="18"/>
+                                                    <rect key="frame" x="8" y="56" width="304" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2rd-Zq-zCI">
-                                                    <rect key="frame" x="8" y="74" width="304" height="87"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2rd-Zq-zCI">
+                                                    <rect key="frame" x="8" y="82" width="304" height="79"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6Kn-Z0-A8O" firstAttribute="top" secondItem="QNn-Va-2LX" secondAttribute="bottom" constant="8" id="3i8-lH-Twd"/>
                                                 <constraint firstItem="2rd-Zq-zCI" firstAttribute="top" secondItem="6Kn-Z0-A8O" secondAttribute="bottom" constant="8" id="4jv-Gh-V3c"/>
                                                 <constraint firstItem="6Kn-Z0-A8O" firstAttribute="leading" secondItem="eGm-0t-dWX" secondAttribute="leading" constant="8" id="CZN-Yb-R6n"/>
-                                                <constraint firstItem="QNn-Va-2LX" firstAttribute="top" secondItem="eGm-0t-dWX" secondAttribute="top" id="FZY-c1-5h7"/>
+                                                <constraint firstItem="QNn-Va-2LX" firstAttribute="top" secondItem="eGm-0t-dWX" secondAttribute="top" constant="8" id="FZY-c1-5h7"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Kn-Z0-A8O" secondAttribute="trailing" constant="8" id="G1N-WZ-H3P"/>
                                                 <constraint firstItem="2rd-Zq-zCI" firstAttribute="leading" secondItem="eGm-0t-dWX" secondAttribute="leading" constant="8" id="Ko4-bC-SMY"/>
                                                 <constraint firstAttribute="trailing" secondItem="2rd-Zq-zCI" secondAttribute="trailing" constant="8" id="PMW-ZD-M4d"/>
@@ -587,8 +589,22 @@
                                                 <constraint firstAttribute="bottom" secondItem="2rd-Zq-zCI" secondAttribute="bottom" constant="8" id="dXb-F8-q0Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="6Kn-Z0-A8O" id="dhy-Ut-ORd"/>
+                                            <outlet property="deleteButton" destination="HVT-Kb-5rN" id="VYR-xu-DpJ"/>
+                                            <outlet property="imagesStackView" destination="2rd-Zq-zCI" id="hYB-Nh-MZM"/>
+                                            <outlet property="postDateLabel" destination="f7k-Ir-NgF" id="Mej-Qk-iWD"/>
+                                            <outlet property="userGenderImageView" destination="HGw-SP-7I6" id="qka-hu-kDh"/>
+                                            <outlet property="userLevelLabel" destination="wKF-EL-8se" id="ADm-LM-EEm"/>
+                                            <outlet property="userNameLabel" destination="GV1-CA-x2P" id="Z57-G7-7Mi"/>
+                                            <outlet property="userPhotoImageView" destination="t34-Cw-zvW" id="b3I-aL-g1p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Z3q-MO-rvN" id="Q03-KV-t3J"/>
+                                    <outlet property="delegate" destination="Z3q-MO-rvN" id="TSm-p0-TLh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -601,6 +617,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="主题贴" id="fHD-aF-WOQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="lBm-aN-R5i" id="a5n-wH-IQh"/>
+                        <outlet property="topicTitleLabel" destination="8Se-cW-bId" id="quW-JJ-SkC"/>
+                        <outlet property="topicView" destination="MGW-nu-4Np" id="mAP-VM-bmm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lg-bl-3Ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

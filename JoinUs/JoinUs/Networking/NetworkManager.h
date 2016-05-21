@@ -35,5 +35,6 @@
 
 - (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
 
+- (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name width:(int)width completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
 
 @end

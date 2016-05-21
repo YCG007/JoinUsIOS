@@ -6,8 +6,10 @@
 //  Copyright © 2016 North Gate Code. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseListViewController.h"
 
-@interface TopicPostsViewController : UIViewController
+@interface TopicPostsViewController : BaseListViewController
+
+@property NSString* topicId;
 
 @end

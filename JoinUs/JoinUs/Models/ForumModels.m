@@ -8,14 +8,12 @@
 
 #import "ForumModels.h"
 
-@implementation ForumUserInfo
+@implementation ImageItem
+
 @end
 
-//@implementation ReplyAdd
-//@end
-//
-//@implementation ReplyItem
-//@end
+@implementation ForumUserInfo
+@end
 
 @implementation PostAdd
 @end
