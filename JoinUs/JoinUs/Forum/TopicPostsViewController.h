@@ -7,8 +7,9 @@
 //
 
 #import "BaseListViewController.h"
+#import "NYTPhotosViewController.h"
 
-@interface TopicPostsViewController : BaseListViewController
+@interface TopicPostsViewController : BaseListViewController <NYTPhotosViewControllerDelegate>
 
 @property NSString* topicId;
 

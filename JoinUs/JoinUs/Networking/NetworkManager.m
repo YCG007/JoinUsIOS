@@ -271,6 +271,25 @@ static NSString* const kImageUrl = @"http://northgatecode.img-cn-hangzhou.aliyun
     return dataTask;
 }
 
+- (NSData*)getUploadImageSynchronouslyWithName:(NSString *)name {
+    
+    NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@%@", name, @".jpg"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"GET"];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    __block NSData *retunData = nil;
+    [[_imageSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil && [(NSHTTPURLResponse *)response statusCode] == 200) {
+            retunData = data;
+        }
+        dispatch_semaphore_signal(semaphore);
+    }] resume];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    return retunData;
+}
+
 - (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long, NSData *))completionHandler {
     NSString* url = [kImageUrl stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@%@@%dh_%dw_1e", name, @".jpg", dimension, dimension]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];

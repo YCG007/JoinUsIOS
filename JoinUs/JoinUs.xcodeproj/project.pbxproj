@@ -134,6 +134,8 @@
 		597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23821CC1E228009DCA6B /* ChooseProvinceViewController.m */; };
 		597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23851CC1E241009DCA6B /* ChooseCityViewController.m */; };
 		597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */; };
+		5980AAD11CF2C7E0009254DC /* ViewingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAD01CF2C7E0009254DC /* ViewingImage.m */; };
+		5980AAD41CF2D5CC009254DC /* NSURLSession+SynchronousTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAD31CF2D5CC009254DC /* NSURLSession+SynchronousTask.m */; };
 		599F42521CCB04F6001BC33A /* HotForumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42511CCB04F6001BC33A /* HotForumsViewController.m */; };
 		599F42551CCB0BE2001BC33A /* ForumModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42541CCB0BE2001BC33A /* ForumModels.m */; };
 		599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */; };
@@ -439,6 +441,10 @@
 		597E23851CC1E241009DCA6B /* ChooseCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCityViewController.m; sourceTree = "<group>"; };
 		597E23871CC1E326009DCA6B /* ProvinceCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceCityTableViewCell.h; sourceTree = "<group>"; };
 		597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceCityTableViewCell.m; sourceTree = "<group>"; };
+		5980AACF1CF2C7E0009254DC /* ViewingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewingImage.h; sourceTree = "<group>"; };
+		5980AAD01CF2C7E0009254DC /* ViewingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewingImage.m; sourceTree = "<group>"; };
+		5980AAD21CF2D5CC009254DC /* NSURLSession+SynchronousTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+SynchronousTask.h"; sourceTree = "<group>"; };
+		5980AAD31CF2D5CC009254DC /* NSURLSession+SynchronousTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+SynchronousTask.m"; sourceTree = "<group>"; };
 		599F42501CCB04F6001BC33A /* HotForumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotForumsViewController.h; sourceTree = "<group>"; };
 		599F42511CCB04F6001BC33A /* HotForumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotForumsViewController.m; sourceTree = "<group>"; };
 		599F42531CCB0BE2001BC33A /* ForumModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumModels.h; sourceTree = "<group>"; };
@@ -576,6 +582,8 @@
 				590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */,
 				590AF2F31CEB81B2004FD5F0 /* PostItemTableViewCell.h */,
 				590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */,
+				5980AACF1CF2C7E0009254DC /* ViewingImage.h */,
+				5980AAD01CF2C7E0009254DC /* ViewingImage.m */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -647,6 +655,8 @@
 		5952D1FC1C9D3E4E00E761F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5980AAD21CF2D5CC009254DC /* NSURLSession+SynchronousTask.h */,
+				5980AAD31CF2D5CC009254DC /* NSURLSession+SynchronousTask.m */,
 				597729681CE8D07A00EBE270 /* NYTPhotoViewer */,
 				597B29501CE6110000869CD2 /* PureLayout */,
 				597B28E61CE6105B00869CD2 /* CTAssetsPickerController */,
@@ -1235,6 +1245,7 @@
 				597729651CE84BC200EBE270 /* SelectedImageCollectionViewCell.m in Sources */,
 				597E237E1CC1DFEF009DCA6B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				59604EB91CCE93A200A8D14A /* WatchingFormsViewController.m in Sources */,
+				5980AAD41CF2D5CC009254DC /* NSURLSession+SynchronousTask.m in Sources */,
 				591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */,
 				597729361CE823FE00EBE270 /* CTLastWeekViewController.m in Sources */,
 				597E23631CC1DFEF009DCA6B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
@@ -1321,6 +1332,7 @@
 				5977298F1CE8D07A00EBE270 /* NYTPhotoViewController.m in Sources */,
 				597E23681CC1DFEF009DCA6B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
+				5980AAD11CF2C7E0009254DC /* ViewingImage.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
 				59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */,

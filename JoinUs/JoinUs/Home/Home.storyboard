@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlI-pa-qk5">
-                                <rect key="frame" x="20" y="148" width="134" height="30"/>
+                                <rect key="frame" x="20" y="148" width="93" height="30"/>
                                 <state key="normal" title="Assets Picker"/>
                                 <connections>
                                     <action selector="assetsPickerButtonPressed:" destination="JAh-g8-tgF" eventType="touchUpInside" id="jlr-qy-Mnf"/>

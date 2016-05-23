@@ -11,6 +11,9 @@
 #import "NetworkManager.h"
 #import "ForumModels.h"
 #import "PostItemTableViewCell.h"
+#import "NYTPhotosViewController.h"
+#import "ViewingImage.h"
+
 
 @interface TopicPostsViewController ()
 
@@ -175,15 +178,22 @@
     if (post.imageItems != nil && post.imageItems.count > 0) {
         float width = self.view.frame.size.width - 16;
         for (ImageItem* image in post.imageItems) {
+            if (image.name == nil || image.name.length < 10 || image.width < 10 || image.height < 10 ) {
+                continue;
+            }
             UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no_image"]];
-            [imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+            imageView.tag = indexPath.row;
+            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            imageView.clipsToBounds = YES;
+            imageView.userInteractionEnabled = YES;
             
+            [cell.imagesStackView addArrangedSubview:imageView];
+            
+            [imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
             [imageView.widthAnchor constraintEqualToConstant:width].active = YES;
             NSLayoutConstraint* constraint = [imageView.heightAnchor constraintEqualToConstant:width * image.height / image.width];
             constraint.priority = 999;
             constraint.active = YES;
-            imageView.clipsToBounds = YES;
-            [cell.imagesStackView addArrangedSubview:imageView];
             
             NSURLSessionDataTask* task = [[NetworkManager sharedManager] getResizedImageWithName:image.name width:width * UIScreen.mainScreen.scale completionHandler:^(long statusCode, NSData *data) {
                 if (statusCode == 200) {
@@ -230,7 +240,35 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostItem* postItem = [_listItems objectAtIndex:indexPath.row];
+    if (postItem.imageItems != nil && postItem.imageItems.count > 0) {
+
+        NSMutableArray* viewingImages = [NSMutableArray array];
+        for (ImageItem* image in postItem.imageItems) {
+            ViewingImage* viewingImage = [[ViewingImage alloc] init];
+            viewingImage.imageName = image.name;
+            [viewingImages addObject:viewingImage];
+        }
+        NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:viewingImages];
+        photosViewController.delegate = self;
+        [self presentViewController:photosViewController animated:YES completion:nil];
+    }
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - NYTPhotosViewControllerDelegate
+
+/**
+ *  Returns the maximum zoom scale for a given object conforming to the `NYTPhoto` protocol.
+ *
+ *  @param photosViewController The `NYTPhotosViewController` instance that sent the delegate message.
+ *  @param photo                The photo for which the maximum zoom scale is requested.
+ *
+ *  @return The maximum zoom scale for the given photo.
+ */
+- (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
+    return 2.0f;
 }
 
 #pragma mark - Navigation

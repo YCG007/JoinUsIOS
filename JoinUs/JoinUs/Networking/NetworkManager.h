@@ -33,6 +33,8 @@
 
 - (NSURLSessionDataTask *)getUploadImageWithName:(NSString *)name completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
 
+- (NSData*)getUploadImageSynchronouslyWithName:(NSString *)name;
+
 - (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name dimension:(int)dimension completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
 
 - (NSURLSessionDataTask *)getResizedImageWithName:(NSString *)name width:(int)width completionHandler:(void (^)(long statusCode, NSData * data))completionHandler;
