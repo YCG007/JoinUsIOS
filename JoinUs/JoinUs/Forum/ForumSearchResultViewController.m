@@ -122,18 +122,20 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didSelectRowAtIndexPath");
-    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
-    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-    [self.presentingViewController.navigationController pushViewController:topicsViewController animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"PresentForumTopics" sender:self];
 }
 
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([segue.identifier isEqualToString:@"PresentForumTopics"]) {
+        UINavigationController* navigationController = [segue destinationViewController];
+        ForumTopicsViewController* forumTopicsViewController = navigationController.viewControllers[0];
+        
+        forumTopicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
 }
 
 

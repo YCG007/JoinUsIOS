@@ -25,7 +25,7 @@
 @property (nonatomic) int level;
 @property (nonatomic) int posts;
 @property (nonatomic) BOOL isAdmin;
-@property (nonatomic) NSDate* joinDate;
+@property (nonatomic) NSDate<Optional>* joinDate;
 @property (nonatomic) NSDate<Optional>* lastPostDate;
 @end
 

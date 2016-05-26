@@ -128,24 +128,26 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self performSegueWithIdentifier:@"PushTopics" sender:self];
+    [self performSegueWithIdentifier:@"PresentForumTopics" sender:self];
     
-    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
-    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
+//    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
+//    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
+//    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"PushTopics"]) {
-//        TopicsViewController* topicsViewController = segue.destinationViewController;
-//        topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-//        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"PresentForumTopics"]) {
+        UINavigationController* navigationController = [segue destinationViewController];
+        ForumTopicsViewController* forumTopicsViewController = navigationController.viewControllers[0];
+        
+        forumTopicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
+}
 
 
 @end

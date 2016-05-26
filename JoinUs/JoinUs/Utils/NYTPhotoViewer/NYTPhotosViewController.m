@@ -102,6 +102,8 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 
     self.view.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor blackColor];

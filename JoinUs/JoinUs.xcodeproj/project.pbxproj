@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		590AF2EC1CEB7003004FD5F0 /* WatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */; };
-		590AF2EF1CEB7F7D004FD5F0 /* TopicPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */; };
-		590AF2F51CEB81B2004FD5F0 /* PostItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */; };
+		59143B011CF5919600724729 /* CreateTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AF21CF5919600724729 /* CreateTopicViewController.m */; };
+		59143B021CF5919600724729 /* ForumTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AF41CF5919600724729 /* ForumTopicsViewController.m */; };
+		59143B031CF5919600724729 /* PostItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AF61CF5919600724729 /* PostItemTableViewCell.m */; };
+		59143B041CF5919600724729 /* SelectedImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AF81CF5919600724729 /* SelectedImageCollectionViewCell.m */; };
+		59143B051CF5919600724729 /* TopicItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AFA1CF5919600724729 /* TopicItemTableViewCell.m */; };
+		59143B061CF5919600724729 /* TopicPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AFC1CF5919600724729 /* TopicPostsViewController.m */; };
+		59143B071CF5919600724729 /* ViewingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143AFE1CF5919600724729 /* ViewingImage.m */; };
+		59143B081CF5919600724729 /* WatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59143B001CF5919600724729 /* WatchListViewController.m */; };
+		59143B0A1CF591E200724729 /* ForumTopics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59143B091CF591E200724729 /* ForumTopics.storyboard */; };
 		591E1C891CA40A0400045E39 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 591E1C881CA40A0400045E39 /* UIView+Toast.m */; };
 		59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */; };
-		594733EB1CE4852E00A7330E /* ForumTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594733EA1CE4852E00A7330E /* ForumTopicsViewController.m */; };
 		594733EE1CE486F900A7330E /* CategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594733ED1CE486F900A7330E /* CategoryCollectionViewCell.m */; };
 		594733F41CE4878D00A7330E /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594733F11CE4878D00A7330E /* BaseListViewController.m */; };
 		594733F51CE4878D00A7330E /* RefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594733F31CE4878D00A7330E /* RefreshView.m */; };
@@ -25,7 +30,6 @@
 		5952D2261C9D50A700E761F9 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952D2251C9D50A700E761F9 /* Utils.m */; };
 		59604EB91CCE93A200A8D14A /* WatchingFormsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604EB81CCE93A200A8D14A /* WatchingFormsViewController.m */; };
 		59604EBF1CCE93F000A8D14A /* CreatedForumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604EBE1CCE93F000A8D14A /* CreatedForumsViewController.m */; };
-		59604EC51CCFC03400A8D14A /* TopicItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604EC41CCFC03400A8D14A /* TopicItemTableViewCell.m */; };
 		59604ECF1CCFC25500A8D14A /* CreateForumStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604EC81CCFC25500A8D14A /* CreateForumStepOneViewController.m */; };
 		59604ED01CCFC25500A8D14A /* CreateForumStepThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604ECA1CCFC25500A8D14A /* CreateForumStepThreeViewController.m */; };
 		59604ED11CCFC25500A8D14A /* CreateForumStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59604ECC1CCFC25500A8D14A /* CreateForumStepTwoViewController.m */; };
@@ -43,8 +47,6 @@
 		597729391CE823FE00EBE270 /* CTProgrammaticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977292F1CE823FE00EBE270 /* CTProgrammaticViewController.m */; };
 		5977293A1CE823FE00EBE270 /* CTSloMoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597729311CE823FE00EBE270 /* CTSloMoViewController.m */; };
 		5977293B1CE823FE00EBE270 /* CTSortedAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597729331CE823FE00EBE270 /* CTSortedAssetsViewController.m */; };
-		5977293E1CE8378900EBE270 /* CreateTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977293D1CE8378900EBE270 /* CreateTopicViewController.m */; };
-		597729651CE84BC200EBE270 /* SelectedImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597729641CE84BC200EBE270 /* SelectedImageCollectionViewCell.m */; };
 		597729881CE8D07A00EBE270 /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977296B1CE8D07A00EBE270 /* NYTPhotoCaptionView.m */; };
 		597729891CE8D07A00EBE270 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977296D1CE8D07A00EBE270 /* NYTPhotoDismissalInteractionController.m */; };
 		5977298A1CE8D07A00EBE270 /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5977296F1CE8D07A00EBE270 /* NYTPhotosDataSource.m */; };
@@ -134,7 +136,6 @@
 		597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23821CC1E228009DCA6B /* ChooseProvinceViewController.m */; };
 		597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23851CC1E241009DCA6B /* ChooseCityViewController.m */; };
 		597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */; };
-		5980AAD11CF2C7E0009254DC /* ViewingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAD01CF2C7E0009254DC /* ViewingImage.m */; };
 		5980AAD41CF2D5CC009254DC /* NSURLSession+SynchronousTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 5980AAD31CF2D5CC009254DC /* NSURLSession+SynchronousTask.m */; };
 		599F42521CCB04F6001BC33A /* HotForumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42511CCB04F6001BC33A /* HotForumsViewController.m */; };
 		599F42551CCB0BE2001BC33A /* ForumModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 599F42541CCB0BE2001BC33A /* ForumModels.m */; };
@@ -181,18 +182,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		590AF2EA1CEB7003004FD5F0 /* WatchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchListViewController.h; sourceTree = "<group>"; };
-		590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchListViewController.m; sourceTree = "<group>"; };
-		590AF2ED1CEB7F7D004FD5F0 /* TopicPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPostsViewController.h; sourceTree = "<group>"; };
-		590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPostsViewController.m; sourceTree = "<group>"; };
-		590AF2F31CEB81B2004FD5F0 /* PostItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItemTableViewCell.h; sourceTree = "<group>"; };
-		590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItemTableViewCell.m; sourceTree = "<group>"; };
+		59143AF11CF5919600724729 /* CreateTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTopicViewController.h; sourceTree = "<group>"; };
+		59143AF21CF5919600724729 /* CreateTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTopicViewController.m; sourceTree = "<group>"; };
+		59143AF31CF5919600724729 /* ForumTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumTopicsViewController.h; sourceTree = "<group>"; };
+		59143AF41CF5919600724729 /* ForumTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumTopicsViewController.m; sourceTree = "<group>"; };
+		59143AF51CF5919600724729 /* PostItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItemTableViewCell.h; sourceTree = "<group>"; };
+		59143AF61CF5919600724729 /* PostItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItemTableViewCell.m; sourceTree = "<group>"; };
+		59143AF71CF5919600724729 /* SelectedImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedImageCollectionViewCell.h; sourceTree = "<group>"; };
+		59143AF81CF5919600724729 /* SelectedImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedImageCollectionViewCell.m; sourceTree = "<group>"; };
+		59143AF91CF5919600724729 /* TopicItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicItemTableViewCell.h; sourceTree = "<group>"; };
+		59143AFA1CF5919600724729 /* TopicItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicItemTableViewCell.m; sourceTree = "<group>"; };
+		59143AFB1CF5919600724729 /* TopicPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPostsViewController.h; sourceTree = "<group>"; };
+		59143AFC1CF5919600724729 /* TopicPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPostsViewController.m; sourceTree = "<group>"; };
+		59143AFD1CF5919600724729 /* ViewingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewingImage.h; sourceTree = "<group>"; };
+		59143AFE1CF5919600724729 /* ViewingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewingImage.m; sourceTree = "<group>"; };
+		59143AFF1CF5919600724729 /* WatchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchListViewController.h; sourceTree = "<group>"; };
+		59143B001CF5919600724729 /* WatchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchListViewController.m; sourceTree = "<group>"; };
+		59143B091CF591E200724729 /* ForumTopics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ForumTopics.storyboard; sourceTree = "<group>"; };
 		591E1C871CA40A0400045E39 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		591E1C881CA40A0400045E39 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		59363F461CCE322B00EEDC96 /* ForumHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumHomeViewController.h; sourceTree = "<group>"; };
 		59363F471CCE322B00EEDC96 /* ForumHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumHomeViewController.m; sourceTree = "<group>"; };
-		594733E91CE4852E00A7330E /* ForumTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumTopicsViewController.h; sourceTree = "<group>"; };
-		594733EA1CE4852E00A7330E /* ForumTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForumTopicsViewController.m; sourceTree = "<group>"; };
 		594733EC1CE486F900A7330E /* CategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		594733ED1CE486F900A7330E /* CategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCollectionViewCell.m; sourceTree = "<group>"; };
 		594733F01CE4878D00A7330E /* BaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListViewController.h; sourceTree = "<group>"; };
@@ -212,8 +222,6 @@
 		59604EB81CCE93A200A8D14A /* WatchingFormsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchingFormsViewController.m; sourceTree = "<group>"; };
 		59604EBD1CCE93F000A8D14A /* CreatedForumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatedForumsViewController.h; sourceTree = "<group>"; };
 		59604EBE1CCE93F000A8D14A /* CreatedForumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatedForumsViewController.m; sourceTree = "<group>"; };
-		59604EC31CCFC03400A8D14A /* TopicItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicItemTableViewCell.h; sourceTree = "<group>"; };
-		59604EC41CCFC03400A8D14A /* TopicItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicItemTableViewCell.m; sourceTree = "<group>"; };
 		59604EC71CCFC25500A8D14A /* CreateForumStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepOneViewController.h; sourceTree = "<group>"; };
 		59604EC81CCFC25500A8D14A /* CreateForumStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateForumStepOneViewController.m; sourceTree = "<group>"; };
 		59604EC91CCFC25500A8D14A /* CreateForumStepThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateForumStepThreeViewController.h; sourceTree = "<group>"; };
@@ -248,10 +256,6 @@
 		597729311CE823FE00EBE270 /* CTSloMoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSloMoViewController.m; sourceTree = "<group>"; };
 		597729321CE823FE00EBE270 /* CTSortedAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSortedAssetsViewController.h; sourceTree = "<group>"; };
 		597729331CE823FE00EBE270 /* CTSortedAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSortedAssetsViewController.m; sourceTree = "<group>"; };
-		5977293C1CE8378900EBE270 /* CreateTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTopicViewController.h; sourceTree = "<group>"; };
-		5977293D1CE8378900EBE270 /* CreateTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTopicViewController.m; sourceTree = "<group>"; };
-		597729631CE84BC200EBE270 /* SelectedImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedImageCollectionViewCell.h; sourceTree = "<group>"; };
-		597729641CE84BC200EBE270 /* SelectedImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedImageCollectionViewCell.m; sourceTree = "<group>"; };
 		5977296A1CE8D07A00EBE270 /* NYTPhotoCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionView.h; sourceTree = "<group>"; };
 		5977296B1CE8D07A00EBE270 /* NYTPhotoCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionView.m; sourceTree = "<group>"; };
 		5977296C1CE8D07A00EBE270 /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
@@ -441,8 +445,6 @@
 		597E23851CC1E241009DCA6B /* ChooseCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCityViewController.m; sourceTree = "<group>"; };
 		597E23871CC1E326009DCA6B /* ProvinceCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceCityTableViewCell.h; sourceTree = "<group>"; };
 		597E23881CC1E326009DCA6B /* ProvinceCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceCityTableViewCell.m; sourceTree = "<group>"; };
-		5980AACF1CF2C7E0009254DC /* ViewingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewingImage.h; sourceTree = "<group>"; };
-		5980AAD01CF2C7E0009254DC /* ViewingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewingImage.m; sourceTree = "<group>"; };
 		5980AAD21CF2D5CC009254DC /* NSURLSession+SynchronousTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+SynchronousTask.h"; sourceTree = "<group>"; };
 		5980AAD31CF2D5CC009254DC /* NSURLSession+SynchronousTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+SynchronousTask.m"; sourceTree = "<group>"; };
 		599F42501CCB04F6001BC33A /* HotForumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotForumsViewController.h; sourceTree = "<group>"; };
@@ -538,6 +540,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59143AF01CF5919600724729 /* ForumTopics */ = {
+			isa = PBXGroup;
+			children = (
+				59143B091CF591E200724729 /* ForumTopics.storyboard */,
+				59143AF11CF5919600724729 /* CreateTopicViewController.h */,
+				59143AF21CF5919600724729 /* CreateTopicViewController.m */,
+				59143AF31CF5919600724729 /* ForumTopicsViewController.h */,
+				59143AF41CF5919600724729 /* ForumTopicsViewController.m */,
+				59143AF51CF5919600724729 /* PostItemTableViewCell.h */,
+				59143AF61CF5919600724729 /* PostItemTableViewCell.m */,
+				59143AF71CF5919600724729 /* SelectedImageCollectionViewCell.h */,
+				59143AF81CF5919600724729 /* SelectedImageCollectionViewCell.m */,
+				59143AF91CF5919600724729 /* TopicItemTableViewCell.h */,
+				59143AFA1CF5919600724729 /* TopicItemTableViewCell.m */,
+				59143AFB1CF5919600724729 /* TopicPostsViewController.h */,
+				59143AFC1CF5919600724729 /* TopicPostsViewController.m */,
+				59143AFD1CF5919600724729 /* ViewingImage.h */,
+				59143AFE1CF5919600724729 /* ViewingImage.m */,
+				59143AFF1CF5919600724729 /* WatchListViewController.h */,
+				59143B001CF5919600724729 /* WatchListViewController.m */,
+			);
+			path = ForumTopics;
+			sourceTree = "<group>";
+		};
 		594733EF1CE4878D00A7330E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +578,7 @@
 		5952D1F61C9D3E4E00E761F9 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
+				59143AF01CF5919600724729 /* ForumTopics */,
 				59604EC61CCFC25500A8D14A /* CreateForum */,
 				5952D1FF1C9D415100E761F9 /* Forum.storyboard */,
 				59363F461CCE322B00EEDC96 /* ForumHomeViewController.h */,
@@ -568,22 +595,6 @@
 				59604EBE1CCE93F000A8D14A /* CreatedForumsViewController.m */,
 				599F42651CCB6A32001BC33A /* ForumItemTableViewCell.h */,
 				599F42661CCB6A32001BC33A /* ForumItemTableViewCell.m */,
-				594733E91CE4852E00A7330E /* ForumTopicsViewController.h */,
-				594733EA1CE4852E00A7330E /* ForumTopicsViewController.m */,
-				59604EC31CCFC03400A8D14A /* TopicItemTableViewCell.h */,
-				59604EC41CCFC03400A8D14A /* TopicItemTableViewCell.m */,
-				5977293C1CE8378900EBE270 /* CreateTopicViewController.h */,
-				5977293D1CE8378900EBE270 /* CreateTopicViewController.m */,
-				597729631CE84BC200EBE270 /* SelectedImageCollectionViewCell.h */,
-				597729641CE84BC200EBE270 /* SelectedImageCollectionViewCell.m */,
-				590AF2EA1CEB7003004FD5F0 /* WatchListViewController.h */,
-				590AF2EB1CEB7003004FD5F0 /* WatchListViewController.m */,
-				590AF2ED1CEB7F7D004FD5F0 /* TopicPostsViewController.h */,
-				590AF2EE1CEB7F7D004FD5F0 /* TopicPostsViewController.m */,
-				590AF2F31CEB81B2004FD5F0 /* PostItemTableViewCell.h */,
-				590AF2F41CEB81B2004FD5F0 /* PostItemTableViewCell.m */,
-				5980AACF1CF2C7E0009254DC /* ViewingImage.h */,
-				5980AAD01CF2C7E0009254DC /* ViewingImage.m */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -1180,6 +1191,7 @@
 				59BD2A9E1C9ACC9D00D9A58C /* Assets.xcassets in Resources */,
 				5952D2081C9D441300E761F9 /* Personal.storyboard in Resources */,
 				5952D2041C9D434D00E761F9 /* Message.storyboard in Resources */,
+				59143B0A1CF591E200724729 /* ForumTopics.storyboard in Resources */,
 				597729901CE8D07A00EBE270 /* NYTPhotoViewer.bundle in Resources */,
 				59BD2A9C1C9ACC9D00D9A58C /* Main.storyboard in Resources */,
 				597B29491CE6105B00869CD2 /* CTAssetsPickerController.bundle in Resources */,
@@ -1240,9 +1252,9 @@
 				597B29431CE6105B00869CD2 /* CTAssetsGridViewFooter.m in Sources */,
 				597E23891CC1E326009DCA6B /* ProvinceCityTableViewCell.m in Sources */,
 				597E23861CC1E241009DCA6B /* ChooseCityViewController.m in Sources */,
+				59143B041CF5919600724729 /* SelectedImageCollectionViewCell.m in Sources */,
 				597B294D1CE6105B00869CD2 /* CTAssetThumbnailOverlay.m in Sources */,
 				597B29401CE6105B00869CD2 /* CTAssetsGridView.m in Sources */,
-				597729651CE84BC200EBE270 /* SelectedImageCollectionViewCell.m in Sources */,
 				597E237E1CC1DFEF009DCA6B /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				59604EB91CCE93A200A8D14A /* WatchingFormsViewController.m in Sources */,
 				5980AAD41CF2D5CC009254DC /* NSURLSession+SynchronousTask.m in Sources */,
@@ -1250,17 +1262,16 @@
 				597729361CE823FE00EBE270 /* CTLastWeekViewController.m in Sources */,
 				597E23631CC1DFEF009DCA6B /* DGActivityIndicatorBallGridBeatAnimation.m in Sources */,
 				597B29331CE6105B00869CD2 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
+				59143B021CF5919600724729 /* ForumTopicsViewController.m in Sources */,
 				59BF18B91CB74C1B00033F41 /* LoginWithPasswordViewController.m in Sources */,
 				599F42521CCB04F6001BC33A /* HotForumsViewController.m in Sources */,
 				597E237B1CC1DFEF009DCA6B /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,
 				597B293B1CE6105B00869CD2 /* CTAssetPlayButton.m in Sources */,
 				597E23661CC1DFEF009DCA6B /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
-				594733EB1CE4852E00A7330E /* ForumTopicsViewController.m in Sources */,
 				59CF08AF1CB88A1200FD2040 /* UpdatePhotoViewController.m in Sources */,
 				59B888F31CDB1B93008850CC /* LoginWithEmailVeifyCodeViewController.m in Sources */,
 				597E23771CC1DFEF009DCA6B /* DGActivityIndicatorNineDotsAnimation.m in Sources */,
 				59CF80D31CA627FE005F0CA6 /* UserModels.m in Sources */,
-				59604EC51CCFC03400A8D14A /* TopicItemTableViewCell.m in Sources */,
 				597E23831CC1E228009DCA6B /* ChooseProvinceViewController.m in Sources */,
 				59B888FC1CDB339B008850CC /* UpdateMobileViewController.m in Sources */,
 				597B29361CE6105B00869CD2 /* UIImage+CTAssetsPickerController.m in Sources */,
@@ -1269,8 +1280,8 @@
 				59BD2ACC1C9ADF2300D9A58C /* JSONKeyMapper.m in Sources */,
 				597B29301CE6105B00869CD2 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
 				599F42671CCB6A32001BC33A /* ForumItemTableViewCell.m in Sources */,
-				590AF2F51CEB81B2004FD5F0 /* PostItemTableViewCell.m in Sources */,
 				59CF80D61CA667ED005F0CA6 /* PersonalViewController.m in Sources */,
+				59143B051CF5919600724729 /* TopicItemTableViewCell.m in Sources */,
 				597B293C1CE6105B00869CD2 /* CTAssetScrollView.m in Sources */,
 				59BD2ACB1C9ADF2300D9A58C /* JSONModel+networking.m in Sources */,
 				59B6EE1E1CE089E10035E49F /* ForumSearchResultViewController.m in Sources */,
@@ -1288,6 +1299,7 @@
 				59F08C7D1CDCBE33001F7415 /* CountriesSearchResultViewController.m in Sources */,
 				597E23701CC1DFEF009DCA6B /* DGActivityIndicatorCookieTerminatorAnimation.m in Sources */,
 				597729921CE8D07A00EBE270 /* NSBundle+NYTPhotoViewer.m in Sources */,
+				59143B081CF5919600724729 /* WatchListViewController.m in Sources */,
 				597B295C1CE6110000869CD2 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				59D191E11C9D82E500FF696C /* NetworkManager.m in Sources */,
 				597E23731CC1DFEF009DCA6B /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
@@ -1301,14 +1313,16 @@
 				597B293F1CE6105B00869CD2 /* CTAssetsGridSelectedView.m in Sources */,
 				597B292E1CE6105B00869CD2 /* NSBundle+CTAssetsPickerController.m in Sources */,
 				59604ECF1CCFC25500A8D14A /* CreateForumStepOneViewController.m in Sources */,
-				590AF2EC1CEB7003004FD5F0 /* WatchListViewController.m in Sources */,
 				597B294B1CE6105B00869CD2 /* CTAssetsPickerNoAssetsView.m in Sources */,
+				59143B031CF5919600724729 /* PostItemTableViewCell.m in Sources */,
 				597B29481CE6105B00869CD2 /* CTAssetsPickerAccessDeniedView.m in Sources */,
 				597E23671CC1DFEF009DCA6B /* DGActivityIndicatorBallRotateAnimation.m in Sources */,
 				597B29411CE6105B00869CD2 /* CTAssetsGridViewCell.m in Sources */,
 				597B294E1CE6105B00869CD2 /* CTAssetThumbnailStacks.m in Sources */,
 				597E23791CC1DFEF009DCA6B /* DGActivityIndicatorRotatingSquaresAnimation.m in Sources */,
 				597B29351CE6105B00869CD2 /* UICollectionView+CTAssetsPickerController.m in Sources */,
+				59143B011CF5919600724729 /* CreateTopicViewController.m in Sources */,
+				59143B061CF5919600724729 /* TopicPostsViewController.m in Sources */,
 				59BD2AC81C9ADF2300D9A58C /* NSArray+JSONModel.m in Sources */,
 				597729381CE823FE00EBE270 /* CTPhotosViewController.m in Sources */,
 				59B888F91CDB3387008850CC /* UpdateEmailViewController.m in Sources */,
@@ -1330,15 +1344,13 @@
 				597B29341CE6105B00869CD2 /* PHImageManager+CTAssetsPickerController.m in Sources */,
 				5952D2231C9D4FED00E761F9 /* UIColor+Utils.m in Sources */,
 				5977298F1CE8D07A00EBE270 /* NYTPhotoViewController.m in Sources */,
+				59143B071CF5919600724729 /* ViewingImage.m in Sources */,
 				597E23681CC1DFEF009DCA6B /* DGActivityIndicatorBallScaleAnimation.m in Sources */,
 				59BD2A931C9ACC9D00D9A58C /* main.m in Sources */,
-				5980AAD11CF2C7E0009254DC /* ViewingImage.m in Sources */,
 				5952D2261C9D50A700E761F9 /* Utils.m in Sources */,
 				59BD2AC61C9ADF2300D9A58C /* JSONModelClassProperty.m in Sources */,
 				59363F481CCE322B00EEDC96 /* ForumHomeViewController.m in Sources */,
-				5977293E1CE8378900EBE270 /* CreateTopicViewController.m in Sources */,
 				5977298C1CE8D07A00EBE270 /* NYTPhotosViewController.m in Sources */,
-				590AF2EF1CEB7F7D004FD5F0 /* TopicPostsViewController.m in Sources */,
 				59B888EA1CDAEC19008850CC /* LoginWithMobileVerifyCodeViewController.m in Sources */,
 				597B298A1CE61C1400869CD2 /* HomeViewController.m in Sources */,
 				597B29371CE6105B00869CD2 /* CTAssetCheckmark.m in Sources */,

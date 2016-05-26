@@ -147,10 +147,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
-    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self performSegueWithIdentifier:@"PresentForumTopics" sender:self];
 }
 
 
@@ -158,8 +156,13 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PresentForumTopics"]) {
+        UINavigationController* navigationController = [segue destinationViewController];
+        ForumTopicsViewController* forumTopicsViewController = navigationController.viewControllers[0];
+        
+        forumTopicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
 }
 
 

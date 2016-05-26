@@ -28,7 +28,6 @@
     NSLog(@"DiskCache: %@ of %@", @([[NSURLCache sharedURLCache] currentDiskUsage]), @([[NSURLCache sharedURLCache] diskCapacity]));
     NSLog(@"MemoryCache: %@ of %@", @([[NSURLCache sharedURLCache] currentMemoryUsage]), @([[NSURLCache sharedURLCache] memoryCapacity]));
     
-    
     // Tab bar tint color
     [[UITabBar appearance] setTintColor:[UIColor blackColor]];
     

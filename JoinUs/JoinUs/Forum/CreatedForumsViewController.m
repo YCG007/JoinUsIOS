@@ -57,7 +57,6 @@
     }
 }
 
-
 - (void)loadData {
     NSString* url = [NSString stringWithFormat:@"forum/created?offset=%d&limit=%d", self.loadingStatus == LoadingStatusLoadingMore ? (int)_listItems.count : 0, 10];
     [[NetworkManager sharedManager] getDataWithUrl:url completionHandler:^(long statusCode, NSData *data, NSString *errorMessage) {
@@ -99,10 +98,8 @@
 }
 
 - (IBAction)createForumImageTapped:(id)sender {
-        [self.parentViewController performSegueWithIdentifier:@"CreateForum" sender:self];
+        [self.parentViewController performSegueWithIdentifier:@"PushCreateForum" sender:self];
 }
-
-
 
 #pragma mark - Table view data source
 
@@ -119,7 +116,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ForumItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
     
     ForumItem* item = _listItems[indexPath.row];
     if (cell.task != nil && cell.task.state == NSURLSessionTaskStateRunning) {
@@ -158,18 +154,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ForumTopicsViewController* topicsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Topics"];
-    topicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;
-    [self.parentViewController.navigationController pushViewController:topicsViewController animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"PresentForumTopics" sender:self];
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"PresentForumTopics"]) {
+        UINavigationController* navigationController = [segue destinationViewController];
+        ForumTopicsViewController* forumTopicsViewController = navigationController.viewControllers[0];
+        
+        forumTopicsViewController.forumId = _listItems[self.tableView.indexPathForSelectedRow.row].id;;
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
 }
 
 
